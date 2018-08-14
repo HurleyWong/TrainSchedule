@@ -1,15 +1,20 @@
 package com.example.trainschedule.View.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
+import com.example.trainschedule.Activity.StationResultActivity;
 import com.example.trainschedule.R;
+import com.example.trainschedule.Util.EditTextClearUtil;
 
 /**
  * <pre>
@@ -24,14 +29,20 @@ import com.example.trainschedule.R;
 public class StationFragment extends Fragment{
     //搜索出发车站输入框
     private EditText start_train_input;
+    //删除出发车站输入框输入的内容
+    private ImageView start_station_clear;
     //搜索到达车站输入框
     private EditText end_train_input;
+    //删除到达车站输入框输入的内容
+    private ImageView end_station_clear;
     //搜索按钮
     private Button search_station_button;
 
     private void initViews(){
         start_train_input=getActivity().findViewById(R.id.search_start_station_input);
         end_train_input=getActivity().findViewById(R.id.search_end_station_input);
+        start_station_clear=getActivity().findViewById(R.id.start_station_clear);
+        end_station_clear=getActivity().findViewById(R.id.end_station_clear);
         search_station_button=getActivity().findViewById(R.id.search_station_button);
     }
 
@@ -47,6 +58,52 @@ public class StationFragment extends Fragment{
         super.onActivityCreated(savedInstanceState);
         initViews();
 
+        //监控EditText输入内容，点击clear图标删除输入内容
+        EditTextClearUtil.addClearListener(start_train_input,start_station_clear);
+        EditTextClearUtil.addClearListener(end_train_input,end_station_clear);
+
+        //输入法完成/回车
+        end_train_input.setOnKeyListener(new View.OnKeyListener(){
+            @Override
+            public boolean onKey(View view,int i,KeyEvent keyEvent){
+                if(i==android.view.KeyEvent.KEYCODE_ENTER&&keyEvent.getAction()==android.view.KeyEvent.ACTION_DOWN){
+                    //获取输入的内容
+                    String start_station=start_train_input.getText().toString();
+                    String end_station=end_train_input.getText().toString();
+                    //输出输入的内容
+                    System.out.println("出发车站："+start_station);
+                    System.out.println("到达车站："+end_station);
+
+                    //使用Intent进行传值页面跳转
+                    Intent intent=new Intent();
+                    intent.setClass(StationFragment.this.getActivity(),StationResultActivity.class);
+                    intent.putExtra("key1",start_station);
+                    intent.putExtra("key2",end_station);
+                    StationFragment.this.getActivity().startActivity(intent);
+                }
+                return false;
+            }
+        });
+
+        //点击搜索按钮
+        search_station_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //获取输入的内容
+                String start_station=start_train_input.getText().toString();
+                String end_station=end_train_input.getText().toString();
+                //输出输入的内容
+                System.out.println("出发车站："+start_station);
+                System.out.println("到达车站："+end_station);
+
+                //使用Intent进行传值页面跳转
+                Intent intent=new Intent();
+                intent.setClass(StationFragment.this.getActivity(),StationResultActivity.class);
+                intent.putExtra("key1",start_station);
+                intent.putExtra("key2",end_station);
+                StationFragment.this.getActivity().startActivity(intent);
+            }
+        });
     }
 }
 

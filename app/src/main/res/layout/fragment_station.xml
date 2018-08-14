@@ -1,40 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/station_title"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"
+        android:text="车站查询"
+        android:textColor="#000"
+        android:textSize="23sp"
+        android:typeface="monospace"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_start_station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/station_title"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_edittext">
+
+        <TextView
+            android:id="@+id/start_station_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingBottom="15dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="15dp"
+            android:text="出发车站"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+
+        <View
+            android:id="@+id/view_start_station"
+            android:layout_width="1dip"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/start_station_text"
+            android:background="@color/colorCursor" />
 
         <EditText
             android:id="@+id/search_start_station_input"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/view_start_station"
+            android:background="@null"
+            android:ems="19"
             android:hint="请输入出发车站"
             android:inputType="text"
-            android:imeOptions="actionSearch"
-            android:layout_gravity="center_vertical"/>
+            android:textColorHint="@color/colorCursor"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/start_station_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/ic_delete"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_end_station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_start_station"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/shape_edittext">
+
+        <TextView
+            android:id="@+id/end_station_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingBottom="15dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="15dp"
+            android:text="到达车站"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+
+        <View
+            android:id="@+id/view_end_station"
+            android:layout_width="1dip"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/end_station_text"
+            android:background="@color/colorCursor" />
+
         <EditText
             android:id="@+id/search_end_station_input"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/view_end_station"
+            android:background="@null"
+            android:drawablePadding="5dp"
+            android:ems="19"
             android:hint="请输入到达车站"
             android:inputType="text"
-            android:imeOptions="actionSearch"
-            android:layout_gravity="center_vertical"/>
+            android:textColorHint="@color/colorCursor"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:textSize="18sp"/>
+
+        <ImageView
+            android:id="@+id/end_station_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/ic_delete"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/rl_end_station"
+        android:layout_marginTop="20dp">
+
+        <CheckBox
+            android:id="@+id/isHigh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:background="@null"
+            android:checked="false"
+            android:duplicateParentState="false"
+            android:text="只显示高铁"
+            android:textColor="#666666"
+            android:textSize="15sp"/>
+
         <Button
             android:id="@+id/search_station_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/shape_search_button"
+            android:gravity="center"
+            android:padding="10dp"
             android:text="搜索"
-            android:layout_gravity="center_vertical"/>
+            android:textColor="#fff"
+            android:textSize="18sp" />
     </LinearLayout>
-</LinearLayout>
+
+</RelativeLayout>

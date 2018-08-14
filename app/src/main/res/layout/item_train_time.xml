@@ -15,7 +15,7 @@
             android:layout_width="0.5dp"
             android:layout_height="12dp"
             android:layout_centerHorizontal="true"
-            android:background="#1296db" />
+            android:background="#1296db"/>
 
         <TextView
             android:id="@+id/timeline_point"

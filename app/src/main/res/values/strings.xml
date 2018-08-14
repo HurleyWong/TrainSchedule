@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">TrainSchedule</string>
+    <string name="app_name">火车时刻表</string>
+    <string name="app_version">V1.0</string>
+    <string name="station_query">车站查询</string>
+    <string name="train_query">车次查询</string>
+    <string name="others">其它</string>
+    <string name="about">关于</string>
+    <string name="support">支持</string>
 </resources>
