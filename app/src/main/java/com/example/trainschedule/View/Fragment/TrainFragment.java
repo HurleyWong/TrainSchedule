@@ -12,9 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.trainschedule.Activity.TrainResultActivity;
 import com.example.trainschedule.R;
+import com.example.trainschedule.Util.EditTextClearUtil;
 
 /**
  * <pre>
@@ -33,12 +35,15 @@ public class TrainFragment extends Fragment{
 
     //搜索车次输入框
     private EditText search_train_input;
+    //删除搜索车次输入框输入的内容
+    private ImageView search_train_clear;
     //搜索车次按钮
     private Button search_train_button;
 
     //初始化控件
     private void initViews(){
         search_train_input=getActivity().findViewById(R.id.search_train_input);
+        search_train_clear=getActivity().findViewById(R.id.search_train_clear);
         search_train_button=getActivity().findViewById(R.id.search_train_button);
     }
 
@@ -53,6 +58,9 @@ public class TrainFragment extends Fragment{
     public void onActivityCreated(@Nullable Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
         initViews();
+
+        //监控EditText输入内容，点击clear图标删除输入内容
+        EditTextClearUtil.addClearListener(search_train_input,search_train_clear);
 
         //输入法完成/回车
         search_train_input.setOnKeyListener(new View.OnKeyListener(){

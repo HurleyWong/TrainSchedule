@@ -5,27 +5,89 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/station_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="160dp"
+        android:text="车次查询"
+        android:textColor="#000"
+        android:textSize="23sp"
+        android:typeface="monospace"/>
+
     <LinearLayout
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="300dp"
         android:orientation="horizontal"
         android:layout_gravity="center">
 
-        <EditText
-            android:id="@+id/search_train_input"
+        <RelativeLayout
+            android:id="@+id/rl_train"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:hint="请输入车次"
-            android:inputType="text"
-            android:imeOptions="actionSearch"
-            android:layout_gravity="center_vertical"/>
+            android:layout_weight="4"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_edittext">
+
+            <TextView
+                android:id="@+id/train_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingBottom="15dp"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:text="到达车站"
+                android:textColor="#000"
+                android:textSize="18sp"/>
+
+            <View
+                android:id="@+id/view_train"
+                android:layout_width="1dip"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/train_text"
+                android:background="@color/colorCursor"/>
+
+            <EditText
+                android:id="@+id/search_train_input"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/view_train"
+                android:background="@null"
+                android:drawablePadding="5dp"
+                android:ems="19"
+                android:hint="请输入车次"
+                android:inputType="text"
+                android:textColorHint="@color/colorCursor"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/search_train_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/ic_delete"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+
         <Button
             android:id="@+id/search_train_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_search_button"
             android:text="搜索"
-            android:layout_gravity="center_vertical"/>
+            android:textColor="#fff"
+            android:textSize="18sp"/>
     </LinearLayout>
 </LinearLayout>

@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -35,14 +37,20 @@ public class StationFragment extends Fragment{
     private EditText end_train_input;
     //删除到达车站输入框输入的内容
     private ImageView end_station_clear;
+    //选择是否只搜索高铁
+    private CheckBox checkBox;
     //搜索按钮
     private Button search_station_button;
+
+    //判断CheckBox是否被选中
+    private int isHigh=0;
 
     private void initViews(){
         start_train_input=getActivity().findViewById(R.id.search_start_station_input);
         end_train_input=getActivity().findViewById(R.id.search_end_station_input);
         start_station_clear=getActivity().findViewById(R.id.start_station_clear);
         end_station_clear=getActivity().findViewById(R.id.end_station_clear);
+        checkBox=getActivity().findViewById(R.id.isHigh);
         search_station_button=getActivity().findViewById(R.id.search_station_button);
     }
 
@@ -96,11 +104,25 @@ public class StationFragment extends Fragment{
                 System.out.println("出发车站："+start_station);
                 System.out.println("到达车站："+end_station);
 
+                //设置CheckBox的监听事件，判断CheckBox是否被选中
+                checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView,boolean isChecked){
+                        if(isChecked){
+                            isHigh=1;
+                        }
+                        else{
+                            isHigh=0;
+                        }
+                    }
+                });
+
                 //使用Intent进行传值页面跳转
                 Intent intent=new Intent();
                 intent.setClass(StationFragment.this.getActivity(),StationResultActivity.class);
                 intent.putExtra("key1",start_station);
                 intent.putExtra("key2",end_station);
+                intent.putExtra("bool",isHigh);
                 StationFragment.this.getActivity().startActivity(intent);
             }
         });

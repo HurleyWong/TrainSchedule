@@ -27,6 +27,9 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private LayoutInflater inflater;
     private List<Station.ResultBean> resultBeans=new ArrayList<>();
 
+    //声明接口变量
+    private OnItemClickListener itemClickListener=null;
+
     public TrainAdapter(Context context,List<Station.ResultBean> resultBeans){
         inflater=LayoutInflater.from(context);
         this.resultBeans=resultBeans;
@@ -37,16 +40,41 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         return new TrainAdapter.ViewHolder(inflater.inflate(R.layout.item_train,parent,false));
     }
 
+    //将数据与界面进行绑定操作
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder,int position){
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder,final int position){
         TrainAdapter.ViewHolder itemHolder=(TrainAdapter.ViewHolder)holder;
         itemHolder.bindHolder(resultBeans.get(position));
+
+        //点击事件注册及分发
+        if(null!=itemClickListener){
+            //监听整个item
+            ((ViewHolder)holder).itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    itemClickListener.onItemClick(holder.itemView,position);
+                }
+            });
+        }
     }
 
+    //获取数据的数量
     @Override
     public int getItemCount(){
         return resultBeans.size();
     }
+
+    //定义点击事件接口
+    public interface OnItemClickListener{
+        void onItemClick(View view,int position);
+    }
+
+    //设置点击事件
+    public void setOnItemClickListener(OnItemClickListener itemClickListener){
+        this.itemClickListener=itemClickListener;
+    }
+
+
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView departure_time;
@@ -56,6 +84,7 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         private TextView arrival_time;
         private TextView arrival_station;
         private TextView price;
+        private TextView seat_type;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -66,6 +95,7 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             arrival_time=itemView.findViewById(R.id.arrival_time);
             arrival_station=itemView.findViewById(R.id.arrival_station);
             price=itemView.findViewById(R.id.price);
+            seat_type=itemView.findViewById(R.id.seat_type);
         }
 
         public void bindHolder(Station.ResultBean resultBean){
@@ -76,6 +106,7 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             arrival_time.setText(resultBean.getArrivaltime());
             arrival_station.setText(resultBean.getEndstation());
             price.setText(resultBean.getPriceed());
+            seat_type.setText(resultBean.getType());
         }
     }
 }

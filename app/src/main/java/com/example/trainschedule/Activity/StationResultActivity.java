@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Response;
@@ -35,7 +36,7 @@ import java.util.List;
  *  </pre>
  */
 
-public class StationResultActivity extends AppCompatActivity{
+public class StationResultActivity extends AppCompatActivity implements TrainAdapter.OnItemClickListener{
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private RecyclerView recyclerView;
@@ -45,6 +46,8 @@ public class StationResultActivity extends AppCompatActivity{
 
     //请求接口
     private String url;
+    //判断是否只搜索高铁
+    private int bool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -59,8 +62,9 @@ public class StationResultActivity extends AppCompatActivity{
         Intent intent=getIntent();
         String key1=intent.getStringExtra("key1").replaceAll(" ","");
         String key2=intent.getStringExtra("key2").replaceAll(" ","");
+        bool=intent.getIntExtra("bool",0);
 
-        url="http://api.jisuapi.com/train/station2s?appkey=f54b78afc15a12fc&start="+key1+"&end="+key2+"&ishigh=1";
+        url="http://api.jisuapi.com/train/station2s?appkey=f54b78afc15a12fc&start="+key1+"&end="+key2+"&ishigh="+bool;
 
         getData();
     }
@@ -129,21 +133,47 @@ public class StationResultActivity extends AppCompatActivity{
         final Station station=gson.fromJson(result,Station.class);
 
         for(int i=0;i<station.getResult().size();i++){
-            resultBeans.add(new Station.ResultBean(
-                    station.getResult().get(i).getTrainno(),
-                    station.getResult().get(i).getStation(),
-                    station.getResult().get(i).getEndstation(),
-                    station.getResult().get(i).getDeparturetime(),
-                    station.getResult().get(i).getArrivaltime(),
-                    station.getResult().get(i).getCosttime(),
-                    station.getResult().get(i).getPriceed()+"元"
-            ));
+            if(station.getResult().get(i).getPriceyz()!=null){
+                resultBeans.add(new Station.ResultBean(
+                        station.getResult().get(i).getTrainno(),
+                        station.getResult().get(i).getStation(),
+                        station.getResult().get(i).getEndstation(),
+                        station.getResult().get(i).getDeparturetime(),
+                        station.getResult().get(i).getArrivaltime(),
+                        station.getResult().get(i).getCosttime(),
+                        station.getResult().get(i).getPriceyz()+"元",
+                        "硬座"
+
+                ));
+            }
+            else{
+                resultBeans.add(new Station.ResultBean(
+                        station.getResult().get(i).getTrainno(),
+                        station.getResult().get(i).getStation(),
+                        station.getResult().get(i).getEndstation(),
+                        station.getResult().get(i).getDeparturetime(),
+                        station.getResult().get(i).getArrivaltime(),
+                        station.getResult().get(i).getCosttime(),
+                        station.getResult().get(i).getPriceed()+"元",
+                        "二等座"
+                ));
+            }
         }
 
         trainAdapter=new TrainAdapter(this,resultBeans);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        trainAdapter.setOnItemClickListener(this);
         recyclerView.setAdapter(trainAdapter);
+    }
+
+    @Override
+    public void onItemClick(View view,int position){
+        String content=resultBeans.get(position).getTrainno();
+        Intent intent=new Intent();
+        intent.setClass(this,TrainResultActivity.class);
+        intent.putExtra("key",content);
+        StationResultActivity.this.startActivity(intent);
     }
 }
 

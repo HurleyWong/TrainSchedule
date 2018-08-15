@@ -74,7 +74,7 @@ public class Station{
          */
 
         public ResultBean(String trainno,String station,String endstation,String departuretime,
-                          String arrivaltime,String costtime,String priceed){
+                          String arrivaltime,String costtime,String priceed,String type){
             this.trainno=trainno;
             this.station=station;
             this.endstation=endstation;
@@ -82,6 +82,7 @@ public class Station{
             this.arrivaltime=arrivaltime;
             this.costtime=costtime;
             this.priceed=priceed;
+            this.type=type;
         }
 
         private String trainno;
@@ -105,6 +106,8 @@ public class Station{
         private String priceyw3;
         private String priceyd;
         private String priceed;
+        private String pricerz;             //软座
+        private String priceyz;             //硬座
 
         public String getTrainno(){
             return trainno;
@@ -272,6 +275,22 @@ public class Station{
 
         public void setPriceed(String priceed){
             this.priceed=priceed;
+        }
+
+        public String getPricerz(){
+            return pricerz;
+        }
+
+        public void setPricerz(String pricerz){
+            this.pricerz=pricerz;
+        }
+
+        public String getPriceyz(){
+            return priceyz;
+        }
+
+        public void setPriceyz(String priceyz){
+            this.priceyz=priceyz;
         }
     }
 }
