@@ -5,5 +5,6 @@
     <string name="train_query">车次查询</string>
     <string name="others">其它</string>
     <string name="about">关于</string>
+    <string name="license">开源协议</string>
     <string name="support">支持</string>
 </resources>

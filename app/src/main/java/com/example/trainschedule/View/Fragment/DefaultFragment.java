@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.trainschedule.R;
 
@@ -21,6 +22,13 @@ import com.example.trainschedule.R;
 
 public class DefaultFragment extends Fragment{
 
+    private ImageView default_image;
+
+    //初始化控件
+    private void initViews(){
+        default_image=getActivity().findViewById(R.id.default_image);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
@@ -31,6 +39,7 @@ public class DefaultFragment extends Fragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
+        initViews();
 
     }
 }

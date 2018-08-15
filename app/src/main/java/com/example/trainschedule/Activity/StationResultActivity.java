@@ -162,6 +162,7 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
 
         trainAdapter=new TrainAdapter(this,resultBeans);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //为RecyclerView添加分割线
         recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         trainAdapter.setOnItemClickListener(this);
         recyclerView.setAdapter(trainAdapter);
