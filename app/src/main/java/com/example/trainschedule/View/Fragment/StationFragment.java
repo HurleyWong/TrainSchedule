@@ -16,8 +16,14 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 
 import com.example.trainschedule.Activity.StationResultActivity;
+import com.example.trainschedule.Model.StationTip;
 import com.example.trainschedule.R;
 import com.example.trainschedule.Util.EditTextClearUtil;
+import com.example.trainschedule.Util.ReadFile;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <pre>
@@ -43,6 +49,11 @@ public class StationFragment extends Fragment{
     //搜索按钮
     private Button search_station_button;
 
+    //请求接口
+    private String url;
+
+    private List<String> resultBeans=new ArrayList<String>();
+
     //判断CheckBox是否被选中
     private int isHigh=0;
 
@@ -67,10 +78,11 @@ public class StationFragment extends Fragment{
         super.onActivityCreated(savedInstanceState);
         initViews();
 
-        String[] strings=new String[]{
-                "南昌","上饶","杭州东","上海虹桥"
-        };
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(StationFragment.this.getActivity(),android.R.layout.simple_list_item_1,strings);
+        url="http://api.avatardata.cn/TrainTicket/Station?key=9de387f10f174850a6e9430ccfd1dc9a";
+        //getData();
+        dealData();
+
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(StationFragment.this.getActivity(),android.R.layout.simple_list_item_1,resultBeans);
 
         //AutoCompleteTextView
         start_train_input.setAdapter(adapter);
@@ -137,6 +149,48 @@ public class StationFragment extends Fragment{
             }
         });
     }
+
+    //处理本地数据
+    private void dealData(){
+        Gson gson=new Gson();
+        String JSONContext=ReadFile.getJSON("station.json",getContext());
+        final StationTip stationTip=gson.fromJson(JSONContext,StationTip.class);
+        for(int i=0;i<stationTip.getResult().size();i++){
+            resultBeans.add(stationTip.getResult().get(i).getName());
+        }
+    }
+
+    //获取网络数据
+    /*private void getData(){
+        //创建请求对象
+        //使用Volley框架
+        StringRequest request=new StringRequest(url,new Response.Listener<String>(){
+            @Override
+            public void onResponse(String response){
+                Log.e("接受的响应信息",response);
+                dealData(response);
+            }
+        },new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error){
+                Toast.makeText(getActivity(),"网络请求出错",Toast.LENGTH_SHORT).show();
+            }
+        });
+        //把请求对象加入请求队列里面
+        new Volley().newRequestQueue(getActivity().getApplicationContext()).add(request);
+    }*/
+
+    //处理网络数据
+    /*private void dealData(String result){
+        //实例化Gson对象
+        Gson gson=new Gson();
+        //把json字符转化为对象
+        final StationTip stationTip=gson.fromJson(result,StationTip.class);
+        for(int i=0;i<stationTip.getResult().size();i++){
+            resultBeans.add(stationTip.getResult().get(i).getName());
+        }
+    }*/
+
 }
 
 
