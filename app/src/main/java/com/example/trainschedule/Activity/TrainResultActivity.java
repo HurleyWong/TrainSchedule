@@ -1,9 +1,11 @@
 package com.example.trainschedule.Activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -39,6 +41,7 @@ public class TrainResultActivity extends AppCompatActivity{
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private RecyclerView recyclerView;
+    private AlertDialog alertDialog;
 
     private List<Train.ResultBean.ListBean> listBeans=new ArrayList<>();
     private TrainTimeAdapter trainTimeAdapter;
@@ -145,41 +148,66 @@ public class TrainResultActivity extends AppCompatActivity{
     private void dealData(String result){
         //实例化Gson对象
         Gson gson=new Gson();
-        //把json字符转化为对象
-        final Train train=gson.fromJson(result,Train.class);
 
-        //车次
-        train_no.setText(train.getResult().getTrainno());
-        //类别
-        train_type.setText(train.getResult().getType());
-        //起点站
-        start_station.setText(train.getResult().getList().get(0).getStation());
-        //起点时间
-        start_time.setText(train.getResult().getList().get(0).getDeparturetime());
-        //终点站
-        end_station.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getStation());
-        //终点时间
-        end_time.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getArrivaltime());
+        try{
+            //把json字符转化为对象
+            Train train=gson.fromJson(result,Train.class);
 
-        for(int i=0;i<train.getResult().getList().size();i++){
-            if(train.getResult().getList().get(i).getArrivaltime().equals("----")){
-                //Toast.makeText(TrainResultActivity.this,"测试1",Toast.LENGTH_SHORT).show();
-                listBeans.add(new Train.ResultBean.ListBean(
-                        train.getResult().getList().get(i).getStation(),
-                        train.getResult().getList().get(i).getDeparturetime(),
-                        "",
-                        ""));
+            //车次
+            train_no.setText(train.getResult().getTrainno());
+            //类别
+            train_type.setText(train.getResult().getType());
+            //起点站
+            start_station.setText(train.getResult().getList().get(0).getStation());
+            //起点时间
+            start_time.setText(train.getResult().getList().get(0).getDeparturetime());
+            //终点站
+            end_station.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getStation());
+            //终点时间
+            end_time.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getArrivaltime());
+
+            for(int i=0;i<train.getResult().getList().size();i++){
+                if(train.getResult().getList().get(i).getArrivaltime().equals("----")){
+                    //Toast.makeText(TrainResultActivity.this,"测试1",Toast.LENGTH_SHORT).show();
+                    listBeans.add(new Train.ResultBean.ListBean(
+                            train.getResult().getList().get(i).getStation(),
+                            train.getResult().getList().get(i).getDeparturetime(),
+                            "",
+                            ""));
+                }
+                else{
+                    //Toast.makeText(TrainResultActivity.this,"测试2",Toast.LENGTH_SHORT).show();
+                    listBeans.add(new Train.ResultBean.ListBean(
+                            train.getResult().getList().get(i).getStation(),
+                            train.getResult().getList().get(i).getArrivaltime()+"-",
+                            train.getResult().getList().get(i).getStoptime()+"'",
+                            "-"+train.getResult().getList().get(i).getDeparturetime()));
+                }
+
             }
-            else{
-                //Toast.makeText(TrainResultActivity.this,"测试2",Toast.LENGTH_SHORT).show();
-                listBeans.add(new Train.ResultBean.ListBean(
-                        train.getResult().getList().get(i).getStation(),
-                        train.getResult().getList().get(i).getArrivaltime()+"-",
-                        train.getResult().getList().get(i).getStoptime()+"'",
-                        "-"+train.getResult().getList().get(i).getDeparturetime()));
+        }catch(Exception e){
+            //创建AlertDialog的构造器对象
+            AlertDialog.Builder builder=new AlertDialog.Builder(TrainResultActivity.this);
+            //设置构造器标题
+            //builder.setTitle("错误");
+            //构造器内容。为对话框设置文本项
+            builder.setMessage("输入车次有误，请输入正确的车次");
+            //为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
+            builder.setPositiveButton("确定",new DialogInterface.OnClickListener(){
+                //第一个参数dialog是点击的确定按钮所属的dialog对象，第二个对象which是按钮的标示值
+                @Override
+                public void onClick(DialogInterface dialog,int which){
+                    onBackPressed();
+                    //Toast.makeText(TrainResultActivity.this,"输入数据有误",Toast.LENGTH_SHORT).show();
+                }
+            });
+            //利用构造器创建AlertDialog对象，实现实例化
+            alertDialog=builder.create();
+            if(alertDialog!=null&&!alertDialog.isShowing()){
+                alertDialog.show();
             }
-
         }
+
 
         trainTimeAdapter=new TrainTimeAdapter(this,listBeans);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

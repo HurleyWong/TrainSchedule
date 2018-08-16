@@ -1,9 +1,11 @@
 package com.example.trainschedule.Activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -40,6 +42,7 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private RecyclerView recyclerView;
+    private AlertDialog alertDialog;
 
     private List<Station.ResultBean> resultBeans=new ArrayList<>();
     private TrainAdapter trainAdapter;
@@ -129,36 +132,61 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
     private void dealData(String result){
         //实例化Gson对象
         Gson gson=new Gson();
-        //把json字符转化为对象
-        final Station station=gson.fromJson(result,Station.class);
 
-        for(int i=0;i<station.getResult().size();i++){
-            if(station.getResult().get(i).getPriceyz()!=null){
-                resultBeans.add(new Station.ResultBean(
-                        station.getResult().get(i).getTrainno(),
-                        station.getResult().get(i).getStation(),
-                        station.getResult().get(i).getEndstation(),
-                        station.getResult().get(i).getDeparturetime(),
-                        station.getResult().get(i).getArrivaltime(),
-                        station.getResult().get(i).getCosttime(),
-                        station.getResult().get(i).getPriceyz()+"元",
-                        "硬座"
+        try{
+            //把json字符转化为对象
+            final Station station=gson.fromJson(result,Station.class);
 
-                ));
+            for(int i=0;i<station.getResult().size();i++){
+                if(station.getResult().get(i).getPriceyz()!=null){
+                    resultBeans.add(new Station.ResultBean(
+                            station.getResult().get(i).getTrainno(),
+                            station.getResult().get(i).getStation(),
+                            station.getResult().get(i).getEndstation(),
+                            station.getResult().get(i).getDeparturetime(),
+                            station.getResult().get(i).getArrivaltime(),
+                            station.getResult().get(i).getCosttime(),
+                            station.getResult().get(i).getPriceyz()+"元",
+                            "硬座"
+
+                    ));
+                }
+                else{
+                    resultBeans.add(new Station.ResultBean(
+                            station.getResult().get(i).getTrainno(),
+                            station.getResult().get(i).getStation(),
+                            station.getResult().get(i).getEndstation(),
+                            station.getResult().get(i).getDeparturetime(),
+                            station.getResult().get(i).getArrivaltime(),
+                            station.getResult().get(i).getCosttime(),
+                            station.getResult().get(i).getPriceed()+"元",
+                            "二等座"
+                    ));
+                }
             }
-            else{
-                resultBeans.add(new Station.ResultBean(
-                        station.getResult().get(i).getTrainno(),
-                        station.getResult().get(i).getStation(),
-                        station.getResult().get(i).getEndstation(),
-                        station.getResult().get(i).getDeparturetime(),
-                        station.getResult().get(i).getArrivaltime(),
-                        station.getResult().get(i).getCosttime(),
-                        station.getResult().get(i).getPriceed()+"元",
-                        "二等座"
-                ));
+        }catch(Exception e){
+            //创建AlertDialog的构造器对象
+            AlertDialog.Builder builder=new AlertDialog.Builder(StationResultActivity.this);
+            //设置构造器标题
+            //builder.setTitle("错误");
+            //构造器内容。为对话框设置文本项
+            builder.setMessage("输入车站有误或没有直达车次，请重新输入");
+            //为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
+            builder.setPositiveButton("确定",new DialogInterface.OnClickListener(){
+                //第一个参数dialog是点击的确定按钮所属的dialog对象，第二个对象which是按钮的标示值
+                @Override
+                public void onClick(DialogInterface dialog,int which){
+                    onBackPressed();
+                    //Toast.makeText(TrainResultActivity.this,"输入数据有误",Toast.LENGTH_SHORT).show();
+                }
+            });
+            //利用构造器创建AlertDialog对象，实现实例化
+            alertDialog=builder.create();
+            if(alertDialog!=null&&!alertDialog.isShowing()){
+                alertDialog.show();
             }
         }
+
 
         trainAdapter=new TrainAdapter(this,resultBeans);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
