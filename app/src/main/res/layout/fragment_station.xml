@@ -45,7 +45,7 @@
             android:layout_toRightOf="@id/start_station_text"
             android:background="@color/colorCursor" />
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/search_start_station_input"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -58,7 +58,8 @@
             android:inputType="text"
             android:textColorHint="@color/colorCursor"
             android:textCursorDrawable="@drawable/color_cursor"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:completionThreshold="1"/>
 
         <ImageView
             android:id="@+id/start_station_clear"
@@ -100,7 +101,7 @@
             android:layout_toRightOf="@id/end_station_text"
             android:background="@color/colorCursor"/>
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/search_end_station_input"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -114,7 +115,8 @@
             android:inputType="text"
             android:textColorHint="@color/colorCursor"
             android:textCursorDrawable="@drawable/color_cursor"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:completionThreshold="1"/>
 
         <ImageView
             android:id="@+id/end_station_clear"

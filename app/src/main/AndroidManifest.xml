@@ -19,6 +19,7 @@
         <activity android:name=".Activity.TrainResultActivity"/>
         <activity android:name=".Activity.StationResultActivity"/>
         <activity android:name=".Activity.LicenseActivity"/>
+        <activity android:name=".Activity.AboutActivity"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

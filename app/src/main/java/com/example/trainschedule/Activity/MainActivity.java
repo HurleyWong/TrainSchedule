@@ -1,6 +1,5 @@
 package com.example.trainschedule.Activity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -183,7 +182,10 @@ public class MainActivity extends AppCompatActivity{
                                 case R.id.about:
                                     //关闭导航栏菜单
                                     drawerLayout.closeDrawers();
-                                    //创建AlertDialog的构造器对象
+                                    Intent intent1=new Intent();
+                                    intent1.setClass(MainActivity.this,AboutActivity.class);
+                                    MainActivity.this.startActivity(intent1);
+                                    /*//创建AlertDialog的构造器对象
                                     AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
                                     //设置构造器标题
                                     builder.setTitle("关于");
@@ -200,14 +202,14 @@ public class MainActivity extends AppCompatActivity{
                                     alertDialog=builder.create();
                                     if(alertDialog!=null&&!alertDialog.isShowing()){
                                         alertDialog.show();
-                                    }
+                                    }*/
                                     break;
                                 case R.id.license:
                                     //关闭导航栏菜单
                                     drawerLayout.closeDrawers();
-                                    Intent intent=new Intent();
-                                    intent.setClass(MainActivity.this,LicenseActivity.class);
-                                    MainActivity.this.startActivity(intent);
+                                    Intent intent2=new Intent();
+                                    intent2.setClass(MainActivity.this,LicenseActivity.class);
+                                    MainActivity.this.startActivity(intent2);
                                     break;
                             }
                             return false;

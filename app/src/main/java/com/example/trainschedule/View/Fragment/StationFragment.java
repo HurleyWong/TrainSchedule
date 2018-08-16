@@ -8,10 +8,11 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.trainschedule.Activity.StationResultActivity;
@@ -30,11 +31,11 @@ import com.example.trainschedule.Util.EditTextClearUtil;
 
 public class StationFragment extends Fragment{
     //搜索出发车站输入框
-    private EditText start_train_input;
+    private AutoCompleteTextView start_train_input;
     //删除出发车站输入框输入的内容
     private ImageView start_station_clear;
     //搜索到达车站输入框
-    private EditText end_train_input;
+    private AutoCompleteTextView end_train_input;
     //删除到达车站输入框输入的内容
     private ImageView end_station_clear;
     //选择是否只搜索高铁
@@ -65,6 +66,15 @@ public class StationFragment extends Fragment{
     public void onActivityCreated(@Nullable Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
         initViews();
+
+        String[] strings=new String[]{
+                "南昌","上饶","杭州东","上海虹桥"
+        };
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(StationFragment.this.getActivity(),android.R.layout.simple_list_item_1,strings);
+
+        //AutoCompleteTextView
+        start_train_input.setAdapter(adapter);
+        end_train_input.setAdapter(adapter);
 
         //监控EditText输入内容，点击clear图标删除输入内容
         EditTextClearUtil.addClearListener(start_train_input,start_station_clear);
