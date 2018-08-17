@@ -2,6 +2,7 @@ package com.example.trainschedule.Activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -12,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +25,8 @@ import com.example.trainschedule.Adapter.TrainTimeAdapter;
 import com.example.trainschedule.Model.Train;
 import com.example.trainschedule.R;
 import com.google.gson.Gson;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitmapUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +62,8 @@ public class TrainResultActivity extends AppCompatActivity{
     private TextView end_station;
     //终点时间
     private TextView end_time;
+    //二维码
+    private ImageView QRCode;
 
     //请求接口
     private String url;
@@ -93,6 +99,7 @@ public class TrainResultActivity extends AppCompatActivity{
         start_time=findViewById(R.id.start_time);
         end_station=findViewById(R.id.end_station);
         end_time=findViewById(R.id.end_time);
+        QRCode=findViewById(R.id.QRCode);
     }
 
     //Toolbar转化为ActionBar
@@ -185,6 +192,16 @@ public class TrainResultActivity extends AppCompatActivity{
                 }
 
             }
+
+            //生成二维码
+            String QRCodeContent=train.getResult().getList().get(0).getStation()+"—>"+train.getResult().getList().get(train.getResult().getList().size()-1).getStation();
+            Bitmap bitmap=null;
+            try{
+                bitmap=BitmapUtils.create2DCode(QRCodeContent);
+                QRCode.setImageBitmap(bitmap);
+            }catch(WriterException e){
+                e.printStackTrace();
+            }
         }catch(Exception e){
             //创建AlertDialog的构造器对象
             AlertDialog.Builder builder=new AlertDialog.Builder(TrainResultActivity.this);
@@ -207,7 +224,7 @@ public class TrainResultActivity extends AppCompatActivity{
                 alertDialog.show();
             }
         }
-        
+
         trainTimeAdapter=new TrainTimeAdapter(this,listBeans);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(trainTimeAdapter);

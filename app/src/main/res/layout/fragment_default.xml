@@ -1,9 +1,15 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-    <com.example.trainschedule.Util.PinchImageView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!--<com.example.trainschedule.Util.PinchImageView
+        android:id="@+id/default_image2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>-->
+
+    <ImageView
         android:id="@+id/default_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/test"/>
-</RelativeLayout>
+        android:layout_height="match_parent"/>
+</LinearLayout>
