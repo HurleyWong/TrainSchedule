@@ -207,8 +207,7 @@ public class TrainResultActivity extends AppCompatActivity{
                 alertDialog.show();
             }
         }
-
-
+        
         trainTimeAdapter=new TrainTimeAdapter(this,listBeans);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(trainTimeAdapter);

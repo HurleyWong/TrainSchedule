@@ -185,24 +185,6 @@ public class MainActivity extends AppCompatActivity{
                                     Intent intent1=new Intent();
                                     intent1.setClass(MainActivity.this,AboutActivity.class);
                                     MainActivity.this.startActivity(intent1);
-                                    /*//创建AlertDialog的构造器对象
-                                    AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
-                                    //设置构造器标题
-                                    builder.setTitle("关于");
-                                    //构造器内容。为对话框设置文本项
-                                    builder.setMessage("作者：Hurley");
-                                    //为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
-                                    builder.setPositiveButton("确定",new DialogInterface.OnClickListener(){
-                                        //第一个参数dialog是点击的确定按钮所属的dialog对象，第二个对象which是按钮的标示值
-                                        @Override
-                                        public void onClick(DialogInterface dialog,int which){
-                                        }
-                                    });
-                                    //利用构造器创建AlertDialog对象，实现实例化
-                                    alertDialog=builder.create();
-                                    if(alertDialog!=null&&!alertDialog.isShowing()){
-                                        alertDialog.show();
-                                    }*/
                                     break;
                                 case R.id.license:
                                     //关闭导航栏菜单
