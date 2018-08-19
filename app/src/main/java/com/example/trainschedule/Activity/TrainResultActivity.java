@@ -68,6 +68,14 @@ public class TrainResultActivity extends AppCompatActivity{
     //请求接口
     private String url;
 
+    private String key_start_station;
+    private String key_end_station;
+    private String key_start_time;
+    private String key_end_time;
+
+    //二维码文字
+    private String QRCodeContent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -80,8 +88,13 @@ public class TrainResultActivity extends AppCompatActivity{
         //获得Intent传递过来的值，并且将其所包含的空格去掉
         Intent intent=getIntent();
         String key=intent.getStringExtra("key").replaceAll(" ","");
+        key_start_station=intent.getStringExtra("start_station").replaceAll(" ","");
+        key_end_station=intent.getStringExtra("end_station").replaceAll(" ","");
+        key_start_time=intent.getStringExtra("start_time").replaceAll(" ","");
+        key_end_time=intent.getStringExtra("end_time").replaceAll(" ","");
         //查看传递过来的值
         //System.out.println(key);
+
         url="http://api.jisuapi.com/train/line?appkey=f54b78afc15a12fc&trainno="+key;
 
         getData();
@@ -164,14 +177,31 @@ public class TrainResultActivity extends AppCompatActivity{
             train_no.setText(train.getResult().getTrainno());
             //类别
             train_type.setText(train.getResult().getType());
-            //起点站
-            start_station.setText(train.getResult().getList().get(0).getStation());
-            //起点时间
-            start_time.setText(train.getResult().getList().get(0).getDeparturetime());
-            //终点站
-            end_station.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getStation());
-            //终点时间
-            end_time.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getArrivaltime());
+            //如果传过来的intent值不为空，则说明是从点击列车班次跳转过来的
+            if(key_start_time!=null&&key_end_time!=null&&key_start_station!=null&&key_end_station!=null){
+                //出发车站
+                start_station.setText(key_start_station);
+                //出发时间
+                start_time.setText(key_start_time);
+                //到达车站
+                end_station.setText(key_end_station);
+                //到达时间
+                end_time.setText(key_end_time);
+                //二维码文字
+                QRCodeContent=key_start_station+"->"+key_end_station;
+            }
+            else{
+                //起点站
+                start_station.setText(train.getResult().getList().get(0).getStation());
+                //起点时间
+                start_time.setText(train.getResult().getList().get(0).getDeparturetime());
+                //终点站
+                end_station.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getStation());
+                //终点时间
+                end_time.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getArrivaltime());
+                //二维码文字
+                QRCodeContent=train.getResult().getList().get(0).getStation()+"—>"+train.getResult().getList().get(train.getResult().getList().size()-1).getStation();
+            }
 
             for(int i=0;i<train.getResult().getList().size();i++){
                 if(train.getResult().getList().get(i).getArrivaltime().equals("----")){
@@ -194,9 +224,9 @@ public class TrainResultActivity extends AppCompatActivity{
             }
 
             //生成二维码
-            String QRCodeContent=train.getResult().getList().get(0).getStation()+"—>"+train.getResult().getList().get(train.getResult().getList().size()-1).getStation();
             Bitmap bitmap=null;
             try{
+                //根据二维码文字生成二维码图片
                 bitmap=BitmapUtils.create2DCode(QRCodeContent);
                 QRCode.setImageBitmap(bitmap);
             }catch(WriterException e){

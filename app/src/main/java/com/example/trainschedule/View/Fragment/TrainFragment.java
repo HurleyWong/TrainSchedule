@@ -101,7 +101,6 @@ public class TrainFragment extends Fragment{
         });
     }
 
-
 }
 
 

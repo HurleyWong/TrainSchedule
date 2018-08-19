@@ -3,7 +3,7 @@ package com.example.trainschedule.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -39,7 +39,7 @@ import java.util.List;
  */
 
 public class StationResultActivity extends AppCompatActivity implements TrainAdapter.OnItemClickListener{
-    private DrawerLayout drawerLayout;
+    private CoordinatorLayout coordinator;
     private Toolbar toolbar;
     private RecyclerView recyclerView;
     private AlertDialog alertDialog;
@@ -74,7 +74,7 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
 
     //初始化控件
     private void initViews(){
-        drawerLayout=findViewById(R.id.drawerLayout);
+        coordinator=findViewById(R.id.coordinator);
         toolbar=findViewById(R.id.toolbar);
         recyclerView=findViewById(R.id.train_info);
     }
@@ -196,12 +196,22 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
         recyclerView.setAdapter(trainAdapter);
     }
 
+    //RecyclerView的item点击事件
     @Override
     public void onItemClick(View view,int position){
-        String content=resultBeans.get(position).getTrainno();
+        String train_no=resultBeans.get(position).getTrainno();
+        String start_station=resultBeans.get(position).getStation();
+        String end_station=resultBeans.get(position).getEndstation();
+        String start_time=resultBeans.get(position).getDeparturetime();
+        String end_time=resultBeans.get(position).getArrivaltime();
         Intent intent=new Intent();
         intent.setClass(this,TrainResultActivity.class);
-        intent.putExtra("key",content);
+        intent.putExtra("key",train_no);
+        intent.putExtra("start_station",start_station);
+        intent.putExtra("end_station",end_station);
+        intent.putExtra("start_time",start_time);
+        intent.putExtra("end_time",end_time);
+
         StationResultActivity.this.startActivity(intent);
     }
 }

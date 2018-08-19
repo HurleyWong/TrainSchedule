@@ -193,6 +193,13 @@ public class MainActivity extends AppCompatActivity{
                                     intent2.setClass(MainActivity.this,LicenseActivity.class);
                                     MainActivity.this.startActivity(intent2);
                                     break;
+                                case R.id.support:
+                                    //关闭导航栏菜单
+                                    drawerLayout.closeDrawers();
+                                    Intent intent3=new Intent();
+                                    intent3.setClass(MainActivity.this,SupportActivity.class);
+                                    MainActivity.this.startActivity(intent3);
+                                    break;
                             }
                             return false;
                         }

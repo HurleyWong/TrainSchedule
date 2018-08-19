@@ -21,6 +21,7 @@
         <activity android:name=".Activity.StationResultActivity"/>
         <activity android:name=".Activity.LicenseActivity"/>
         <activity android:name=".Activity.AboutActivity"/>
+        <activity android:name=".Activity.SupportActivity"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

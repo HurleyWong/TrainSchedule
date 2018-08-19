@@ -93,9 +93,11 @@ public class LicenseActivity extends AppCompatActivity{
         //添加所使用的开源项目的名称和地址
         licenses.add(new License("Gson","https://github.com/google/gson"));
         licenses.add(new License("Volley","https://github.com/google/volley"));
+        licenses.add(new License("Glide","https://github.com/bumptech/glide"));
         licenses.add(new License("PinchImageView","https://github.com/boycy815/PinchImageView"));
         licenses.add(new License("FlyShapeImageView","https://github.com/FlyRecker/FlyShapeImageView"));
         licenses.add(new License("Y_DividerItemDecoration","https://github.com/yanyusong/Y_DividerItemDecoration"));
+        licenses.add(new License("Zxing","https://github.com/open-android/Zxing"));
 
         licenseAdapter=new LicenseAdapter(this,licenses);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
