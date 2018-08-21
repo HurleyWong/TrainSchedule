@@ -22,6 +22,7 @@
         <activity android:name=".Activity.LicenseActivity"/>
         <activity android:name=".Activity.AboutActivity"/>
         <activity android:name=".Activity.SupportActivity"/>
+        <activity android:name=".Activity.ActivityCardStack"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

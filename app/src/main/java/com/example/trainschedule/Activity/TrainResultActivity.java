@@ -31,6 +31,9 @@ import com.google.zxing.common.BitmapUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * <pre>
  *      author : Hurley
@@ -42,28 +45,38 @@ import java.util.List;
  */
 
 public class TrainResultActivity extends AppCompatActivity{
-    private DrawerLayout drawerLayout;
-    private Toolbar toolbar;
-    private RecyclerView recyclerView;
+    @BindView(R.id.drawerLayout)
+    public DrawerLayout drawerLayout;
+    @BindView(R.id.toolbar)
+    public Toolbar toolbar;
+    @BindView(R.id.train_timeline)
+    public RecyclerView recyclerView;
     private AlertDialog alertDialog;
 
     private List<Train.ResultBean.ListBean> listBeans=new ArrayList<>();
     private TrainTimeAdapter trainTimeAdapter;
 
     //车次
-    private TextView train_no;
+    @BindView(R.id.train_no)
+    public TextView train_no;
     //类型
-    private TextView train_type;
+    @BindView(R.id.train_type)
+    public TextView train_type;
     //起点站
-    private TextView start_station;
+    @BindView(R.id.start_station)
+    public TextView start_station;
     //起点时间
-    private TextView start_time;
+    @BindView(R.id.start_time)
+    public TextView start_time;
     //终点站
-    private TextView end_station;
+    @BindView(R.id.end_station)
+    public TextView end_station;
     //终点时间
-    private TextView end_time;
+    @BindView(R.id.end_time)
+    public TextView end_time;
     //二维码
-    private ImageView QRCode;
+    @BindView(R.id.QRCode)
+    public ImageView QRCode;
 
     //请求接口
     private String url;
@@ -80,18 +93,32 @@ public class TrainResultActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.train_result);
-        initViews();
+        //initViews();
+        ButterKnife.bind(this);
 
         //Toolbar转化为ActionBar
         setToolbar();
 
         //获得Intent传递过来的值，并且将其所包含的空格去掉
         Intent intent=getIntent();
-        String key=intent.getStringExtra("key").replaceAll(" ","");
-        key_start_station=intent.getStringExtra("start_station").replaceAll(" ","");
-        key_end_station=intent.getStringExtra("end_station").replaceAll(" ","");
-        key_start_time=intent.getStringExtra("start_time").replaceAll(" ","");
-        key_end_time=intent.getStringExtra("end_time").replaceAll(" ","");
+        String key=intent.getStringExtra("key");
+        key_start_station=intent.getStringExtra("start_station");
+        if(key_start_station!=null){
+            key_start_station=key_start_station.replaceAll(""," ");
+        }
+        key_end_station=intent.getStringExtra("end_station");
+        if(key_end_station!=null){
+            key_end_station=key_end_station.replaceAll(""," ");
+        }
+        key_start_time=intent.getStringExtra("start_time");
+        if(key_start_time!=null){
+            key_start_time=key_start_time.replaceAll(""," ");
+        }
+        key_end_time=intent.getStringExtra("end_time");
+        if(key_end_time!=null){
+            key_end_time=key_end_time.replaceAll(""," ");
+        }
+
         //查看传递过来的值
         //System.out.println(key);
 

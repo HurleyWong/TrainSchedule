@@ -12,6 +12,9 @@ import android.widget.ImageView;
 
 import com.example.trainschedule.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * <pre>
  *      author : Hurley
@@ -23,9 +26,12 @@ import com.example.trainschedule.R;
  */
 
 public class SupportActivity extends AppCompatActivity{
-    private DrawerLayout drawerLayout;
-    private Toolbar toolbar;
-    private ImageView not_found_image;
+    @BindView(R.id.drawerLayout)
+    public DrawerLayout drawerLayout;
+    @BindView(R.id.toolbar)
+    public Toolbar toolbar;
+    @BindView(R.id.not_found_image)
+    public ImageView not_found_image;
 
     private AlertDialog alertDialog;
 
@@ -33,7 +39,8 @@ public class SupportActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_support);
-        initViews();
+        //initViews();
+        ButterKnife.bind(this);
 
         //Toolbar转化为ActionBar
         setToolbar();

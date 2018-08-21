@@ -23,12 +23,23 @@ import com.example.trainschedule.View.Fragment.TrainFragment;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity{
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
-    private Toolbar toolbar;
+    @BindView(R.id.drawerLayout)
+    public DrawerLayout drawerLayout;
+
+    @BindView(R.id.nav_view)
+    public NavigationView navigationView;
+
+    @BindView(R.id.toolbar)
+    public Toolbar toolbar;
+
+    @BindView(R.id.viewPager)
     //private ViewPager viewPager;
-    private ViewPagerSlide viewPager;
+    public ViewPagerSlide viewPager;
+
     private AlertDialog alertDialog;
 
     private int option=-1;
@@ -42,7 +53,8 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initViews();
+        //initViews();
+        ButterKnife.bind(this);
 
         //Toolbar转化为ActionBar
         setToolbar();

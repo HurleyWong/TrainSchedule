@@ -16,6 +16,9 @@ import android.widget.TextView;
 
 import com.example.trainschedule.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * <pre>
  *      author : Hurley
@@ -27,14 +30,21 @@ import com.example.trainschedule.R;
  */
 
 public class AboutActivity extends AppCompatActivity{
-    private DrawerLayout drawerLayout;
-    private Toolbar toolbar;
+    @BindView(R.id.drawerLayout)
+    public DrawerLayout drawerLayout;
+    @BindView(R.id.toolbar)
+    public Toolbar toolbar;
     //应用功能介绍
-    private TextView app_function;
-    private TextView point1;
-    private TextView point2;
-    private TextView function1;
-    private TextView function2;
+    @BindView(R.id.app_function)
+    public TextView app_function;
+    @BindView(R.id.point1)
+    public TextView point1;
+    @BindView(R.id.point2)
+    public TextView point2;
+    @BindView(R.id.function1)
+    public TextView function1;
+    @BindView(R.id.function2)
+    public TextView function2;
 
     //整个Activity视图的根视图
     View decorView;
@@ -47,7 +57,8 @@ public class AboutActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_about);
-        initViews();
+        //initViews();
+        ButterKnife.bind(this);
 
         //Toolbar转化为ActionBar
         setToolbar();

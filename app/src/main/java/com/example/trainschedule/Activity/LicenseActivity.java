@@ -20,6 +20,9 @@ import com.yanyusong.y_divideritemdecoration.Y_DividerItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * <pre>
  *      author : Hurley
@@ -31,9 +34,12 @@ import java.util.List;
  */
 
 public class LicenseActivity extends AppCompatActivity{
-    private DrawerLayout drawerLayout;
-    private Toolbar toolbar;
-    private RecyclerView recyclerView;
+    @BindView(R.id.drawerLayout)
+    public DrawerLayout drawerLayout;
+    @BindView(R.id.toolbar)
+    public Toolbar toolbar;
+    @BindView(R.id.license_info)
+    public RecyclerView recyclerView;
 
     private List<License> licenses=new ArrayList<>();
     private LicenseAdapter licenseAdapter;
@@ -44,7 +50,8 @@ public class LicenseActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_license);
-        initViews();
+        //initViews();
+        ButterKnife.bind(this);
 
         //Toolbar转化为ActionBar
         setToolbar();

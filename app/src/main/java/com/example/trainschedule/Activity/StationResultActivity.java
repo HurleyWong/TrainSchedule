@@ -28,6 +28,9 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * <pre>
  *      author : Hurley
@@ -39,9 +42,12 @@ import java.util.List;
  */
 
 public class StationResultActivity extends AppCompatActivity implements TrainAdapter.OnItemClickListener{
-    private CoordinatorLayout coordinator;
-    private Toolbar toolbar;
-    private RecyclerView recyclerView;
+    @BindView(R.id.coordinator)
+    public CoordinatorLayout coordinator;
+    @BindView(R.id.toolbar)
+    public Toolbar toolbar;
+    @BindView(R.id.train_info)
+    public RecyclerView recyclerView;
     private AlertDialog alertDialog;
 
     private List<Station.ResultBean> resultBeans=new ArrayList<>();
@@ -56,7 +62,8 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.station_result);
-        initViews();
+        //initViews();
+        ButterKnife.bind(this);
 
         //Toolbar转化为ActionBar
         setToolbar();
