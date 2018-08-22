@@ -167,6 +167,16 @@ public class MainActivity extends AppCompatActivity{
                         public boolean onNavigationItemSelected(@NonNull MenuItem item){
                             switch(item.getItemId()){
                                 //根据item进行选择
+                                case R.id.default_fragment:
+                                    //改变item选中状态
+                                    item.setChecked(true);
+                                    //跳转到相应的ViewPager
+                                    //首页默认对应0
+                                    viewPager.setCurrentItem(0);
+                                    viewPager.setSlide(false);
+                                    //关闭导航栏菜单
+                                    drawerLayout.closeDrawers();
+                                    break;
                                 case R.id.station_query:
                                     //改变item选中状态
                                     item.setChecked(true);
@@ -219,6 +229,7 @@ public class MainActivity extends AppCompatActivity{
             );
         }
     }
+
 }
 
 
