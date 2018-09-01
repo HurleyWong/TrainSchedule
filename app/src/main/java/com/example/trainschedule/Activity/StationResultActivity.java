@@ -24,6 +24,7 @@ import com.example.trainschedule.Adapter.TrainAdapter;
 import com.example.trainschedule.Model.Station;
 import com.example.trainschedule.R;
 import com.google.gson.Gson;
+import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +49,8 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
     public Toolbar toolbar;
     @BindView(R.id.train_info)
     public RecyclerView recyclerView;
+    @BindView(R.id.fab_test)
+    public FloatingActionButton fab_test;
     private AlertDialog alertDialog;
 
     private List<Station.ResultBean> resultBeans=new ArrayList<>();
@@ -77,6 +80,8 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
         url="http://api.jisuapi.com/train/station2s?appkey=f54b78afc15a12fc&start="+key1+"&end="+key2+"&ishigh="+bool;
 
         getData();
+
+        fab_test.attachToRecyclerView(recyclerView);
     }
 
     //初始化控件

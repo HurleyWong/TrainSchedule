@@ -46,4 +46,5 @@ dependencies {
     compile 'com.yanyusong.y_divideritemdecoration:y_divideritemdecoration:2.0'
     compile 'me.panpf:sketch:2.6.1'
     compile 'com.github.open-android:Zxing:v1.0.3'
+    compile 'com.melnykov:floatingactionbutton:1.3.0'
 }

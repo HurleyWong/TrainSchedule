@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".Activity.TrainResultActivity"/>
         <activity android:name=".Activity.StationResultActivity"/>
+        <activity android:name=".Activity.TicketActivity"/>
         <activity android:name=".Activity.LicenseActivity"/>
         <activity android:name=".Activity.AboutActivity"/>
         <activity android:name=".Activity.SupportActivity"/>

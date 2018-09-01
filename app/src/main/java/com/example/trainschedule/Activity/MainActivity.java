@@ -13,7 +13,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.trainschedule.R;
 import com.example.trainschedule.Util.ViewPagerSlide;
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity{
     public ViewPagerSlide viewPager;
 
     private AlertDialog alertDialog;
+
+    private long exitTime=0;
 
     private int option=-1;
 
@@ -201,32 +205,73 @@ public class MainActivity extends AppCompatActivity{
                                     //关闭导航栏菜单
                                     drawerLayout.closeDrawers();
                                     break;
-                                case R.id.about:
+                                /*case R.id.ticket_manage:
+                                    //改变item选中状态
+                                    item.setChecked(true);
+                                    //跳转到相应的ViewPager
+                                    //车票管理对应3
+                                    viewPager.setCurrentItem(3);
+                                    //禁止ViewPager左右滑动
+                                    viewPager.setSlide(false);
+                                    //关闭导航栏菜单
+                                    drawerLayout.closeDrawers();
+                                    break;
+
                                     //关闭导航栏菜单
                                     drawerLayout.closeDrawers();
                                     Intent intent1=new Intent();
-                                    intent1.setClass(MainActivity.this,AboutActivity.class);
+                                    intent1.setClass(MainActivity.this,TicketActivity.class);
                                     MainActivity.this.startActivity(intent1);
+                                    break;
+                                */
+                                case R.id.about:
+                                    //关闭导航栏菜单
+                                    drawerLayout.closeDrawers();
+                                    Intent intent2=new Intent();
+                                    intent2.setClass(MainActivity.this,AboutActivity.class);
+                                    MainActivity.this.startActivity(intent2);
                                     break;
                                 case R.id.license:
                                     //关闭导航栏菜单
                                     drawerLayout.closeDrawers();
-                                    Intent intent2=new Intent();
-                                    intent2.setClass(MainActivity.this,LicenseActivity.class);
-                                    MainActivity.this.startActivity(intent2);
+                                    Intent intent3=new Intent();
+                                    intent3.setClass(MainActivity.this,LicenseActivity.class);
+                                    MainActivity.this.startActivity(intent3);
                                     break;
                                 case R.id.support:
                                     //关闭导航栏菜单
                                     drawerLayout.closeDrawers();
-                                    Intent intent3=new Intent();
-                                    intent3.setClass(MainActivity.this,SupportActivity.class);
-                                    MainActivity.this.startActivity(intent3);
+                                    Intent intent4=new Intent();
+                                    intent4.setClass(MainActivity.this,SupportActivity.class);
+                                    MainActivity.this.startActivity(intent4);
                                     break;
                             }
                             return false;
                         }
                     }
             );
+        }
+    }
+
+    //重写点击返回键事件
+    @Override
+    public boolean onKeyDown(int keyCode,KeyEvent event){
+        if(keyCode==KeyEvent.KEYCODE_BACK){
+            exit();
+            return false;
+        }
+        return super.onKeyDown(keyCode,event);
+    }
+
+    //按两次返回键退出程序
+    private void exit(){
+        if((System.currentTimeMillis()-exitTime)>2000){
+            Toast.makeText(MainActivity.this,"再按一次返回键退出程序",Toast.LENGTH_SHORT).show();
+            exitTime=System.currentTimeMillis();
+        }
+        else{
+            finish();
+            System.exit(0);
         }
     }
 
