@@ -1,5 +1,6 @@
 package com.example.trainschedule.View.Fragment;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,8 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.trainschedule.R;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 
 /**
@@ -26,6 +29,8 @@ public class DefaultFragment extends Fragment{
 
     private ImageView default_image;
 
+    private SimpleDraweeView draweeView;
+
     int resourceId=R.mipmap.small_railline;
 
     String url1="http://s16.sinaimg.cn/orignal/001yUN6jzy7hgWgzoHt0f&690";
@@ -34,7 +39,7 @@ public class DefaultFragment extends Fragment{
     //初始化控件
     private void initViews(){
         default_image=getActivity().findViewById(R.id.default_image);
-
+        //draweeView = getActivity().findViewById(R.id.default_image);
     }
 
     @Nullable
@@ -49,6 +54,11 @@ public class DefaultFragment extends Fragment{
         super.onActivityCreated(savedInstanceState);
         initViews();
 
+        //Fresco加载图片
+        //Uri uri = Uri.parse("res://mipmap/"+R.mipmap.small_railline);
+        //draweeView.setImageURI(uri);
+
+        //Glide加载图片
         Glide.with(this).load(resourceId).into(default_image);
     }
 

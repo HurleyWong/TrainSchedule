@@ -49,8 +49,8 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
     public Toolbar toolbar;
     @BindView(R.id.train_info)
     public RecyclerView recyclerView;
-    @BindView(R.id.fab_test)
-    public FloatingActionButton fab_test;
+    /*@BindView(R.id.fab_test)
+    public FloatingActionButton fab_test;*/
     private AlertDialog alertDialog;
 
     private List<Station.ResultBean> resultBeans=new ArrayList<>();
@@ -81,7 +81,7 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
 
         getData();
 
-        fab_test.attachToRecyclerView(recyclerView);
+        //fab_test.attachToRecyclerView(recyclerView);
     }
 
     //初始化控件

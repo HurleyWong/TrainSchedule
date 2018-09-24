@@ -32,7 +32,7 @@
         android:overScrollMode="never"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-    <com.melnykov.fab.FloatingActionButton
+    <!--<com.melnykov.fab.FloatingActionButton
         android:id="@+id/fab_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,5 +41,5 @@
         android:src="@drawable/ic_menu"
         fab:fab_colorNormal="@color/primary"
         fab:fab_colorPressed="@color/primary_pressed"
-        fab:fab_colorRipple="@color/ripple"/>
+        fab:fab_colorRipple="@color/ripple"/>-->
 </android.support.design.widget.CoordinatorLayout>

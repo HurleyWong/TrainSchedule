@@ -101,6 +101,7 @@ public class LicenseActivity extends AppCompatActivity{
         licenses.add(new License("Gson","https://github.com/google/gson"));
         licenses.add(new License("Volley","https://github.com/google/volley"));
         licenses.add(new License("Glide","https://github.com/bumptech/glide"));
+        licenses.add(new License("Fresco","https://www.fresco-cn.org/"));
         licenses.add(new License("ButterKnife","https://github.com/JakeWharton/butterknife"));
         licenses.add(new License("PinchImageView","https://github.com/boycy815/PinchImageView"));
         licenses.add(new License("FlyShapeImageView","https://github.com/FlyRecker/FlyShapeImageView"));
