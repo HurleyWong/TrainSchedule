@@ -79,7 +79,8 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
         String key2=intent.getStringExtra("key2").replaceAll(" ","");
         bool=intent.getIntExtra("bool",0);
 
-        url=R.string.url_path_station+"&start="+key1+"&end="+key2+"&ishigh="+bool;
+        //极速数据api
+        url=R.string.jisu_url_station+"&start="+key1+"&end="+key2+"&ishigh="+bool;
 
         getData();
 

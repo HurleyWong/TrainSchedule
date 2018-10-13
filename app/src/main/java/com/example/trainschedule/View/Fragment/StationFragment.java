@@ -80,7 +80,7 @@ public class StationFragment extends Fragment{
         super.onActivityCreated(savedInstanceState);
         initViews();
 
-        url=getString(R.string.url_station_tip) + getString(R.string.station_tip_key);
+        url=getString(R.string.afanda_url_station_tip) + getString(R.string.afanda_station_tip_key);
         //getData();
         dealData();
 

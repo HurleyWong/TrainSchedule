@@ -10,11 +10,14 @@
     <string name="license">开源协议</string>
     <string name="support">支持</string>
 
-    <!-- api -->
-    <string name="url_path_station">http://api.jisuapi.com/train/station2s?appkey=f54b78afc15a12fc</string>
-    <string name="url_path_train">http://api.jisuapi.com/train/line?appkey=f54b78afc15a12fc</string>
-    <string name="url_station_tip">http://api.avatardata.cn/TrainTicket/Station?key=</string>
-    <string name="station_tip_key">9de387f10f174850a6e9430ccfd1dc9a</string>
+    <!-- 极速数据api -->
+    <string name="jisu_url_station">http://api.jisuapi.com/train/station2s?appkey=f54b78afc15a12fc</string>
+    <string name="jisu_url_train">http://api.jisuapi.com/train/line?appkey=f54b78afc15a12fc</string>
+    <!-- 阿凡达数据api -->
+    <string name="afanda_url_station_tip">http://api.avatardata.cn/TrainTicket/Station?key=</string>
+    <string name="afanda_station_tip_key">9de387f10f174850a6e9430ccfd1dc9a</string>
+
+
 
     <!-- 主要应用功能 -->
     <string name="start_station">出发车站</string>

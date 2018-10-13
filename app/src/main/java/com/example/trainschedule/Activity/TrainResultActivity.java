@@ -124,7 +124,8 @@ public class TrainResultActivity extends AppCompatActivity{
         //查看传递过来的值
         //System.out.println(key);
 
-        url=R.string.url_path_train+"&trainno="+key;
+        //极速数据api
+        url=R.string.jisu_url_train+"&trainno="+key;
 
         getData();
     }
