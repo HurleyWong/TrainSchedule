@@ -1,4 +1,4 @@
-package com.example.trainschedule.View.Fragment;
+package com.example.trainschedule.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.example.trainschedule.Activity.TrainResultActivity;
 import com.example.trainschedule.R;
 import com.example.trainschedule.Util.TextUtils;
 

@@ -116,7 +116,7 @@ public class LicenseActivity extends AppCompatActivity{
         recyclerView.addItemDecoration(new DividerItemDecoration(this));
         //recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         //默认添加分割线方式
-        //recyclerView.addItemDecoration(new RecyclerViewDivider(context,LinearLayoutManager.VERTICAL,R.drawable.divider_bg));
+        //recyclerView.addItemDecoration(new RecyclerViewDivider(context,LinearLayoutManager.VERTICAL,R.drawable.a_divider_bg));
         recyclerView.setAdapter(licenseAdapter);
     }
 

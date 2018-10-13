@@ -1,4 +1,4 @@
-package com.example.trainschedule.View.Fragment;
+package com.example.trainschedule.Activity;
 
 import android.net.Uri;
 import android.os.Bundle;

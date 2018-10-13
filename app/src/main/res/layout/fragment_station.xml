@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/station_title"
         android:layout_marginTop="40dp"
-        android:background="@drawable/shape_edittext">
+        android:background="@drawable/a_shape_edittext">
 
         <TextView
             android:id="@+id/start_station_text"
@@ -57,7 +57,7 @@
             android:hint="@string/input_start_station"
             android:inputType="text"
             android:textColorHint="@color/colorCursor"
-            android:textCursorDrawable="@drawable/color_cursor"
+            android:textCursorDrawable="@drawable/a_color_cursor"
             android:textSize="18sp"
             android:completionThreshold="1"/>
 
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/rl_start_station"
         android:layout_marginTop="1dp"
-        android:background="@drawable/shape_edittext">
+        android:background="@drawable/a_shape_edittext">
 
         <TextView
             android:id="@+id/end_station_text"
@@ -114,7 +114,7 @@
             android:hint="@string/input_end_station"
             android:inputType="text"
             android:textColorHint="@color/colorCursor"
-            android:textCursorDrawable="@drawable/color_cursor"
+            android:textCursorDrawable="@drawable/a_color_cursor"
             android:textSize="18sp"
             android:completionThreshold="1"/>
 
@@ -158,7 +158,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="30dp"
-            android:background="@drawable/shape_search_button"
+            android:background="@drawable/a_shape_search_button"
             android:gravity="center"
             android:text="搜索"
             android:textColor="@color/white"

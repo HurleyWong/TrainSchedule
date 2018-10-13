@@ -19,9 +19,6 @@ import android.widget.Toast;
 
 import com.example.trainschedule.R;
 import com.example.trainschedule.Util.ViewPagerUtils;
-import com.example.trainschedule.View.Fragment.DefaultFragment;
-import com.example.trainschedule.View.Fragment.StationFragment;
-import com.example.trainschedule.View.Fragment.TrainFragment;
 
 import java.util.ArrayList;
 

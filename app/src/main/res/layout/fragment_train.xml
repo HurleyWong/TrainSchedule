@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="4"
             android:layout_marginTop="20dp"
-            android:background="@drawable/shape_edittext">
+            android:background="@drawable/a_shape_edittext">
 
             <TextView
                 android:id="@+id/train_text"
@@ -66,7 +66,7 @@
                 android:hint="@string/input_train"
                 android:inputType="text"
                 android:textColorHint="@color/colorCursor"
-                android:textCursorDrawable="@drawable/color_cursor"
+                android:textCursorDrawable="@drawable/a_color_cursor"
                 android:textSize="18sp"/>
 
             <ImageView
@@ -87,7 +87,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="25dp"
             android:layout_weight="1"
-            android:background="@drawable/shape_search_button"
+            android:background="@drawable/a_shape_search_button"
             android:text="搜索"
             android:textColor="@color/white"
             android:textSize="18sp"/>
