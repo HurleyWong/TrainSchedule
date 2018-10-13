@@ -1,7 +1,7 @@
 <resources>
     <!-- 主要功能 -->
     <string name="app_name">火车时刻表</string>
-    <string name="app_version">V1.0</string>
+    <string name="app_version">V1.1</string>
     <string name="station_query">车站查询</string>
     <string name="train_query">车次查询</string>
     <string name="ticket_manage">火车票管理</string>

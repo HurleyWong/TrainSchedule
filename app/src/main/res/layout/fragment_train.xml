@@ -20,6 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_gravity="center">
 
         <RelativeLayout
@@ -36,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:paddingBottom="15dp"
-                android:paddingLeft="30dp"
+                android:paddingLeft="0dp"
                 android:paddingTop="15dp"
                 android:text="到达车站"
                 android:textColor="@color/black"
@@ -54,7 +56,7 @@
             <EditText
                 android:id="@+id/search_train_input"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/view_train"
