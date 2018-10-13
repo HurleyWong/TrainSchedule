@@ -26,6 +26,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
  */
 
 public class DefaultFragment extends Fragment{
+    private static final String TAG = "DefaultFragment";
 
     private ImageView default_image;
 

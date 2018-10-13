@@ -26,6 +26,8 @@ import butterknife.ButterKnife;
  */
 
 public class SupportActivity extends AppCompatActivity{
+    private static final String TAG = "SupportActivity";
+
     @BindView(R.id.drawerLayout)
     public DrawerLayout drawerLayout;
     @BindView(R.id.toolbar)
@@ -45,14 +47,8 @@ public class SupportActivity extends AppCompatActivity{
         //Toolbar转化为ActionBar
         setToolbar();
 
+        //弹窗
         showDialog();
-    }
-
-    //初始化控件
-    private void initViews(){
-        drawerLayout=findViewById(R.id.drawerLayout);
-        toolbar=findViewById(R.id.toolbar);
-        not_found_image=findViewById(R.id.not_found_image);
     }
 
     //Toolbar转化为ActionBar
@@ -90,7 +86,7 @@ public class SupportActivity extends AppCompatActivity{
         //设置构造器标题
         //builder.setTitle("错误");
         //构造器内容。为对话框设置文本项
-        builder.setMessage("抱歉，开发者尚未开发此功能");
+        builder.setMessage(R.string.wrong_404);
         //为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
         builder.setPositiveButton("确定",new DialogInterface.OnClickListener(){
             //第一个参数dialog是点击的确定按钮所属的dialog对象，第二个对象which是按钮的标示值

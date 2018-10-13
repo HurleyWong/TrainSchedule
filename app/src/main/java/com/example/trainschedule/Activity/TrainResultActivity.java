@@ -45,6 +45,8 @@ import butterknife.ButterKnife;
  */
 
 public class TrainResultActivity extends AppCompatActivity{
+    private static final String TAG = "TrainResultActivity";
+
     @BindView(R.id.drawerLayout)
     public DrawerLayout drawerLayout;
     @BindView(R.id.toolbar)
@@ -122,24 +124,9 @@ public class TrainResultActivity extends AppCompatActivity{
         //查看传递过来的值
         //System.out.println(key);
 
-        url="http://api.jisuapi.com/train/line?appkey=f54b78afc15a12fc&trainno="+key;
+        url=R.string.url_path_train+"&trainno="+key;
 
         getData();
-    }
-
-    //初始化控件
-    private void initViews(){
-        drawerLayout=findViewById(R.id.drawerLayout);
-        toolbar=findViewById(R.id.toolbar);
-        recyclerView=findViewById(R.id.train_timeline);
-
-        train_no=findViewById(R.id.train_no);
-        train_type=findViewById(R.id.train_type);
-        start_station=findViewById(R.id.start_station);
-        start_time=findViewById(R.id.start_time);
-        end_station=findViewById(R.id.end_station);
-        end_time=findViewById(R.id.end_time);
-        QRCode=findViewById(R.id.QRCode);
     }
 
     //Toolbar转化为ActionBar
@@ -265,7 +252,7 @@ public class TrainResultActivity extends AppCompatActivity{
             //设置构造器标题
             //builder.setTitle("错误");
             //构造器内容。为对话框设置文本项
-            builder.setMessage("输入车次有误，请输入正确的车次");
+            builder.setMessage(R.string.wrong_train);
             //为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
             builder.setPositiveButton("确定",new DialogInterface.OnClickListener(){
                 //第一个参数dialog是点击的确定按钮所属的dialog对象，第二个对象which是按钮的标示值

@@ -66,7 +66,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="上海虹桥"
-                            android:textColor="#000000"
+                            android:textColor="@color/black"
                             android:textSize="18sp"/>
                         <TextView
                             android:id="@+id/start_time"
@@ -74,7 +74,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="14:10"
-                            android:textColor="#000000"
+                            android:textColor="@color/black"
                             android:textSize="16sp"/>
                     </LinearLayout>
 
@@ -89,7 +89,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="G99"
-                            android:textColor="#000000"
+                            android:textColor="@color/black"
                             android:textSize="16sp"/>
                         <ImageView
                             android:layout_width="80dp"
@@ -102,7 +102,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="高铁"
-                            android:textColor="#000000"
+                            android:textColor="@color/black"
                             android:textSize="16sp"/>
                     </LinearLayout>
 
@@ -117,7 +117,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="广州南"
-                            android:textColor="#000000"
+                            android:textColor="@color/black"
                             android:textSize="18sp"/>
                         <TextView
                             android:id="@+id/end_time"
@@ -125,7 +125,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="21:32"
-                            android:textColor="#000000"
+                            android:textColor="@color/black"
                             android:textSize="16sp"/>
                         <ImageView
                             android:id="@+id/QRCode"

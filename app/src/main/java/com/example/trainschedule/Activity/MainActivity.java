@@ -18,7 +18,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.trainschedule.R;
-import com.example.trainschedule.Util.ViewPagerSlide;
+import com.example.trainschedule.Util.ViewPagerUtils;
 import com.example.trainschedule.View.Fragment.DefaultFragment;
 import com.example.trainschedule.View.Fragment.StationFragment;
 import com.example.trainschedule.View.Fragment.TrainFragment;
@@ -29,6 +29,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity{
+    private static final String TAG = "MainActivity";
+
     @BindView(R.id.drawerLayout)
     public DrawerLayout drawerLayout;
 
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity{
 
     @BindView(R.id.viewPager)
     //private ViewPager viewPager;
-    public ViewPagerSlide viewPager;
+    public ViewPagerUtils viewPager;
 
     private AlertDialog alertDialog;
 
@@ -66,14 +68,6 @@ public class MainActivity extends AppCompatActivity{
         viewPagerListener();
         //监听NavigationView
         navigationViewListener();
-    }
-
-    //初始化控件
-    private void initViews(){
-        drawerLayout=findViewById(R.id.drawerLayout);
-        navigationView=findViewById(R.id.nav_view);
-        toolbar=findViewById(R.id.toolbar);
-        viewPager=findViewById(R.id.viewPager);
     }
 
     //顶部导航栏右边设置按钮

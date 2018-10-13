@@ -34,6 +34,8 @@ import butterknife.ButterKnife;
  */
 
 public class LicenseActivity extends AppCompatActivity{
+    private static final String TAG = "LicenseActivity";
+
     @BindView(R.id.drawerLayout)
     public DrawerLayout drawerLayout;
     @BindView(R.id.toolbar)
@@ -98,15 +100,15 @@ public class LicenseActivity extends AppCompatActivity{
 
     private void dealRecyclerView(Context context){
         //添加所使用的开源项目的名称和地址
-        licenses.add(new License("Gson","https://github.com/google/gson"));
-        licenses.add(new License("Volley","https://github.com/google/volley"));
-        licenses.add(new License("Glide","https://github.com/bumptech/glide"));
-        licenses.add(new License("Fresco","https://www.fresco-cn.org/"));
-        licenses.add(new License("ButterKnife","https://github.com/JakeWharton/butterknife"));
-        licenses.add(new License("PinchImageView","https://github.com/boycy815/PinchImageView"));
-        licenses.add(new License("FlyShapeImageView","https://github.com/FlyRecker/FlyShapeImageView"));
-        licenses.add(new License("Y_DividerItemDecoration","https://github.com/yanyusong/Y_DividerItemDecoration"));
-        licenses.add(new License("Zxing","https://github.com/open-android/Zxing"));
+        licenses.add(new License(getString(R.string.Gson),getString(R.string.gson_addr)));
+        licenses.add(new License(getString(R.string.Volley),getString(R.string.volley_addr)));
+        licenses.add(new License(getString(R.string.Glide),getString(R.string.glide_addr)));
+        licenses.add(new License(getString(R.string.Fresco),getString(R.string.fresco_addr)));
+        licenses.add(new License(getString(R.string.BufferKnife),getString(R.string.butterknife_addr)));
+        licenses.add(new License(getString(R.string.PinchImageView),getString(R.string.pinchimageview_addr)));
+        licenses.add(new License(getString(R.string.FlyShapeImageView),getString(R.string.flyshapeimageview_addr)));
+        licenses.add(new License(getString(R.string.Y_DividerItemDecoration),getString(R.string.y_divideritemdecoration_addr)));
+        licenses.add(new License(getString(R.string.Zxing),getString(R.string.zxing_addr)));
 
         licenseAdapter=new LicenseAdapter(this,licenses);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -118,6 +120,8 @@ public class LicenseActivity extends AppCompatActivity{
         recyclerView.setAdapter(licenseAdapter);
     }
 
+    //RecyclerView的分割线
+    //使用Y_DividerItemDecoration框架
     private class DividerItemDecoration extends Y_DividerItemDecoration{
 
         private DividerItemDecoration(Context context){
@@ -132,14 +136,14 @@ public class LicenseActivity extends AppCompatActivity{
                     //每一行第一个显示right和bottom
                     divider=new Y_DividerBuilder()
                             //.setRightSideLine(true,0xff666666,10,0,0)
-                            .setBottomSideLine(true,0xff9e9e9e,1,0,0)
+                            .setBottomSideLine(true,getResources().getColor(R.color.y_divider),1,0,0)
                             .create();
                     break;
                 case 1:
                     //每一行第二个显示left和bottom
                     divider=new Y_DividerBuilder()
                             //.setLeftSideLine(true,0xff666666,10,0,0)
-                            .setBottomSideLine(true,0xff9e9e9e,1,0,0)
+                            .setBottomSideLine(true,getResources().getColor(R.color.y_divider),1,0,0)
                             .create();
                     break;
                 default:
@@ -148,8 +152,8 @@ public class LicenseActivity extends AppCompatActivity{
             //第一行上方显示分割线
             if(itemPosition==0){
                 divider=new Y_DividerBuilder()
-                        .setTopSideLine(true,0xff9e9e9e,1,0,0)
-                        .setBottomSideLine(true,0xff9e9e9e,1,0,0)
+                        .setTopSideLine(true,getResources().getColor(R.color.y_divider),1,0,0)
+                        .setBottomSideLine(true,getResources().getColor(R.color.y_divider),1,0,0)
                         .create();
             }
             return divider;

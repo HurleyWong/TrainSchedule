@@ -15,7 +15,7 @@
             android:layout_width="0.5dp"
             android:layout_height="12dp"
             android:layout_centerHorizontal="true"
-            android:background="#1296db"/>
+            android:background="@color/blue_85"/>
 
         <TextView
             android:id="@+id/timeline_point"
@@ -30,7 +30,7 @@
             android:layout_height="match_parent"
             android:layout_below="@id/timeline_point"
             android:layout_centerHorizontal="true"
-            android:background="#1296db" />
+            android:background="@color/blue_85" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:text="上海虹桥"
             android:layout_marginTop="3dp"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="14sp"/>
     </RelativeLayout>
 
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:text="14:10"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="14sp"/>
         <ImageView
             android:id="@+id/clock"
@@ -85,7 +85,7 @@
             android:layout_marginTop="3dp"
             android:paddingLeft="60dp"
             android:text="3'"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="14sp"/>
         <TextView
             android:id="@+id/departureTime"
@@ -94,7 +94,7 @@
             android:layout_marginTop="3dp"
             android:paddingLeft="80dp"
             android:text="15:01"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="14sp"/>
     </RelativeLayout>
 </LinearLayout>

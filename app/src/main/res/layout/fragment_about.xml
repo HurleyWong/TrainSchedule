@@ -78,8 +78,8 @@
                     android:id="@+id/point1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="·  "
-                    android:textColor="#000000"
+                    android:text="@string/func_paragraph"
+                    android:textColor="@color/black"
                     android:textSize="16sp"/>
                 <TextView
                     android:id="@+id/function1"
@@ -96,8 +96,8 @@
                     android:id="@+id/point2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="·  "
-                    android:textColor="#000000"
+                    android:text="@string/func_paragraph"
+                    android:textColor="@color/black"
                     android:textSize="16sp"/>
                 <TextView
                     android:id="@+id/function2"
@@ -118,13 +118,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="作者："
+                android:text="@string/app_author"
                 android:textSize="16sp"/>
             <TextView
                 android:id="@+id/app_author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hurley"
+                android:text="@string/app_author_name"
                 android:textSize="16sp"/>
         </LinearLayout>
         <LinearLayout
@@ -137,13 +137,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Github："
+                android:text="@string/app_github"
                 android:textSize="16sp"/>
             <TextView
                 android:id="@+id/app_github"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="https://github.com/HurleyJames"
+                android:text="@string/app_github_addr"
                 android:textSize="16sp"
                 android:autoLink="web"/>
         </LinearLayout>
@@ -157,13 +157,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CSDN："
+                android:text="@string/app_csdn"
                 android:textSize="16sp"/>
             <TextView
                 android:id="@+id/app_csdn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="https://blog.csdn.net/qq_34262794"
+                android:text="@string/app_csdn_addr"
                 android:textSize="16sp"
                 android:autoLink="web"/>
         </LinearLayout>
@@ -177,13 +177,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="个人博客："
+                android:text="@string/app_blog"
                 android:textSize="16sp"/>
             <TextView
                 android:id="@+id/app_blog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="https://pipipeng.me"
+                android:text="@string/app_blog_addr"
                 android:textSize="16sp"
                 android:autoLink="web"/>
         </LinearLayout>

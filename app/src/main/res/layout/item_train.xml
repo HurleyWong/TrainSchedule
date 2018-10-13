@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="06:43"
-                android:textColor="#03A9F4"
+                android:textColor="@color/blue_98"
                 android:textSize="18sp"/>
             <TextView
                 android:id="@+id/departure_station"
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="北京南"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="14sp"/>
         </LinearLayout>
         <LinearLayout
@@ -43,7 +43,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
                 android:text="--5时57分-->"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="14sp"/>
             <TextView
                 android:id="@+id/trainNo"
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="G101"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="14sp"/>
         </LinearLayout>
         <LinearLayout
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="12:40"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="18sp"/>
             <TextView
                 android:id="@+id/arrival_station"
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="上海虹桥"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="14sp"/>
         </LinearLayout>
         <LinearLayout
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="553"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="18sp"/>
             <TextView
                 android:id="@+id/seat_type"
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="二等座"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="14sp"/>
         </LinearLayout>
     </LinearLayout>

@@ -16,7 +16,7 @@ import android.widget.ImageView;
  *  </pre>
  */
 
-public class EditTextClearUtil{
+public class TextUtils {
     public static void addClearListener(final EditText editText,final ImageView imageView){
         //监听EditText的输入内容
         editText.addTextChangedListener(new TextWatcher(){

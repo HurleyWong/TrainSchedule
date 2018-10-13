@@ -1,4 +1,5 @@
 <resources>
+    <!-- 主要功能 -->
     <string name="app_name">火车时刻表</string>
     <string name="app_version">V1.0</string>
     <string name="station_query">车站查询</string>
@@ -9,4 +10,62 @@
     <string name="license">开源协议</string>
     <string name="support">支持</string>
 
+    <!-- api -->
+    <string name="url_path_station">http://api.jisuapi.com/train/station2s?appkey=f54b78afc15a12fc</string>
+    <string name="url_path_train">http://api.jisuapi.com/train/line?appkey=f54b78afc15a12fc</string>
+    <string name="url_station_tip">http://api.avatardata.cn/TrainTicket/Station?key=</string>
+    <string name="station_tip_key">9de387f10f174850a6e9430ccfd1dc9a</string>
+
+    <!-- 主要应用功能 -->
+    <string name="start_station">出发车站</string>
+    <string name="input_start_station">请输入出发车站</string>
+    <string name="end_station">到达车站</string>
+    <string name="input_end_station">请输入到达车站</string>
+    <string name="input_train">请输入车次</string>
+    <string name="only_high">只显示高铁</string>
+    <string name="train_no">列车班次</string>
+
+
+    <!-- 应用功能介绍 -->
+    <string name="app_func">火车时刻表是一款可以根据车站和车次来查询火车运行时刻表的应用,主要功能如下：</string>
+    <string name="func_paragraph">·  </string>
+    <string name="app_func1">输入出发车站和到达车站，显示经过两个车站之间的所有车次</string>
+    <string name="app_func2">输入准确的车次，显示该车次经过的所有车站和具体时刻表以及停留时间</string>
+    <string name="app_author">作者：</string>
+    <string name="app_author_name">Hurley</string>
+    <string name="app_github">Github：</string>
+    <string name="app_github_addr">https://github.com/HurleyJames</string>
+    <string name="app_csdn">CSDN：</string>
+    <string name="app_csdn_addr">https://blog.csdn.net/qq_34262794</string>
+    <string name="app_blog">个人博客：</string>
+    <string name="app_blog_addr">https://pipipeng.me</string>
+
+    <!-- 框架名称 -->
+    <string name="open_source">开源协议</string>
+    <string name="thanks">感谢下列项目的付出</string>
+    <string name="Gson">Gson</string>
+    <string name="Volley">Volley</string>
+    <string name="Glide">Glide</string>
+    <string name="Fresco">Fresco</string>
+    <string name="BufferKnife">ButterKnife</string>
+    <string name="PinchImageView">PinchImageView</string>
+    <string name="FlyShapeImageView">FlyShapeImageView</string>
+    <string name="Y_DividerItemDecoration">Y_DividerItemDecoration</string>
+    <string name="Zxing">Zxing</string>
+
+    <!-- 框架地址 -->
+    <string name="gson_addr">https://github.com/google/gson</string>
+    <string name="volley_addr">https://github.com/google/volley</string>
+    <string name="glide_addr">https://github.com/bumptech/glide</string>
+    <string name="fresco_addr">https://www.fresco-cn.org/</string>
+    <string name="butterknife_addr">https://github.com/JakeWharton/butterknife</string>
+    <string name="pinchimageview_addr">https://github.com/boycy815/PinchImageView</string>
+    <string name="flyshapeimageview_addr">https://github.com/FlyRecker/FlyShapeImageView</string>
+    <string name="y_divideritemdecoration_addr">https://github.com/yanyusong/Y_DividerItemDecoration</string>
+    <string name="zxing_addr">https://github.com/open-android/Zxing</string>
+
+    <!-- 出错 -->
+    <string name="wrong_404">抱歉，开发者尚未开发此功能</string>
+    <string name="wrong_train">输入车次有误，请输入正确的车次</string>
+    <string name="wrong_station">输入车站有误或没有直达车次，请重新输入</string>
 </resources>

@@ -17,7 +17,7 @@ import java.io.InputStreamReader;
  *  </pre>
  */
 
-public class ReadFile{
+public class FileUtils {
 
     //读取位于assets文件夹下的JSON文件
     public static String getJSON(String fileName,Context context){

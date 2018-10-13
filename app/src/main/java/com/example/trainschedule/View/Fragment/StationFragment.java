@@ -18,8 +18,8 @@ import android.widget.ImageView;
 import com.example.trainschedule.Activity.StationResultActivity;
 import com.example.trainschedule.Model.StationTip;
 import com.example.trainschedule.R;
-import com.example.trainschedule.Util.EditTextClearUtil;
-import com.example.trainschedule.Util.ReadFile;
+import com.example.trainschedule.Util.TextUtils;
+import com.example.trainschedule.Util.FileUtils;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -36,6 +36,8 @@ import java.util.List;
  */
 
 public class StationFragment extends Fragment{
+    private static final String TAG = "StationFragment";
+
     //搜索出发车站输入框
     private AutoCompleteTextView start_train_input;
     //删除出发车站输入框输入的内容
@@ -78,7 +80,7 @@ public class StationFragment extends Fragment{
         super.onActivityCreated(savedInstanceState);
         initViews();
 
-        url="http://api.avatardata.cn/TrainTicket/Station?key=9de387f10f174850a6e9430ccfd1dc9a";
+        url=getString(R.string.url_station_tip) + getString(R.string.station_tip_key);
         //getData();
         dealData();
 
@@ -89,8 +91,8 @@ public class StationFragment extends Fragment{
         end_train_input.setAdapter(adapter);
 
         //监控EditText输入内容，点击clear图标删除输入内容
-        EditTextClearUtil.addClearListener(start_train_input,start_station_clear);
-        EditTextClearUtil.addClearListener(end_train_input,end_station_clear);
+        TextUtils.addClearListener(start_train_input,start_station_clear);
+        TextUtils.addClearListener(end_train_input,end_station_clear);
 
         //输入法完成/回车
         end_train_input.setOnKeyListener(new View.OnKeyListener(){
@@ -153,7 +155,7 @@ public class StationFragment extends Fragment{
     //处理本地数据
     private void dealData(){
         Gson gson=new Gson();
-        String JSONContext=ReadFile.getJSON("station.json",getContext());
+        String JSONContext= FileUtils.getJSON("station.json",getContext());
         final StationTip stationTip=gson.fromJson(JSONContext,StationTip.class);
         for(int i=0;i<stationTip.getResult().size();i++){
             resultBeans.add(stationTip.getResult().get(i).getName());

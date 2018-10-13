@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="160dp"
-        android:text="车次查询"
-        android:textColor="#000"
+        android:text="@string/train_query"
+        android:textColor="@color/black"
         android:textSize="23sp"
         android:typeface="monospace"/>
 
@@ -39,7 +39,7 @@
                 android:paddingLeft="30dp"
                 android:paddingTop="15dp"
                 android:text="到达车站"
-                android:textColor="#000"
+                android:textColor="@color/black"
                 android:textSize="18sp"/>
 
             <View
@@ -61,7 +61,7 @@
                 android:background="@null"
                 android:drawablePadding="5dp"
                 android:ems="19"
-                android:hint="请输入车次"
+                android:hint="@string/input_train"
                 android:inputType="text"
                 android:textColorHint="@color/colorCursor"
                 android:textCursorDrawable="@drawable/color_cursor"
@@ -87,7 +87,7 @@
             android:layout_weight="1"
             android:background="@drawable/shape_search_button"
             android:text="搜索"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="18sp"/>
     </LinearLayout>
 </LinearLayout>

@@ -43,6 +43,8 @@ import butterknife.ButterKnife;
  */
 
 public class StationResultActivity extends AppCompatActivity implements TrainAdapter.OnItemClickListener{
+    private static final String TAG = "StationResultActivity";
+
     @BindView(R.id.coordinator)
     public CoordinatorLayout coordinator;
     @BindView(R.id.toolbar)
@@ -77,7 +79,7 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
         String key2=intent.getStringExtra("key2").replaceAll(" ","");
         bool=intent.getIntExtra("bool",0);
 
-        url="http://api.jisuapi.com/train/station2s?appkey=f54b78afc15a12fc&start="+key1+"&end="+key2+"&ishigh="+bool;
+        url=R.string.url_path_station+"&start="+key1+"&end="+key2+"&ishigh="+bool;
 
         getData();
 
@@ -182,7 +184,7 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
             //设置构造器标题
             //builder.setTitle("错误");
             //构造器内容。为对话框设置文本项
-            builder.setMessage("输入车站有误或没有直达车次，请重新输入");
+            builder.setMessage(R.string.wrong_station);
             //为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
             builder.setPositiveButton("确定",new DialogInterface.OnClickListener(){
                 //第一个参数dialog是点击的确定按钮所属的dialog对象，第二个对象which是按钮的标示值

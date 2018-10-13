@@ -8,4 +8,16 @@
 
     <color name="app_primary">#1976D2</color>
     <color name="app_primary_dark">#1565C0</color>
+
+    <!-- 透明度100% -->
+    <color name="y_divider">#9e9e9e</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#808080</color>
+    <color name="black">#000000</color>
+
+    <color name="blue_98">#03A9F4</color>
+    <color name="blue_85">#1296db</color>
+
+
+    <color name="grey_0">#666666</color>
 </resources>

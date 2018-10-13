@@ -1,4 +1,4 @@
-package com.example.trainschedule.Util;
+package com.example.trainschedule.ThirdParty;
 
 import android.content.Context;
 import android.content.res.TypedArray;

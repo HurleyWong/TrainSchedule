@@ -15,7 +15,7 @@ import android.view.MotionEvent;
  *  </pre>
  */
 
-public class ViewPagerSlide extends ViewPager{
+public class ViewPagerUtils extends ViewPager{
     //是否可以进行滑动
     private boolean isSlide=false;
 
@@ -23,11 +23,11 @@ public class ViewPagerSlide extends ViewPager{
         isSlide=isSlide;
     }
 
-    public ViewPagerSlide(Context context){
+    public ViewPagerUtils(Context context){
         super(context);
     }
 
-    public ViewPagerSlide(Context context,AttributeSet attrs){
+    public ViewPagerUtils(Context context, AttributeSet attrs){
         super(context,attrs);
     }
 

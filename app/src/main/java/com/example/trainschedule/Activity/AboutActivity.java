@@ -30,6 +30,8 @@ import butterknife.ButterKnife;
  */
 
 public class AboutActivity extends AppCompatActivity{
+    private static final String TAG = "AboutActivity";
+
     @BindView(R.id.drawerLayout)
     public DrawerLayout drawerLayout;
     @BindView(R.id.toolbar)
@@ -76,17 +78,6 @@ public class AboutActivity extends AppCompatActivity{
         screenHeight=metrics.heightPixels;*/
     }
 
-    //初始化控件
-    private void initViews(){
-        drawerLayout=findViewById(R.id.drawerLayout);
-        toolbar=findViewById(R.id.toolbar);
-        app_function=findViewById(R.id.app_function);
-        point1=findViewById(R.id.point1);
-        point2=findViewById(R.id.point2);
-        function1=findViewById(R.id.function1);
-        function2=findViewById(R.id.function2);
-    }
-
     //Toolbar转化为ActionBar
     public void setToolbar(){
         //将Toolbar转化为Actionbar
@@ -118,11 +109,11 @@ public class AboutActivity extends AppCompatActivity{
 
     //设置应用功能文本TextView
     private void setTextView(){
-        app_function.setText("火车时刻表是一款可以根据车站和车次来查询火车运行时刻表的应用,主要功能如下：");
-        point1.setText("·  ");
-        point2.setText("·  ");
-        function1.setText("输入出发车站和到达车站，显示经过两个车站之间的所有车次");
-        function2.setText("输入准确的车次，显示该车次经过的所有车站和具体时刻表以及停留时间");
+        app_function.setText(R.string.app_func);
+        point1.setText(R.string.func_paragraph);
+        point2.setText(R.string.func_paragraph);
+        function1.setText(R.string.app_func1);
+        function2.setText(R.string.app_func2);
     }
 
     //对触摸事件进行处理

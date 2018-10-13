@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="160dp"
-        android:text="车站查询"
-        android:textColor="#000"
+        android:text="@string/station_query"
+        android:textColor="@color/black"
         android:textSize="23sp"
         android:typeface="monospace"/>
 
@@ -32,8 +32,8 @@
             android:paddingBottom="15dp"
             android:paddingLeft="30dp"
             android:paddingTop="15dp"
-            android:text="出发车站"
-            android:textColor="#000"
+            android:text="@string/start_station"
+            android:textColor="@color/black"
             android:textSize="18sp"/>
 
         <View
@@ -54,7 +54,7 @@
             android:layout_toRightOf="@id/view_start_station"
             android:background="@null"
             android:ems="19"
-            android:hint="请输入出发车站"
+            android:hint="@string/input_start_station"
             android:inputType="text"
             android:textColorHint="@color/colorCursor"
             android:textCursorDrawable="@drawable/color_cursor"
@@ -88,8 +88,8 @@
             android:paddingBottom="15dp"
             android:paddingLeft="30dp"
             android:paddingTop="15dp"
-            android:text="到达车站"
-            android:textColor="#000"
+            android:text="@string/end_station"
+            android:textColor="@color/black"
             android:textSize="18sp"/>
 
         <View
@@ -111,7 +111,7 @@
             android:background="@null"
             android:drawablePadding="5dp"
             android:ems="19"
-            android:hint="请输入到达车站"
+            android:hint="@string/input_end_station"
             android:inputType="text"
             android:textColorHint="@color/colorCursor"
             android:textCursorDrawable="@drawable/color_cursor"
@@ -147,8 +147,8 @@
             android:background="@null"
             android:checked="false"
             android:duplicateParentState="false"
-            android:text="只显示高铁"
-            android:textColor="#666666"
+            android:text="@string/only_high"
+            android:textColor="@color/grey_0"
             android:textSize="15sp"/>
 
         <Button
@@ -163,7 +163,7 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="搜索"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="18sp"/>
     </LinearLayout>
 

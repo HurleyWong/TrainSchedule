@@ -16,7 +16,7 @@ import android.widget.ImageView;
 
 import com.example.trainschedule.Activity.TrainResultActivity;
 import com.example.trainschedule.R;
-import com.example.trainschedule.Util.EditTextClearUtil;
+import com.example.trainschedule.Util.TextUtils;
 
 /**
  * <pre>
@@ -29,6 +29,8 @@ import com.example.trainschedule.Util.EditTextClearUtil;
  */
 
 public class TrainFragment extends Fragment{
+    private static final String TAG = "TrainFragment";
+
     //Fragment管理对象
     public FragmentManager manager;
     public FragmentTransaction ft;
@@ -60,7 +62,7 @@ public class TrainFragment extends Fragment{
         initViews();
 
         //监控EditText输入内容，点击clear图标删除输入内容
-        EditTextClearUtil.addClearListener(search_train_input,search_train_clear);
+        TextUtils.addClearListener(search_train_input,search_train_clear);
 
         //输入法完成/回车
         search_train_input.setOnKeyListener(new View.OnKeyListener(){
