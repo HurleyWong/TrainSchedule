@@ -56,17 +56,17 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
     private AlertDialog alertDialog;
 
     private List<Station.ResultBean> resultBeans=new ArrayList<>();
-    private TrainAdapter trainAdapter;
+    private TrainAdapter mTrainAdapter;
 
     //请求接口
     private String url;
     //判断是否只搜索高铁
-    private int bool;
+    private int isHigh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.station_result);
+        setContentView(getLayoutId());
         //initViews();
         ButterKnife.bind(this);
 
@@ -77,21 +77,18 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
         Intent intent=getIntent();
         String key1=intent.getStringExtra("key1").replaceAll(" ","");
         String key2=intent.getStringExtra("key2").replaceAll(" ","");
-        bool=intent.getIntExtra("bool",0);
+        isHigh=intent.getIntExtra("bool",0);
 
         //极速数据api
-        url=R.string.jisu_url_station+"&start="+key1+"&end="+key2+"&ishigh="+bool;
+        url=R.string.jisu_url_station+"&start="+key1+"&end="+key2+"&ishigh="+isHigh;
 
         getData();
 
         //fab_test.attachToRecyclerView(recyclerView);
     }
 
-    //初始化控件
-    private void initViews(){
-        coordinator=findViewById(R.id.coordinator);
-        toolbar=findViewById(R.id.toolbar);
-        recyclerView=findViewById(R.id.train_info);
+    public int getLayoutId() {
+        return R.layout.station_result;
     }
 
     //Toolbar转化为ActionBar
@@ -203,12 +200,12 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
         }
 
 
-        trainAdapter=new TrainAdapter(this,resultBeans);
+        mTrainAdapter=new TrainAdapter(this,resultBeans);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //为RecyclerView添加分割线
         recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-        trainAdapter.setOnItemClickListener(this);
-        recyclerView.setAdapter(trainAdapter);
+        mTrainAdapter.setOnItemClickListener(this);
+        recyclerView.setAdapter(mTrainAdapter);
     }
 
     //RecyclerView的item点击事件

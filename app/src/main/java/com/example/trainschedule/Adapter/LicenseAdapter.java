@@ -32,9 +32,13 @@ public class LicenseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         this.licenses=licenses;
     }
 
+    public int getLayoutId() {
+        return R.layout.item_license;
+    }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
-        return new LicenseAdapter.ViewHolder(inflater.inflate(R.layout.item_license,parent,false));
+        return new LicenseAdapter.ViewHolder(inflater.inflate(getLayoutId(),parent,false));
     }
 
     //将数据与界面进行绑定操作

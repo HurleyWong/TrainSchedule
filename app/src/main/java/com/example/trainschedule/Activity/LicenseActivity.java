@@ -41,17 +41,15 @@ public class LicenseActivity extends AppCompatActivity{
     @BindView(R.id.toolbar)
     public Toolbar toolbar;
     @BindView(R.id.license_info)
-    public RecyclerView recyclerView;
+    public RecyclerView mRvLicenseInfo;
 
     private List<License> licenses=new ArrayList<>();
-    private LicenseAdapter licenseAdapter;
-
-    private Context context;
+    private LicenseAdapter mLicenseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_license);
+        setContentView(getLayoutId());
         //initViews();
         ButterKnife.bind(this);
 
@@ -59,14 +57,11 @@ public class LicenseActivity extends AppCompatActivity{
         setToolbar();
 
         //添加RecyclerView的数据
-        dealRecyclerView(context);
+        dealRecyclerView(this);
     }
 
-    //初始化控件
-    private void initViews(){
-        drawerLayout=findViewById(R.id.drawerLayout);
-        toolbar=findViewById(R.id.toolbar);
-        recyclerView=findViewById(R.id.license_info);
+    public int getLayoutId() {
+        return R.layout.fragment_license;
     }
 
     //Toolbar转化为ActionBar
@@ -110,14 +105,14 @@ public class LicenseActivity extends AppCompatActivity{
         licenses.add(new License(getString(R.string.Y_DividerItemDecoration),getString(R.string.y_divideritemdecoration_addr)));
         licenses.add(new License(getString(R.string.Zxing),getString(R.string.zxing_addr)));
 
-        licenseAdapter=new LicenseAdapter(this,licenses);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mLicenseAdapter=new LicenseAdapter(this,licenses);
+        mRvLicenseInfo.setLayoutManager(new LinearLayoutManager(this));
         //为RecyclerView添加分割线
-        recyclerView.addItemDecoration(new DividerItemDecoration(this));
+        mRvLicenseInfo.addItemDecoration(new DividerItemDecoration(this));
         //recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         //默认添加分割线方式
         //recyclerView.addItemDecoration(new RecyclerViewDivider(context,LinearLayoutManager.VERTICAL,R.drawable.a_divider_bg));
-        recyclerView.setAdapter(licenseAdapter);
+        mRvLicenseInfo.setAdapter(mLicenseAdapter);
     }
 
     //RecyclerView的分割线

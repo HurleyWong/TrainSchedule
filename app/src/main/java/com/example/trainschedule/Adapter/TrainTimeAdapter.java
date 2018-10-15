@@ -38,9 +38,13 @@ public class TrainTimeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         this.trainList=trainList;
     }*/
 
+    public int getLayoutId() {
+        return R.layout.item_train_time;
+    }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
-        return new ViewHolder(inflater.inflate(R.layout.item_train_time,parent,false));
+        return new ViewHolder(inflater.inflate(getLayoutId(),parent,false));
     }
 
     @Override

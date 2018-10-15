@@ -17,6 +17,9 @@ import android.widget.ImageView;
 import com.example.trainschedule.R;
 import com.example.trainschedule.Util.TextUtils;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * <pre>
  *      author : Hurley
@@ -35,14 +38,17 @@ public class TrainFragment extends Fragment{
     public FragmentTransaction ft;
 
     //搜索车次输入框
-    private EditText search_train_input;
+    EditText search_train_input;
     //删除搜索车次输入框输入的内容
-    private ImageView search_train_clear;
+    ImageView search_train_clear;
     //搜索车次按钮
-    private Button search_train_button;
+    Button search_train_button;
 
-    //初始化控件
-    private void initViews(){
+    public int getLayoutId() {
+        return R.layout.fragment_train;
+    }
+
+    private void initViews() {
         search_train_input=getActivity().findViewById(R.id.search_train_input);
         search_train_clear=getActivity().findViewById(R.id.search_train_clear);
         search_train_button=getActivity().findViewById(R.id.search_train_button);
@@ -51,7 +57,7 @@ public class TrainFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_train,container,false);
+        View view=inflater.inflate(getLayoutId(),container,false);
         return view;
     }
 

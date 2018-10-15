@@ -33,14 +33,14 @@ public class SupportActivity extends AppCompatActivity{
     @BindView(R.id.toolbar)
     public Toolbar toolbar;
     @BindView(R.id.not_found_image)
-    public ImageView not_found_image;
+    public ImageView mIvNotFound;
 
     private AlertDialog alertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_support);
+        setContentView(getLayoutId());
         //initViews();
         ButterKnife.bind(this);
 
@@ -49,6 +49,10 @@ public class SupportActivity extends AppCompatActivity{
 
         //弹窗
         showDialog();
+    }
+
+    public int getLayoutId() {
+        return R.layout.fragment_support;
     }
 
     //Toolbar转化为ActionBar

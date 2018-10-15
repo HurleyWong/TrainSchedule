@@ -27,6 +27,7 @@ import com.example.trainschedule.R;
 import com.google.gson.Gson;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitmapUtils;
+import com.google.zxing.qrcode.encoder.QRCode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,50 +53,53 @@ public class TrainResultActivity extends AppCompatActivity{
     @BindView(R.id.toolbar)
     public Toolbar toolbar;
     @BindView(R.id.train_timeline)
-    public RecyclerView recyclerView;
+    public RecyclerView mRvTrainTimeLine;
     private AlertDialog alertDialog;
 
     private List<Train.ResultBean.ListBean> listBeans=new ArrayList<>();
-    private TrainTimeAdapter trainTimeAdapter;
+    private TrainTimeAdapter mTrainTimeAdapter;
 
     //车次
     @BindView(R.id.train_no)
-    public TextView train_no;
+    public TextView mTvTrainNo;
     //类型
     @BindView(R.id.train_type)
-    public TextView train_type;
+    public TextView mTvTrainType;
     //起点站
     @BindView(R.id.start_station)
-    public TextView start_station;
+    public TextView mTvStartStation;
     //起点时间
     @BindView(R.id.start_time)
-    public TextView start_time;
+    public TextView mTvStartTime;
     //终点站
     @BindView(R.id.end_station)
-    public TextView end_station;
+    public TextView mTvEndStation;
     //终点时间
     @BindView(R.id.end_time)
-    public TextView end_time;
+    public TextView mTvEndTime;
     //二维码
     @BindView(R.id.QRCode)
-    public ImageView QRCode;
+    public ImageView mIvQRCode;
 
     //请求接口
     private String url;
 
-    private String key_start_station;
-    private String key_end_station;
-    private String key_start_time;
-    private String key_end_time;
+    private String mKeyStartStation;
+    private String mKeyEndStation;
+    private String mKeyStartTime;
+    private String mKeyEndTime;
 
     //二维码文字
-    private String QRCodeContent;
+    private String mQRCodeText;
+
+    public int getLayoutId() {
+        return R.layout.train_result;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.train_result);
-        //initViews();
+        setContentView(getLayoutId());
         ButterKnife.bind(this);
 
         //Toolbar转化为ActionBar
@@ -104,21 +108,21 @@ public class TrainResultActivity extends AppCompatActivity{
         //获得Intent传递过来的值，并且将其所包含的空格去掉
         Intent intent=getIntent();
         String key=intent.getStringExtra("key");
-        key_start_station=intent.getStringExtra("start_station");
-        if(key_start_station!=null){
-            key_start_station=key_start_station.replaceAll(""," ");
+        mKeyStartStation=intent.getStringExtra("start_station");
+        if(mKeyStartStation!=null){
+            mKeyStartStation=mKeyStartStation.replaceAll(""," ");
         }
-        key_end_station=intent.getStringExtra("end_station");
-        if(key_end_station!=null){
-            key_end_station=key_end_station.replaceAll(""," ");
+        mKeyEndStation=intent.getStringExtra("end_station");
+        if(mKeyEndStation!=null){
+            mKeyEndStation=mKeyEndStation.replaceAll(""," ");
         }
-        key_start_time=intent.getStringExtra("start_time");
-        if(key_start_time!=null){
-            key_start_time=key_start_time.replaceAll(""," ");
+        mKeyStartTime=intent.getStringExtra("start_time");
+        if(mKeyStartTime!=null){
+            mKeyStartTime=mKeyStartTime.replaceAll(""," ");
         }
-        key_end_time=intent.getStringExtra("end_time");
-        if(key_end_time!=null){
-            key_end_time=key_end_time.replaceAll(""," ");
+        mKeyEndTime=intent.getStringExtra("end_time");
+        if(mKeyEndTime!=null){
+            mKeyEndTime=mKeyEndTime.replaceAll(""," ");
         }
 
         //查看传递过来的值
@@ -189,33 +193,33 @@ public class TrainResultActivity extends AppCompatActivity{
             Train train=gson.fromJson(result,Train.class);
 
             //车次
-            train_no.setText(train.getResult().getTrainno());
+            mTvTrainNo.setText(train.getResult().getTrainno());
             //类别
-            train_type.setText(train.getResult().getType());
+            mTvTrainType.setText(train.getResult().getType());
             //如果传过来的intent值不为空，则说明是从点击列车班次跳转过来的
-            if(key_start_time!=null&&key_end_time!=null&&key_start_station!=null&&key_end_station!=null){
+            if(mKeyStartTime!=null&&mKeyEndTime!=null&&mKeyStartStation!=null&&mKeyEndStation!=null){
                 //出发车站
-                start_station.setText(key_start_station);
+                mTvStartStation.setText(mKeyStartStation);
                 //出发时间
-                start_time.setText(key_start_time);
+                mTvStartTime.setText(mKeyStartTime);
                 //到达车站
-                end_station.setText(key_end_station);
+                mTvEndStation.setText(mKeyEndStation);
                 //到达时间
-                end_time.setText(key_end_time);
+                mTvEndTime.setText(mKeyEndTime);
                 //二维码文字
-                QRCodeContent=key_start_station+"->"+key_end_station;
+                mQRCodeText=mKeyStartStation+"->"+mKeyEndStation;
             }
             else{
                 //起点站
-                start_station.setText(train.getResult().getList().get(0).getStation());
+                mTvStartStation.setText(train.getResult().getList().get(0).getStation());
                 //起点时间
-                start_time.setText(train.getResult().getList().get(0).getDeparturetime());
+                mTvStartTime.setText(train.getResult().getList().get(0).getDeparturetime());
                 //终点站
-                end_station.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getStation());
+                mTvEndStation.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getStation());
                 //终点时间
-                end_time.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getArrivaltime());
+                mTvEndTime.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getArrivaltime());
                 //二维码文字
-                QRCodeContent=train.getResult().getList().get(0).getStation()+"—>"+train.getResult().getList().get(train.getResult().getList().size()-1).getStation();
+                mQRCodeText=train.getResult().getList().get(0).getStation()+"—>"+train.getResult().getList().get(train.getResult().getList().size()-1).getStation();
             }
 
             for(int i=0;i<train.getResult().getList().size();i++){
@@ -242,8 +246,8 @@ public class TrainResultActivity extends AppCompatActivity{
             Bitmap bitmap=null;
             try{
                 //根据二维码文字生成二维码图片
-                bitmap=BitmapUtils.create2DCode(QRCodeContent);
-                QRCode.setImageBitmap(bitmap);
+                bitmap=BitmapUtils.create2DCode(mQRCodeText);
+                mIvQRCode.setImageBitmap(bitmap);
             }catch(WriterException e){
                 e.printStackTrace();
             }
@@ -270,9 +274,9 @@ public class TrainResultActivity extends AppCompatActivity{
             }
         }
 
-        trainTimeAdapter=new TrainTimeAdapter(this,listBeans);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(trainTimeAdapter);
+        mTrainTimeAdapter=new TrainTimeAdapter(this,listBeans);
+        mRvTrainTimeLine.setLayoutManager(new LinearLayoutManager(this));
+        mRvTrainTimeLine.setAdapter(mTrainTimeAdapter);
     }
 
 }

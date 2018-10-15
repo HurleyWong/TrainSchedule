@@ -28,7 +28,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 public class DefaultFragment extends Fragment{
     private static final String TAG = "DefaultFragment";
 
-    private ImageView default_image;
+    private ImageView mIvDefault;
 
     private SimpleDraweeView draweeView;
 
@@ -39,14 +39,18 @@ public class DefaultFragment extends Fragment{
 
     //初始化控件
     private void initViews(){
-        default_image=getActivity().findViewById(R.id.default_image);
+        mIvDefault=getActivity().findViewById(R.id.default_image);
         //draweeView = getActivity().findViewById(R.id.default_image);
+    }
+
+    public int getLayoutId() {
+        return R.layout.fragment_default;
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_default,container,false);
+        View view=inflater.inflate(getLayoutId(),container,false);
         return view;
     }
 
@@ -60,7 +64,7 @@ public class DefaultFragment extends Fragment{
         //draweeView.setImageURI(uri);
 
         //Glide加载图片
-        Glide.with(this).load(resourceId).into(default_image);
+        Glide.with(this).load(resourceId).into(mIvDefault);
     }
 
 }

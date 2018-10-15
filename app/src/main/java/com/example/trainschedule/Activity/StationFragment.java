@@ -24,6 +24,9 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * <pre>
  *      author : Hurley
@@ -58,20 +61,24 @@ public class StationFragment extends Fragment{
     //判断CheckBox是否被选中
     private int isHigh=0;
 
-    private void initViews(){
+    public int getLayoutId() {
+        return R.layout.fragment_station;
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
+        View view=inflater.inflate(getLayoutId(),container,false);
+        return view;
+    }
+
+    private void initViews() {
         start_train_input=getActivity().findViewById(R.id.search_start_station_input);
         end_train_input=getActivity().findViewById(R.id.search_end_station_input);
         start_station_clear=getActivity().findViewById(R.id.start_station_clear);
         end_station_clear=getActivity().findViewById(R.id.end_station_clear);
         checkBox=getActivity().findViewById(R.id.isHigh);
         search_station_button=getActivity().findViewById(R.id.search_station_button);
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_station,container,false);
-        return view;
     }
 
     @Override

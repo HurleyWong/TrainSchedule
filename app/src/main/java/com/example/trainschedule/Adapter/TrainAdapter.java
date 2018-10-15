@@ -35,6 +35,10 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         this.resultBeans=resultBeans;
     }
 
+    public int getLayoutId() {
+        return R.layout.item_train;
+    }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
         return new TrainAdapter.ViewHolder(inflater.inflate(R.layout.item_train,parent,false));

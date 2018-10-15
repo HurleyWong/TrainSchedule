@@ -38,15 +38,15 @@ public class AboutActivity extends AppCompatActivity{
     public Toolbar toolbar;
     //应用功能介绍
     @BindView(R.id.app_function)
-    public TextView app_function;
+    public TextView mAppFunc;
     @BindView(R.id.point1)
-    public TextView point1;
+    public TextView mTvPoint1;
     @BindView(R.id.point2)
-    public TextView point2;
+    public TextView mTvPoint2;
     @BindView(R.id.function1)
-    public TextView function1;
+    public TextView mTvFunc1;
     @BindView(R.id.function2)
-    public TextView function2;
+    public TextView mTvFunc2;
 
     //整个Activity视图的根视图
     View decorView;
@@ -58,7 +58,7 @@ public class AboutActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_about);
+        setContentView(getLayoutId());
         //initViews();
         ButterKnife.bind(this);
 
@@ -76,6 +76,10 @@ public class AboutActivity extends AppCompatActivity{
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         screenWidth=metrics.widthPixels;
         screenHeight=metrics.heightPixels;*/
+    }
+
+    public int getLayoutId() {
+        return R.layout.fragment_about;
     }
 
     //Toolbar转化为ActionBar
@@ -109,11 +113,11 @@ public class AboutActivity extends AppCompatActivity{
 
     //设置应用功能文本TextView
     private void setTextView(){
-        app_function.setText(R.string.app_func);
-        point1.setText(R.string.func_paragraph);
-        point2.setText(R.string.func_paragraph);
-        function1.setText(R.string.app_func1);
-        function2.setText(R.string.app_func2);
+        mAppFunc.setText(R.string.app_func);
+        mTvPoint1.setText(R.string.func_paragraph);
+        mTvPoint2.setText(R.string.func_paragraph);
+        mTvFunc1.setText(R.string.app_func1);
+        mTvFunc2.setText(R.string.app_func2);
     }
 
     //对触摸事件进行处理

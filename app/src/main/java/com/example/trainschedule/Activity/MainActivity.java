@@ -1,5 +1,6 @@
 package com.example.trainschedule.Activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -41,8 +42,6 @@ public class MainActivity extends AppCompatActivity{
     //private ViewPager viewPager;
     public ViewPagerUtils viewPager;
 
-    private AlertDialog alertDialog;
-
     private long exitTime=0;
 
     private int option=-1;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(getLayoutId());
         //initViews();
         ButterKnife.bind(this);
 
@@ -73,6 +72,10 @@ public class MainActivity extends AppCompatActivity{
         getMenuInflater().inflate(R.menu.menu_overaction, menu);
         return true;
     }*/
+
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
 
     //Toolbar转化为ActionBar
     public void setToolbar(){
@@ -248,16 +251,16 @@ public class MainActivity extends AppCompatActivity{
     @Override
     public boolean onKeyDown(int keyCode,KeyEvent event){
         if(keyCode==KeyEvent.KEYCODE_BACK){
-            exit();
+            exit(this);
             return false;
         }
         return super.onKeyDown(keyCode,event);
     }
 
     //按两次返回键退出程序
-    private void exit(){
+    private void exit(Context context){
         if((System.currentTimeMillis()-exitTime)>2000){
-            Toast.makeText(MainActivity.this,"再按一次返回键退出程序",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,"再按一次返回键退出程序",Toast.LENGTH_SHORT).show();
             exitTime=System.currentTimeMillis();
         }
         else{
