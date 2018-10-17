@@ -36,8 +36,8 @@
             android:text="@string/thanks"
             android:textColor="@color/grey"
             android:textSize="18sp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp10"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/license_info"
@@ -45,6 +45,6 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:overScrollMode="never"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="@dimen/dp10"/>
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

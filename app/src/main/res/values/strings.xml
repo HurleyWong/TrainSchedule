@@ -9,6 +9,7 @@
     <string name="about">关于</string>
     <string name="license">开源协议</string>
     <string name="support">支持</string>
+    <string name="setting">设置</string>
 
     <!-- 极速数据api -->
     <string name="jisu_url_station">http://api.jisuapi.com/train/station2s?appkey=f54b78afc15a12fc</string>

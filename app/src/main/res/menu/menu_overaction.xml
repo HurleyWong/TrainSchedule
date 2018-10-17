@@ -5,6 +5,6 @@
       tools:context=".Activity.TicketActivity">
     <item
         android:id="@+id/action_settings"
-        android:title="设置"
+        android:title="@string/setting"
         app:showAsAction="never"/>
 </menu>

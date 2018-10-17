@@ -6,9 +6,9 @@
               android:orientation="horizontal">
     <RelativeLayout
         android:id="@+id/timeline"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="2">
+        android:layout_marginLeft="@dimen/dp10">
 
         <TextView
             android:id="@+id/topLine"
@@ -19,8 +19,8 @@
 
         <TextView
             android:id="@+id/timeline_point"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
             android:layout_below="@id/topLine"
             android:layout_centerHorizontal="true"
             android:background="@mipmap/point"/>
@@ -35,39 +35,37 @@
 
     <RelativeLayout
         android:id="@+id/stations"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:paddingBottom="6dp"
-        android:paddingRight="10dp"
-        android:paddingLeft="32dp"
-        android:paddingTop="6dp">
+        android:paddingBottom="@dimen/dp6"
+        android:paddingRight="@dimen/dp10"
+        android:paddingLeft="@dimen/dp32"
+        android:paddingTop="@dimen/dp6">
 
         <TextView
             android:id="@+id/station"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="上海虹桥"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="@dimen/dp3"
             android:textColor="@color/black"
             android:textSize="14sp"/>
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/times"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="3"
-        android:paddingBottom="6dp"
-        android:paddingRight="20dp"
-        android:paddingLeft="18dp"
-        android:paddingTop="6dp">
+        android:paddingBottom="@dimen/dp6"
+        android:paddingRight="@dimen/dp20"
+        android:paddingLeft="@dimen/dp18"
+        android:paddingTop="@dimen/dp6">
 
         <TextView
             android:id="@+id/arrivalTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="@dimen/dp3"
             android:text="14:10"
             android:textColor="@color/black"
             android:textSize="14sp"/>
@@ -76,14 +74,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/clock"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/dp5"
             android:paddingLeft="40dp"/>
         <TextView
             android:id="@+id/stopTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:paddingLeft="60dp"
+            android:layout_marginTop="@dimen/dp3"
+            android:paddingLeft="@dimen/dp60"
             android:text="3'"
             android:textColor="@color/black"
             android:textSize="14sp"/>
@@ -91,8 +89,8 @@
             android:id="@+id/departureTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:paddingLeft="80dp"
+            android:layout_marginTop="@dimen/dp3"
+            android:paddingLeft="@dimen/dp80"
             android:text="15:01"
             android:textColor="@color/black"
             android:textSize="14sp"/>

@@ -13,18 +13,18 @@
     <com.recker.flyshapeimageview.ShapeImageView
         android:id="@+id/app_icon"
         android:layout_gravity="center_horizontal"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="@dimen/dp60"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginTop="@dimen/dp80"
         android:src="@drawable/app_icon"
         app:shape_mode="shape"
-        app:frame_width="1dp"/>
+        app:frame_width="@dimen/dp1"/>
     <TextView
         android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/dp10"
         android:text="@string/app_name"
         android:textSize="16sp"/>
     <TextView
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/dp5"
         android:text="@string/app_version"
         android:textSize="15sp"/>
 </LinearLayout>
