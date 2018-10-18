@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".Activity.MainActivity">
+        tools:context=".module.activity.MainActivity">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"
@@ -36,7 +36,7 @@
             app:tabMode="scrollable"/>-->
         </android.support.design.widget.AppBarLayout>
 
-        <com.example.trainschedule.Util.ViewPagerUtils
+        <com.example.trainschedule.util.ViewPagerUtils
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

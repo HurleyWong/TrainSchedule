@@ -11,18 +11,18 @@
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".module.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.TrainResultActivity"/>
-        <activity android:name=".Activity.StationResultActivity"/>
-        <activity android:name=".Activity.LicenseActivity"/>
-        <activity android:name=".Activity.AboutActivity"/>
-        <activity android:name=".Activity.SupportActivity"/>
+        <activity android:name=".module.train.TrainResultActivity"/>
+        <activity android:name=".module.station.StationResultActivity"/>
+        <activity android:name=".module.activity.LicenseActivity"/>
+        <activity android:name=".module.activity.AboutActivity"/>
+        <activity android:name=".module.activity.SupportActivity"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>
