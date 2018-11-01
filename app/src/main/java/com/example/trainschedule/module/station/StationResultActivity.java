@@ -37,9 +37,7 @@ import butterknife.ButterKnife;
  *      author : Hurley
  *      e-mail : 1401682479@qq.com
  *      time   : 2018/08/14
- *      desc   :
- *      version: 1.0
- *  </pre>
+ * </pre>
  */
 
 public class StationResultActivity extends AppCompatActivity implements TrainAdapter.OnItemClickListener{

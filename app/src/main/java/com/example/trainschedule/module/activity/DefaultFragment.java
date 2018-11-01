@@ -20,9 +20,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
  *      author : Hurley
  *      e-mail : 1401682479@qq.com
  *      time   : 2018/08/13
- *      desc   :
- *      version: 1.0
- *  </pre>
+ * </pre>
  */
 
 public class DefaultFragment extends Fragment{

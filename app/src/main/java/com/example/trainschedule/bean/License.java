@@ -5,9 +5,7 @@ package com.example.trainschedule.bean;
  *      author : Hurley
  *      e-mail : 1401682479@qq.com
  *      time   : 2018/08/16
- *      desc   :
- *      version: 1.0
- *  </pre>
+ * </pre>
  */
 
 public class License{

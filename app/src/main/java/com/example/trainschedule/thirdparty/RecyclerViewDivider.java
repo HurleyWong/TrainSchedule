@@ -16,9 +16,7 @@ import android.view.View;
  *      author : Hurley
  *      e-mail : 1401682479@qq.com
  *      time   : 2018/08/16
- *      desc   :
- *      version: 1.0
- *  </pre>
+ * </pre>
  */
 
 public class RecyclerViewDivider extends RecyclerView.ItemDecoration{
