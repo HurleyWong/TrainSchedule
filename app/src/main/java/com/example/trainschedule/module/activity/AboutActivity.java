@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.trainschedule.R;
+import com.example.trainschedule.util.ActionBarUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -61,7 +62,7 @@ public class AboutActivity extends AppCompatActivity{
         ButterKnife.bind(this);
 
         //Toolbar转化为ActionBar
-        setToolbar();
+        ActionBarUtils.setToolBar(this, toolbar, R.drawable.ic_menu, false);
 
         //设置应用功能文本TextView
         setTextView();
@@ -78,22 +79,6 @@ public class AboutActivity extends AppCompatActivity{
 
     public int getLayoutId() {
         return R.layout.fragment_about;
-    }
-
-    //Toolbar转化为ActionBar
-    public void setToolbar(){
-        //将Toolbar转化为Actionbar
-        setSupportActionBar(toolbar);
-        //获取ActionBar
-        ActionBar actionBar=getSupportActionBar();
-        if(actionBar!=null){
-            //隐藏actionBar
-            //actionBar.hide();
-            //设置左上角的按钮图标可以点击
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            //是否显示标题
-            actionBar.setDisplayShowTitleEnabled(true);
-        }
     }
 
     //对Toolbar的菜单选项进行监听回调

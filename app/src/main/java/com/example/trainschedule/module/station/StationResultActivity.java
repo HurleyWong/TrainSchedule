@@ -20,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.trainschedule.util.ActionBarUtils;
 import com.example.trainschedule.widget.adapter.TrainAdapter;
 import com.example.trainschedule.bean.Station;
 import com.example.trainschedule.R;
@@ -69,7 +70,7 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
         ButterKnife.bind(this);
 
         //Toolbar转化为ActionBar
-        setToolbar();
+        ActionBarUtils.setToolBar(this, toolbar, R.drawable.ic_menu, false);
 
         //获得Intent传递过来的值，并且将其所包含的空格去掉
         Intent intent=getIntent();
@@ -87,22 +88,6 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
 
     public int getLayoutId() {
         return R.layout.station_result;
-    }
-
-    //Toolbar转化为ActionBar
-    public void setToolbar(){
-        //将Toolbar转化为Actionbar
-        setSupportActionBar(toolbar);
-        //获取ActionBar
-        ActionBar actionBar=getSupportActionBar();
-        if(actionBar!=null){
-            //隐藏actionBar
-            //actionBar.hide();
-            //设置左上角的按钮图标可以点击
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            //是否显示标题
-            actionBar.setDisplayShowTitleEnabled(true);
-        }
     }
 
     //对Toolbar的菜单选项进行监听回调

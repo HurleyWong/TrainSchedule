@@ -10,6 +10,8 @@
     <string name="license">开源协议</string>
     <string name="support">支持</string>
     <string name="setting">设置</string>
+    <string name="positive">确定</string>
+    <string name="exit">再按一次返回键退出程序</string>
 
     <!-- 极速数据api -->
     <string name="jisu_url_station">http://api.jisuapi.com/train/station2s?appkey=f54b78afc15a12fc</string>
