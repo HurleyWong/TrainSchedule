@@ -37,6 +37,8 @@ public class FileUtils {
         }
         return stringBuilder.toString();
     }
+
+
     /*public static String readJSONFile(String path){
         String lastStr="";
         //打开文件

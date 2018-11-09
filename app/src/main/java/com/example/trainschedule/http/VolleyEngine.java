@@ -50,8 +50,15 @@ public class VolleyEngine {
             }
         }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
+            public void onErrorResponse(final VolleyError error) {
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (callback != null) {
+                            error.printStackTrace();
+                        }
+                    }
+                });
             }
         });
         //把请求对象加入请求队列中
