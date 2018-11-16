@@ -3,15 +3,14 @@ package com.example.trainschedule.module.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.example.trainschedule.util.ActionBarUtils;
-import com.example.trainschedule.widget.adapter.LicenseAdapter;
+import com.example.trainschedule.utils.ActionBarUtils;
+import com.example.trainschedule.module.activity.adapter.LicenseAdapter;
 import com.example.trainschedule.bean.License;
 import com.example.trainschedule.R;
 import com.yanyusong.y_divideritemdecoration.Y_Divider;

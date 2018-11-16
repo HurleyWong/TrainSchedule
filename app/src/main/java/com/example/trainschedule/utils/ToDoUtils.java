@@ -1,4 +1,4 @@
-package com.example.trainschedule.util;
+package com.example.trainschedule.utils;
 
 public class ToDoUtils {
 

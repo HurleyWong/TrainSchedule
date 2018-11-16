@@ -52,4 +52,10 @@ dependencies {
     //Zxing包
     implementation 'com.github.open-android:Zxing:v1.0.3'
 
+    //状态栏沉浸：https://github.com/gyf-dev/ImmersionBar
+    implementation 'com.gyf.immersionbar:immersionbar:2.3.2-beta05'
+    //侧滑功能：https://github.com/bingoogolapple/BGASwipeBackLayout-Android
+    implementation 'cn.bingoogolapple:bga-swipebacklayout:1.2.0@aar'
+    //标题栏：https://github.com/getActivity/TitleBar
+    implementation 'com.hjq:titlebar:3.5'
 }

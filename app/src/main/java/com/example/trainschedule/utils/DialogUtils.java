@@ -1,4 +1,4 @@
-package com.example.trainschedule.util;
+package com.example.trainschedule.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;

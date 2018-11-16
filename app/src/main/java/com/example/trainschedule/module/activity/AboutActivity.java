@@ -6,7 +6,6 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -15,7 +14,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.trainschedule.R;
-import com.example.trainschedule.util.ActionBarUtils;
+import com.example.trainschedule.utils.ActionBarUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -15,9 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.trainschedule.R;
-import com.example.trainschedule.base.view.MvpBaseFragment;
-import com.example.trainschedule.bean.Train;
-import com.example.trainschedule.util.TextUtils;
+import com.example.trainschedule.utils.TextUtils;
 
 /**
  * <pre>

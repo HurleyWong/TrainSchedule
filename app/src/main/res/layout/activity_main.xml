@@ -36,7 +36,7 @@
             app:tabMode="scrollable"/>-->
         </android.support.design.widget.AppBarLayout>
 
-        <com.example.trainschedule.util.ViewPagerUtils
+        <com.example.trainschedule.utils.ViewPagerUtils
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

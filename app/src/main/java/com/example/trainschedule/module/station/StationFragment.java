@@ -17,8 +17,8 @@ import android.widget.ImageView;
 
 import com.example.trainschedule.bean.StationTip;
 import com.example.trainschedule.R;
-import com.example.trainschedule.util.TextUtils;
-import com.example.trainschedule.util.FileUtils;
+import com.example.trainschedule.utils.TextUtils;
+import com.example.trainschedule.utils.FileUtils;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;

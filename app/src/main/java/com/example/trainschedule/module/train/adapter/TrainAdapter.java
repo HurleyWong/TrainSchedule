@@ -1,4 +1,4 @@
-package com.example.trainschedule.widget.adapter;
+package com.example.trainschedule.module.train.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

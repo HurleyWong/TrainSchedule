@@ -1,4 +1,4 @@
-package com.example.trainschedule.thirdparty;
+package com.example.trainschedule.widget;
 
 import android.animation.ValueAnimator;
 import android.content.Context;

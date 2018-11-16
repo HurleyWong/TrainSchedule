@@ -1,4 +1,4 @@
-package com.example.trainschedule.util;
+package com.example.trainschedule.utils;
 
 import android.content.Context;
 import android.content.res.AssetManager;

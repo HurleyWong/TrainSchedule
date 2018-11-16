@@ -1,19 +1,15 @@
 package com.example.trainschedule.module.activity;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.example.trainschedule.R;
-import com.example.trainschedule.util.ActionBarUtils;
-import com.example.trainschedule.util.DialogUtils;
+import com.example.trainschedule.utils.ActionBarUtils;
+import com.example.trainschedule.utils.DialogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

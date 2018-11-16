@@ -1,4 +1,4 @@
-package com.example.trainschedule.util;
+package com.example.trainschedule.utils;
 
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
