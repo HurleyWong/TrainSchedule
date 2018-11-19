@@ -34,6 +34,7 @@ public abstract class UIActivity extends BaseActivity
         super.onCreate(savedInstanceState);
     }
 
+    @Override
     public void init() {
         //初始化沉浸式状态栏
         if (isStatusBarEnabled()) {

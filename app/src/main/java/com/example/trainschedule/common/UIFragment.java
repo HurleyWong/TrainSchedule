@@ -37,6 +37,7 @@ public abstract class UIFragment extends BaseFragment {
     }
 
     //是否在Fragment中使用沉浸式
+    @Override
     public boolean isStatusBarEnabled() {
         return false;
     }
