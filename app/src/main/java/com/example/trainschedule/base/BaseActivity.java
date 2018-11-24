@@ -22,6 +22,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (getLayoutId() > 0) {
+            setContentView(getLayoutId());
+        }
+
+        init();
     }
 
     public void init() {
@@ -29,16 +34,26 @@ public abstract class BaseActivity extends AppCompatActivity {
         initData();
     }
 
-    //引入布局
+    /**
+     * 引入布局
+     * @return
+     */
     protected abstract int getLayoutId();
 
-    //标题栏id
+    /**
+     * 标题栏id
+     * @return
+     */
     protected abstract int getTitleBarId();
 
-    //初始化控件
+    /**
+     * 初始化控件
+     */
     protected abstract void initView();
 
-    //初始化数据
+    /**
+     * 初始化数据
+     */
     protected abstract void initData();
 
     @Override

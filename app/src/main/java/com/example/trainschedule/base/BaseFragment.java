@@ -26,16 +26,27 @@ import java.lang.reflect.Field;
  */
 public abstract class BaseFragment extends Fragment {
 
-    //是否已经懒加载
+    /**
+     * 是否已经懒加载
+     */
     private boolean isLazyLoad = false;
-    //根布局
+    /**
+     * 根布局
+     */
     private View mRootView;
-    //Activity对象
+    /**
+     * Activity对象
+     */
     public Activity mActivity;
-    //是否对用户可见
+    /**
+     * 是否对用户可见
+     */
     private boolean isVisibleToUser;
 
-    //获得全局的，防止使用getActivity()为空
+    /**
+     * 获得全局的，防止使用getActivity()为空
+     * @param context
+     */
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -90,7 +101,10 @@ public abstract class BaseFragment extends Fragment {
         super.setUserVisibleHint(isVisibleToUser);
     }
 
-    //对用户是否可见
+    /**
+     * 对用户是否可见
+     * @return
+     */
     public boolean isVisibleToUser() {
         return isVisibleToUser;
     }
@@ -104,7 +118,10 @@ public abstract class BaseFragment extends Fragment {
         return isLazyLoad;
     }
 
-    //是否在Fragment使用沉浸式
+    /**
+     * 是否在Fragment使用沉浸式
+     * @return
+     */
     protected boolean isStatusBarEnabled() {
         return false;
     }
@@ -114,19 +131,34 @@ public abstract class BaseFragment extends Fragment {
         initData();
     }
 
-    //引入布局
+    /**
+     * 引入布局
+     * @return
+     */
     protected abstract int getLayoutId();
 
-    //标题栏id
+    /**
+     * 标题栏id
+     * @return
+     */
     protected abstract int getTitleBarId();
 
-    //初始化控件
+    /**
+     * 初始化控件
+     */
     protected abstract void initView();
 
-    //初始化数据
+    /**
+     * 初始化数据
+     */
     protected abstract void initData();
 
-    //根据资源id获取一个View
+    /**
+     * 根据资源id获取一个View
+     * @param id
+     * @param <T>
+     * @return
+     */
     protected <T extends View> T findViewById(@IdRes int id) {
         return (T) getView().findViewById(id);
     }
@@ -135,12 +167,20 @@ public abstract class BaseFragment extends Fragment {
         return (T) mActivity.findViewById(id);
     }
 
-    //跳转到其它Activity
+    /**
+     * 跳转到其它Activity
+     * @param clazz
+     */
     public void startActivity(Class<? extends Activity> clazz) {
         startActivity(new Intent(getContext(), clazz));
     }
 
-    //Fragment返回键被按下时回调
+    /**
+     * Fragment返回键被按下时回调
+     * @param keyCode
+     * @param event
+     * @return
+     */
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //默认不拦截按键事件，传递给Activity
         return false;

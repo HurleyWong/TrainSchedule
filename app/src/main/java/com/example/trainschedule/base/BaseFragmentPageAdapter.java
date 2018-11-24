@@ -20,10 +20,14 @@ import java.util.List;
  */
 public abstract class BaseFragmentPageAdapter<T extends Fragment> extends FragmentPagerAdapter {
 
-    //Fragment集合
+    /**
+     * Fragment集合
+     */
     private List<T> mFragments = new ArrayList<>();
 
-    //当前正在显示的Fragment
+    /**
+     * 当前正在显示的Fragment
+     */
     private T mCurrentFragment;
 
     public BaseFragmentPageAdapter(FragmentManager fm) {
@@ -31,17 +35,27 @@ public abstract class BaseFragmentPageAdapter<T extends Fragment> extends Fragme
         init(fm, mFragments);
     }
 
-    //在Activity中使用ViewPager适配器
+    /**
+     * 在Activity中使用ViewPager适配器
+     * @param activity
+     */
     public BaseFragmentPageAdapter(FragmentActivity activity) {
         this(activity.getSupportFragmentManager());
     }
 
-    //在Fragment中使用ViewPager适配器
+    /**
+     * 在Fragment中使用ViewPager适配器
+     * @param fragment
+     */
     public BaseFragmentPageAdapter(Fragment fragment) {
         this(fragment.getChildFragmentManager());
     }
 
-    //初始化Fragment
+    /**
+     * 初始化Fragment
+     * @param fm
+     * @param list
+     */
     protected abstract void init(FragmentManager fm, List<T> list);
 
     @Override
@@ -54,7 +68,12 @@ public abstract class BaseFragmentPageAdapter<T extends Fragment> extends Fragme
         return mFragments.size();
     }
 
-    //设置主要item
+    /**
+     * 设置主要item
+     * @param container
+     * @param position
+     * @param object
+     */
     @Override
     public void setPrimaryItem(ViewGroup container, int position, Object object) {
         if (getCurrentFragment() != object) {
@@ -64,12 +83,18 @@ public abstract class BaseFragmentPageAdapter<T extends Fragment> extends Fragme
         super.setPrimaryItem(container, position, object);
     }
 
-    //获取Fragment集合
+    /**
+     * 获取Fragment集合
+     * @return
+     */
     public List<T> getAllFragment() {
         return mFragments;
     }
 
-    //获取当前Fragment
+    /**
+     * 获取当前Fragment
+     * @return
+     */
     public T getCurrentFragment() {
         return mCurrentFragment;
     }

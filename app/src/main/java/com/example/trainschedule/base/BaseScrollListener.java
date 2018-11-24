@@ -15,13 +15,19 @@ import com.example.trainschedule.listener.OnScrollingListener;
  */
 public class BaseScrollListener extends RecyclerView.OnScrollListener {
 
-    //RecyclerView对象
+    /**
+     * RecyclerView对象
+     */
     private RecyclerView mRecyclerView;
 
-    //设置RecyclerView条目滚动监听
+    /**
+     * 设置RecyclerView条目滚动监听
+     */
     private OnScrollingListener onScrollingListener;
 
-    //自定义滚动监听器
+    /**
+     * 自定义滚动监听器
+     */
     private BaseScrollListener mScrollListener;
 
     public void setOnScrollingListener(OnScrollingListener l) {
@@ -43,7 +49,9 @@ public class BaseScrollListener extends RecyclerView.OnScrollListener {
     @Override
     public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
 
-        if (onScrollingListener == null) return;
+        if (onScrollingListener == null) {
+            return;
+        }
 
         if (newState == RecyclerView.SCROLL_STATE_IDLE) {
 

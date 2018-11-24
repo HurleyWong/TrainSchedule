@@ -22,17 +22,25 @@ public abstract class BaseActivityHandler<T extends Activity> extends Handler {
         mActivity = new WeakReference<>(activity);
     }
 
-    //判断当前Handler是否可用
+    /**
+     * 判断当前Handler是否可用
+     * @return
+     */
     public boolean isEnabled() {
         return getActivity() != null && !getActivity().isFinishing();
     }
 
-    //获取Activity对象
+    /**
+     * 获取Activity对象
+     * @return
+     */
     public T getActivity() {
         return mActivity.get();
     }
 
-    //在Activity销毁前移除所有的任务
+    /**
+     * 在Activity销毁前移除所有的任务
+     */
     public void onDestroy() {
         //删除所有的回调函数和消息
         removeCallbacksAndMessages(null);

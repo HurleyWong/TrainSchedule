@@ -23,13 +23,17 @@ import com.example.trainschedule.listener.OnItemLongClickListener;
  */
 public class BaseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
-    //设置RecyclerView条目点击监听
+    /**
+     * 设置RecyclerView条目点击监听
+     */
     private OnItemClickListener mOnItemClickListener;
     public void setOnItemClickListener(OnItemClickListener listener) {
         mOnItemClickListener = listener;
     }
 
-    //设置RecyclerView条目长按监听
+    /**
+     * 设置RecyclerView条目长按监听
+     */
     private OnItemLongClickListener mOnItemLongClickListener;
     public void setOnItemlongClickListener(OnItemLongClickListener listener) {
         mOnItemLongClickListener = listener;
