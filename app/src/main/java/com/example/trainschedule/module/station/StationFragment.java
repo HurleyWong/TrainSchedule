@@ -163,37 +163,6 @@ public class StationFragment extends Fragment{
         }
     }
 
-    //获取网络数据
-    /*private void getData(){
-        //创建请求对象
-        //使用Volley框架
-        StringRequest request=new StringRequest(url,new Response.Listener<String>(){
-            @Override
-            public void onResponse(String response){
-                Log.e("接受的响应信息",response);
-                dealData(response);
-            }
-        },new Response.ErrorListener(){
-            @Override
-            public void onErrorResponse(VolleyError error){
-                Toast.makeText(getActivity(),"网络请求出错",Toast.LENGTH_SHORT).show();
-            }
-        });
-        //把请求对象加入请求队列里面
-        new Volley().newRequestQueue(getActivity().getApplicationContext()).add(request);
-    }*/
-
-    //处理网络数据
-    /*private void dealData(String result){
-        //实例化Gson对象
-        Gson gson=new Gson();
-        //把json字符转化为对象
-        final StationTip stationTip=gson.fromJson(result,StationTip.class);
-        for(int i=0;i<stationTip.getResult().size();i++){
-            resultBeans.add(stationTip.getResult().get(i).getName());
-        }
-    }*/
-
 }
 
 
