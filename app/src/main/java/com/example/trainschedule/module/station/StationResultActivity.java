@@ -50,16 +50,18 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
     public Toolbar toolbar;
     @BindView(R.id.train_info)
     public RecyclerView recyclerView;
-    /*@BindView(R.id.fab_test)
-    public FloatingActionButton fab_test;*/
     private AlertDialog alertDialog;
 
     private List<Station.ResultBean> resultBeans=new ArrayList<>();
     private TrainAdapter mTrainAdapter;
 
-    //请求接口
+    /**
+     * 请求接口
+     */
     private String url;
-    //判断是否只搜索高铁
+    /**
+     * 判断是否只搜索高铁
+     */
     private int isHigh;
 
     @Override
@@ -81,7 +83,9 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
         getData();
     }
 
-    //获取数据
+    /**
+     * 获取数据
+     */
     private void getData(){
         //创建请求对象
         //使用Volley框架
@@ -101,7 +105,10 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
         Volley.newRequestQueue(getApplicationContext()).add(request);
     }
 
-    //处理数据
+    /**
+     * 处理数据
+     * @param result
+     */
     private void dealData(String result){
         //实例化Gson对象
         Gson gson=new Gson();
@@ -169,7 +176,11 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
         recyclerView.setAdapter(mTrainAdapter);
     }
 
-    //RecyclerView的item点击事件
+    /**
+     * RecyclerView的item点击事件
+     * @param view
+     * @param position
+     */
     @Override
     public void onItemClick(View view,int position){
         String train_no=resultBeans.get(position).getTrainno();

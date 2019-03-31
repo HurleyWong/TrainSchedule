@@ -57,25 +57,39 @@ public class TrainResultActivity extends BaseActivity {
     private List<Train.ResultBean.ListBean> listBeans=new ArrayList<>();
     private TrainTimeAdapter mTrainTimeAdapter;
 
-    //车次
+    /**
+     * 车次
+     */
     @BindView(R.id.train_no)
     public TextView mTvTrainNo;
-    //类型
+    /**
+     * 类型
+     */
     @BindView(R.id.train_type)
     public TextView mTvTrainType;
-    //起点站
+    /**
+     * 起点站
+     */
     @BindView(R.id.start_station)
     public TextView mTvStartStation;
-    //起点时间
+    /**
+     * 起点时间
+     */
     @BindView(R.id.start_time)
     public TextView mTvStartTime;
-    //终点站
+    /**
+     * 终点站
+     */
     @BindView(R.id.end_station)
     public TextView mTvEndStation;
-    //终点时间
+    /**
+     * 终点时间
+     */
     @BindView(R.id.end_time)
     public TextView mTvEndTime;
-    //二维码
+    /**
+     * 二维码
+     */
     @BindView(R.id.QRCode)
     public ImageView mIvQRCode;
 

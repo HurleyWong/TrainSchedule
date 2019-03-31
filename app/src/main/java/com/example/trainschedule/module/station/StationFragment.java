@@ -38,22 +38,34 @@ import butterknife.BindView;
 public class StationFragment extends BaseFragment {
     private static final String TAG = "StationFragment";
 
-    //搜索出发车站输入框
+    /**
+     * 搜索出发车站输入框
+     */
     @BindView(R.id.search_start_station_input)
     AutoCompleteTextView start_train_input;
-    //删除出发车站输入框输入的内容
+    /**
+     * 删除出发车站输入框输入的内容
+     */
     @BindView(R.id.start_station_clear)
     ImageView start_station_clear;
-    //搜索到达车站输入框
+    /**
+     * 搜索到达车站输入框
+     */
     @BindView(R.id.search_end_station_input)
     AutoCompleteTextView end_train_input;
-    //删除到达车站输入框输入的内容
+    /**
+     * 删除到达车站输入框输入的内容
+     */
     @BindView(R.id.end_station_clear)
     ImageView end_station_clear;
-    //选择是否只搜索高铁
+    /**
+     * 选择是否只搜索高铁
+     */
     @BindView(R.id.isHigh)
     CheckBox checkBox;
-    //搜索按钮
+    /**
+     * 搜索按钮
+     */
     @BindView(R.id.search_station_button)
     Button search_station_button;
 
@@ -62,7 +74,9 @@ public class StationFragment extends BaseFragment {
 
     private List<String> resultBeans=new ArrayList<String>();
 
-    //判断CheckBox是否被选中
+    /**
+     * 判断CheckBox是否被选中
+     */
     private int isHigh=0;
 
     @Override

@@ -41,17 +41,11 @@ public class MainActivity extends BaseActivity {
     public Toolbar toolbar;
 
     @BindView(R.id.viewPager)
-    //private ViewPager viewPager;
     public ViewPagerUtils viewPager;
 
     private long exitTime = 0;
 
     private int option = -1;
-
-    //车站查询
-    //private StationFragment fragment1;
-    //车次查询
-    //private TrainFragment fragment2;
 
     @Override
     protected int getLayoutId() {

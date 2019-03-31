@@ -31,17 +31,19 @@ import butterknife.BindView;
 public class TrainFragment extends BaseFragment {
     private static final String TAG = "TrainFragment";
 
-    //Fragment管理对象
-    public FragmentManager manager;
-    public FragmentTransaction ft;
-
-    //搜索车次输入框
+    /**
+     * 搜索车次输入框
+     */
     @BindView(R.id.search_train_input)
     EditText search_train_input;
-    //删除搜索车次输入框输入的内容
+    /**
+     * 删除搜索车次输入框输入的内容
+     */
     @BindView(R.id.search_train_clear)
     ImageView search_train_clear;
-    //搜索车次按钮
+    /**
+     * 搜索车次按钮
+     */
     @BindView(R.id.search_train_button)
     Button search_train_button;
 

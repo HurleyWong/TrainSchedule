@@ -2,6 +2,7 @@ package com.example.trainschedule.module.activity;
 
 import android.content.Context;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -82,8 +83,9 @@ public class LicenseActivity extends BaseActivity {
         mRvLicenseInfo.setAdapter(mLicenseAdapter);
     }
 
-    //RecyclerView的分割线
-    //使用Y_DividerItemDecoration框架
+    /**
+     * RecyclerView的分割线，使用Y_DividerItemDecoration框架
+     */
     private class DividerItemDecoration extends Y_DividerItemDecoration{
 
         private DividerItemDecoration(Context context){
