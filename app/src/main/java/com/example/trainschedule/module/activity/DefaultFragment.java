@@ -11,8 +11,11 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.trainschedule.R;
+import com.example.trainschedule.base.BaseFragment;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
+
+import butterknife.BindView;
 
 
 /**
@@ -23,10 +26,11 @@ import com.facebook.drawee.view.SimpleDraweeView;
  * </pre>
  */
 
-public class DefaultFragment extends Fragment{
+public class DefaultFragment extends BaseFragment {
     private static final String TAG = "DefaultFragment";
 
-    private ImageView mIvDefault;
+    @BindView(R.id.default_image)
+    ImageView mIvDefault;
 
     private SimpleDraweeView draweeView;
 
@@ -35,33 +39,13 @@ public class DefaultFragment extends Fragment{
     String url1="http://s16.sinaimg.cn/orignal/001yUN6jzy7hgWgzoHt0f&690";
     String url2="http://photo.blog.sina.com.cn/showpic.html#blogid=14f7d01f50102y18q&url=http://album.sina.com.cn/pic/0068URxzzy7mV6yvoio7c";
 
-    //初始化控件
-    private void initViews(){
-        mIvDefault=getActivity().findViewById(R.id.default_image);
-        //draweeView = getActivity().findViewById(R.id.default_image);
-    }
-
+    @Override
     public int getLayoutId() {
         return R.layout.fragment_default;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(getLayoutId(),container,false);
-        return view;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState){
-        super.onActivityCreated(savedInstanceState);
-        initViews();
-
-        //Fresco加载图片
-        //Uri uri = Uri.parse("res://mipmap/"+R.mipmap.small_railline);
-        //draweeView.setImageURI(uri);
-
-        //Glide加载图片
+    protected void initView(View view) {
         Glide.with(this).load(resourceId).into(mIvDefault);
     }
 

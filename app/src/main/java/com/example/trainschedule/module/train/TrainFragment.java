@@ -15,7 +15,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.trainschedule.R;
+import com.example.trainschedule.base.BaseFragment;
 import com.example.trainschedule.utils.TextUtils;
+
+import butterknife.BindView;
 
 /**
  * <pre>
@@ -25,7 +28,7 @@ import com.example.trainschedule.utils.TextUtils;
  * </pre>
  */
 
-public class TrainFragment extends Fragment{
+public class TrainFragment extends BaseFragment {
     private static final String TAG = "TrainFragment";
 
     //Fragment管理对象
@@ -33,34 +36,22 @@ public class TrainFragment extends Fragment{
     public FragmentTransaction ft;
 
     //搜索车次输入框
+    @BindView(R.id.search_train_input)
     EditText search_train_input;
     //删除搜索车次输入框输入的内容
+    @BindView(R.id.search_train_clear)
     ImageView search_train_clear;
     //搜索车次按钮
+    @BindView(R.id.search_train_button)
     Button search_train_button;
 
+    @Override
     public int getLayoutId() {
         return R.layout.fragment_train;
     }
 
-    private void initViews() {
-        search_train_input=getActivity().findViewById(R.id.search_train_input);
-        search_train_clear=getActivity().findViewById(R.id.search_train_clear);
-        search_train_button=getActivity().findViewById(R.id.search_train_button);
-    }
-
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(getLayoutId(),container,false);
-        return view;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState){
-        super.onActivityCreated(savedInstanceState);
-        initViews();
-
+    protected void initView(View view) {
         //监控EditText输入内容，点击clear图标删除输入内容
         TextUtils.addClearListener(search_train_input,search_train_clear);
 
@@ -102,7 +93,6 @@ public class TrainFragment extends Fragment{
             }
         });
     }
-
 }
 
 

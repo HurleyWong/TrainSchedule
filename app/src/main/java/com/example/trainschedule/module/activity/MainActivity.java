@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.trainschedule.R;
+import com.example.trainschedule.base.BaseActivity;
 import com.example.trainschedule.utils.ActionBarUtils;
 import com.example.trainschedule.utils.ViewPagerUtils;
 import com.example.trainschedule.module.station.StationFragment;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
 
     @BindView(R.id.drawerLayout)
@@ -53,45 +54,22 @@ public class MainActivity extends AppCompatActivity {
     //private TrainFragment fragment2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
-        //initViews();
-        ButterKnife.bind(this);
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
 
-        //Toolbar转化为ActionBar
-        ActionBarUtils.setToolBar(this, toolbar, R.drawable.ic_menu, true);
+    @Override
+    protected void initView() {
         //监听ViewPager
         viewPagerListener();
         //监听NavigationView
         navigationViewListener();
     }
 
-    //顶部导航栏右边设置按钮
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_overaction, menu);
-        return true;
-    }*/
-
-    public int getLayoutId() {
-        return R.layout.activity_main;
-    }
-
-    //对Toolbar的菜单选项进行监听回调
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                //打开抽屉侧滑菜单
-                drawerLayout.openDrawer(GravityCompat.START);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    //监听ViewPager
-    public void viewPagerListener() {
+    /**
+     * 监听ViewPager
+     */
+    private void viewPagerListener() {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -139,8 +117,10 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setOffscreenPageLimit(2);
     }
 
-    //监听NavigationView
-    public void navigationViewListener() {
+    /**
+     * 监听NavigationView
+     */
+    private void navigationViewListener() {
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(
                     //设置当导航栏被点击时的回调
@@ -223,6 +203,8 @@ public class MainActivity extends AppCompatActivity {
                                     intent4.setClass(MainActivity.this, SupportActivity.class);
                                     MainActivity.this.startActivity(intent4);
                                     break;
+                                default:
+                                    break;
                             }
                             return false;
                         }
@@ -231,7 +213,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //重写点击返回键事件
+    /**
+     * 监听NavigationView
+     *
+     * @param keyCode
+     * @param event
+     * @return
+     */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -241,7 +229,10 @@ public class MainActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    //按两次返回键退出程序
+    /**
+     * 按两次返回键退出程序
+     * @param context
+     */
     private void exit(Context context) {
         if ((System.currentTimeMillis() - exitTime) > 2000) {
             Toast.makeText(context, getString(R.string.exit), Toast.LENGTH_SHORT).show();

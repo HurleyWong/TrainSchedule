@@ -15,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 
+import com.example.trainschedule.base.BaseFragment;
 import com.example.trainschedule.bean.StationTip;
 import com.example.trainschedule.R;
 import com.example.trainschedule.utils.TextUtils;
@@ -24,6 +25,8 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+
 /**
  * <pre>
  *      author : Hurley
@@ -32,21 +35,27 @@ import java.util.List;
  * </pre>
  */
 
-public class StationFragment extends Fragment{
+public class StationFragment extends BaseFragment {
     private static final String TAG = "StationFragment";
 
     //搜索出发车站输入框
-    private AutoCompleteTextView start_train_input;
+    @BindView(R.id.search_start_station_input)
+    AutoCompleteTextView start_train_input;
     //删除出发车站输入框输入的内容
-    private ImageView start_station_clear;
+    @BindView(R.id.start_station_clear)
+    ImageView start_station_clear;
     //搜索到达车站输入框
-    private AutoCompleteTextView end_train_input;
+    @BindView(R.id.search_end_station_input)
+    AutoCompleteTextView end_train_input;
     //删除到达车站输入框输入的内容
-    private ImageView end_station_clear;
+    @BindView(R.id.end_station_clear)
+    ImageView end_station_clear;
     //选择是否只搜索高铁
-    private CheckBox checkBox;
+    @BindView(R.id.isHigh)
+    CheckBox checkBox;
     //搜索按钮
-    private Button search_station_button;
+    @BindView(R.id.search_station_button)
+    Button search_station_button;
 
     //请求接口
     private String url;
@@ -56,31 +65,13 @@ public class StationFragment extends Fragment{
     //判断CheckBox是否被选中
     private int isHigh=0;
 
+    @Override
     public int getLayoutId() {
         return R.layout.fragment_station;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(getLayoutId(),container,false);
-        return view;
-    }
-
-    private void initViews() {
-        start_train_input=getActivity().findViewById(R.id.search_start_station_input);
-        end_train_input=getActivity().findViewById(R.id.search_end_station_input);
-        start_station_clear=getActivity().findViewById(R.id.start_station_clear);
-        end_station_clear=getActivity().findViewById(R.id.end_station_clear);
-        checkBox=getActivity().findViewById(R.id.isHigh);
-        search_station_button=getActivity().findViewById(R.id.search_station_button);
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState){
-        super.onActivityCreated(savedInstanceState);
-        initViews();
-
+    protected void initView(View view) {
         url=getString(R.string.afanda_url_station_tip) + getString(R.string.afanda_station_tip_key);
         //getData();
         dealData();
@@ -153,7 +144,9 @@ public class StationFragment extends Fragment{
         });
     }
 
-    //处理本地数据
+    /**
+     * 处理本地数据
+     */
     private void dealData(){
         Gson gson=new Gson();
         String JSONContext= FileUtils.getJSON("station.json",getContext());

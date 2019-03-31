@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.trainschedule.base.BaseActivity;
 import com.example.trainschedule.utils.ActionBarUtils;
 import com.example.trainschedule.module.train.adapter.TrainAdapter;
 import com.example.trainschedule.bean.Station;
@@ -40,7 +41,7 @@ import butterknife.ButterKnife;
  * </pre>
  */
 
-public class StationResultActivity extends AppCompatActivity implements TrainAdapter.OnItemClickListener{
+public class StationResultActivity extends BaseActivity implements TrainAdapter.OnItemClickListener{
     private static final String TAG = "StationResultActivity";
 
     @BindView(R.id.coordinator)
@@ -62,15 +63,12 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
     private int isHigh;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
-        //initViews();
-        ButterKnife.bind(this);
+    protected int getLayoutId() {
+        return R.layout.station_result;
+    }
 
-        //Toolbar转化为ActionBar
-        ActionBarUtils.setToolBar(this, toolbar, R.drawable.ic_menu, false);
-
+    @Override
+    protected void initView() {
         //获得Intent传递过来的值，并且将其所包含的空格去掉
         Intent intent=getIntent();
         String key1=intent.getStringExtra("key1").replaceAll(" ","");
@@ -81,25 +79,6 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
         url=R.string.jisu_url_station+"&start="+key1+"&end="+key2+"&ishigh="+isHigh;
 
         getData();
-
-        //fab_test.attachToRecyclerView(recyclerView);
-    }
-
-    public int getLayoutId() {
-        return R.layout.station_result;
-    }
-
-    //对Toolbar的菜单选项进行监听回调
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
-            case android.R.id.home:
-                //点击返货箭头返回上一页面
-                //返回操作方法
-                onBackPressed();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     //获取数据
@@ -119,7 +98,7 @@ public class StationResultActivity extends AppCompatActivity implements TrainAda
             }
         });
         //把请求对象加入请求队列里面
-        new Volley().newRequestQueue(getApplicationContext()).add(request);
+        Volley.newRequestQueue(getApplicationContext()).add(request);
     }
 
     //处理数据

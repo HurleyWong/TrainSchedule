@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.example.trainschedule.R;
+import com.example.trainschedule.base.BaseActivity;
 import com.example.trainschedule.utils.ActionBarUtils;
 import com.example.trainschedule.utils.DialogUtils;
 
@@ -22,7 +23,7 @@ import butterknife.ButterKnife;
  * </pre>
  */
 
-public class SupportActivity extends AppCompatActivity{
+public class SupportActivity extends BaseActivity {
     private static final String TAG = "SupportActivity";
 
     @BindView(R.id.drawerLayout)
@@ -32,36 +33,24 @@ public class SupportActivity extends AppCompatActivity{
     @BindView(R.id.not_found_image)
     public ImageView mIvNotFound;
 
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_support;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
-        //initViews();
-        ButterKnife.bind(this);
-
-        //Toolbar转化为ActionBar
-        ActionBarUtils.setToolBar(this, toolbar, R.drawable.ic_menu, false);
-
+    protected void initView() {
         //警告Dialog
         DialogUtils.showAlertDialog(this, null, getString(R.string.wrong_404), getString(R.string.positive));
     }
 
-    public int getLayoutId() {
-        return R.layout.fragment_support;
-    }
-
-    //对Toolbar的菜单选项进行监听回调
+    /**
+     * 显示返回键
+     *
+     * @return
+     */
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
-            case android.R.id.home:
-                //点击返货箭头返回上一页面
-                //返回操作方法
-                onBackPressed();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+    protected boolean showHomeAsUp() {
+        return true;
     }
-
 }

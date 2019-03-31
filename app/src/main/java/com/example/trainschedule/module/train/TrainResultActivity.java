@@ -20,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.trainschedule.base.BaseActivity;
 import com.example.trainschedule.utils.ActionBarUtils;
 import com.example.trainschedule.module.train.adapter.TrainTimeAdapter;
 import com.example.trainschedule.bean.Train;
@@ -42,7 +43,7 @@ import butterknife.ButterKnife;
  * </pre>
  */
 
-public class TrainResultActivity extends AppCompatActivity{
+public class TrainResultActivity extends BaseActivity {
     private static final String TAG = "TrainResultActivity";
 
     @BindView(R.id.drawerLayout)
@@ -78,7 +79,9 @@ public class TrainResultActivity extends AppCompatActivity{
     @BindView(R.id.QRCode)
     public ImageView mIvQRCode;
 
-    //请求接口
+    /**
+     * 请求接口
+     */
     private String url;
 
     private String mKeyStartStation;
@@ -86,22 +89,18 @@ public class TrainResultActivity extends AppCompatActivity{
     private String mKeyStartTime;
     private String mKeyEndTime;
 
-    //二维码文字
+    /**
+     * 二维码文字
+     */
     private String mQRCodeText;
 
-    public int getLayoutId() {
+    @Override
+    protected int getLayoutId() {
         return R.layout.train_result;
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
-        ButterKnife.bind(this);
-
-        //Toolbar转化为ActionBar
-        ActionBarUtils.setToolBar(this, toolbar, R.drawable.ic_menu, false);
-
+    protected void initView() {
         //获得Intent传递过来的值，并且将其所包含的空格去掉
         Intent intent=getIntent();
         String key=intent.getStringExtra("key");
@@ -122,29 +121,14 @@ public class TrainResultActivity extends AppCompatActivity{
             mKeyEndTime=mKeyEndTime.replaceAll(""," ");
         }
 
-        //查看传递过来的值
-        //System.out.println(key);
-
-        //极速数据api
         url=R.string.jisu_url_train+"&trainno="+key;
 
         getData();
     }
 
-    //对Toolbar的菜单选项进行监听回调
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
-            case android.R.id.home:
-                //点击返货箭头返回上一页面
-                //返回操作方法
-                onBackPressed();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    //获取数据
+    /**
+     * 获取数据
+     */
     private void getData(){
         //创建请求对象
         //使用Volley框架
@@ -161,10 +145,13 @@ public class TrainResultActivity extends AppCompatActivity{
             }
         });
         //把请求对象加入请求队列里面
-        new Volley().newRequestQueue(getApplicationContext()).add(request);
+        Volley.newRequestQueue(getApplicationContext()).add(request);
     }
 
-    //处理数据
+    /**
+     * 处理数据
+     * @param result
+     */
     private void dealData(String result){
         //实例化Gson对象
         Gson gson=new Gson();
