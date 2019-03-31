@@ -1,15 +1,12 @@
 package com.example.trainschedule.module.activity;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 
-import com.example.trainschedule.utils.ActionBarUtils;
+import com.example.trainschedule.base.BaseActivity;
 import com.example.trainschedule.module.activity.adapter.LicenseAdapter;
 import com.example.trainschedule.bean.License;
 import com.example.trainschedule.R;
@@ -21,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * <pre>
@@ -31,7 +27,7 @@ import butterknife.ButterKnife;
  * </pre>
  */
 
-public class LicenseActivity extends AppCompatActivity{
+public class LicenseActivity extends BaseActivity {
     private static final String TAG = "LicenseActivity";
 
     @BindView(R.id.drawerLayout)
@@ -45,34 +41,23 @@ public class LicenseActivity extends AppCompatActivity{
     private LicenseAdapter mLicenseAdapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
-        //initViews();
-        ButterKnife.bind(this);
-
-        //Toolbar转化为ActionBar
-        ActionBarUtils.setToolBar(this, toolbar, R.drawable.ic_menu, false);
-
-        //添加RecyclerView的数据
-        dealData(this);
-    }
-
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.fragment_license;
     }
 
-    //对Toolbar的菜单选项进行监听回调
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
-            case android.R.id.home:
-                //点击返货箭头返回上一页面
-                //返回操作方法
-                onBackPressed();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+    protected void initView() {
+        dealData(this);
+    }
+
+    /**
+     * 显示返回键
+     *
+     * @return
+     */
+    @Override
+    protected boolean showHomeAsUp() {
+        return true;
     }
 
     private void dealData(Context context){
