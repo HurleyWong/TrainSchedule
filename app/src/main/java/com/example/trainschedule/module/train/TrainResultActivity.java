@@ -42,11 +42,12 @@ public class TrainResultActivity extends BaseActivity {
     private static final String TAG = "TrainResultActivity";
 
     @BindView(R.id.drawerLayout)
-    public DrawerLayout drawerLayout;
+    DrawerLayout drawerLayout;
     @BindView(R.id.toolbar)
-    public Toolbar toolbar;
-    @BindView(R.id.train_timeline)
-    public RecyclerView mRvTrainTimeLine;
+    Toolbar toolbar;
+    @BindView(R.id.rv_train_timeline)
+    RecyclerView mRvTrainTimeLine;
+
     private AlertDialog alertDialog;
 
     private List<Train.ResultBean.ListBean> listBeans=new ArrayList<>();
@@ -55,38 +56,38 @@ public class TrainResultActivity extends BaseActivity {
     /**
      * 车次
      */
-    @BindView(R.id.train_no)
-    public TextView mTvTrainNo;
+    @BindView(R.id.tv_train_no)
+    TextView mTvTrainNo;
     /**
      * 类型
      */
-    @BindView(R.id.train_type)
-    public TextView mTvTrainType;
+    @BindView(R.id.tv_train_type)
+    TextView mTvTrainType;
     /**
      * 起点站
      */
-    @BindView(R.id.start_station)
-    public TextView mTvStartStation;
+    @BindView(R.id.tv_start_station)
+    TextView mTvStartStation;
     /**
      * 起点时间
      */
-    @BindView(R.id.start_time)
-    public TextView mTvStartTime;
+    @BindView(R.id.tv_start_time)
+    TextView mTvStartTime;
     /**
      * 终点站
      */
-    @BindView(R.id.end_station)
-    public TextView mTvEndStation;
+    @BindView(R.id.tv_end_station)
+    TextView mTvEndStation;
     /**
      * 终点时间
      */
-    @BindView(R.id.end_time)
-    public TextView mTvEndTime;
+    @BindView(R.id.tv_end_time)
+    TextView mTvEndTime;
     /**
      * 二维码
      */
-    @BindView(R.id.QRCode)
-    public ImageView mIvQRCode;
+    @BindView(R.id.iv_QR_code)
+    ImageView mIvQRCode;
 
     /**
      * 请求接口

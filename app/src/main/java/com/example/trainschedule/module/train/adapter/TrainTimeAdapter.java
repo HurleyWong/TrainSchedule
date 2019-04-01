@@ -59,29 +59,30 @@ public class TrainTimeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView departureTime;
-        private TextView stopTime;
-        private TextView arrivalTime;
-        private TextView station;
-        private TextView topLine,timeline_point;
+        private TextView mTvDepartureTime;
+        private TextView mTvStopTime;
+        private TextView mTvArrivalTime;
+        private TextView mTvStation;
+        private TextView mTvTopLine;
+        private TextView mTvTimelinePoint;
 
         public ViewHolder(View itemView){
             super(itemView);
-            arrivalTime=itemView.findViewById(R.id.arrivalTime);
-            stopTime=itemView.findViewById(R.id.stopTime);
-            departureTime=itemView.findViewById(R.id.departureTime);
-            station=itemView.findViewById(R.id.station);
-            topLine=itemView.findViewById(R.id.topLine);
-            timeline_point=itemView.findViewById(R.id.timeline_point);
+            mTvArrivalTime=itemView.findViewById(R.id.tv_arrival_time);
+            mTvStopTime=itemView.findViewById(R.id.tv_stop_time);
+            mTvDepartureTime=itemView.findViewById(R.id.tv_departure_time);
+            mTvStation=itemView.findViewById(R.id.tv_station);
+            mTvTopLine=itemView.findViewById(R.id.tv_top_line);
+            mTvTimelinePoint=itemView.findViewById(R.id.tv_timeline_point);
         }
 
         public void bindHolder(Train.ResultBean.ListBean listBean){
             //time.setText(train.getResult().getList().get(0).getArrivaltime()+"-"+train.getResult().getList().get(0).getDeparturetime());
             //station.setText(train.getResult().getList().get(0).getStation());
-            arrivalTime.setText(listBean.getArrivaltime());
-            stopTime.setText(listBean.getStoptime());
-            departureTime.setText(listBean.getDeparturetime());
-            station.setText(listBean.getStation());
+            mTvArrivalTime.setText(listBean.getArrivaltime());
+            mTvStopTime.setText(listBean.getStoptime());
+            mTvDepartureTime.setText(listBean.getDeparturetime());
+            mTvStation.setText(listBean.getStation());
             //time.setText(listBean.getDeparturetime()+""+listBean.getArrivaltime());
             //station.setText(listBean.getStation());
         }

@@ -25,7 +25,9 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private LayoutInflater inflater;
     private List<Station.ResultBean> resultBeans=new ArrayList<>();
 
-    //声明接口变量
+    /**
+     * 声明接口变量
+     */
     private OnItemClickListener itemClickListener=null;
 
     public TrainAdapter(Context context,List<Station.ResultBean> resultBeans){
@@ -42,7 +44,11 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         return new TrainAdapter.ViewHolder(inflater.inflate(R.layout.item_train,parent,false));
     }
 
-    //将数据与界面进行绑定操作
+    /**
+     * 将数据与界面进行绑定操作
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder,final int position){
         TrainAdapter.ViewHolder itemHolder=(TrainAdapter.ViewHolder)holder;
@@ -60,55 +66,61 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         }
     }
 
-    //获取数据的数量
+    /**
+     * 获取数据的数量
+     * @return
+     */
     @Override
     public int getItemCount(){
         return resultBeans.size();
     }
 
-    //定义点击事件接口
+    /**
+     * 定义点击事件接口
+     */
     public interface OnItemClickListener{
         void onItemClick(View view,int position);
     }
 
-    //设置点击事件
+    /**
+     * 设置点击事件
+     * @param itemClickListener
+     */
     public void setOnItemClickListener(OnItemClickListener itemClickListener){
         this.itemClickListener=itemClickListener;
     }
 
-
-
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView departure_time;
-        private TextView departure_station;
-        private TextView costTime;
-        private TextView trainNo;
-        private TextView arrival_time;
-        private TextView arrival_station;
-        private TextView price;
-        private TextView seat_type;
+        private TextView mTvDepartureTime;
+        private TextView mTvDepartureStation;
+        private TextView mTvCostTime;
+        private TextView mTvTrainNo;
+        private TextView mTvArrivalTime;
+        private TextView mTvArrivalStation;
+        private TextView mTvPrice;
+        private TextView mTvSeatType;
 
         public ViewHolder(View itemView){
             super(itemView);
-            departure_time=itemView.findViewById(R.id.departure_time);
-            departure_station=itemView.findViewById(R.id.departure_station);
-            costTime=itemView.findViewById(R.id.costTime);
-            trainNo=itemView.findViewById(R.id.trainNo);
-            arrival_time=itemView.findViewById(R.id.arrival_time);
-            arrival_station=itemView.findViewById(R.id.arrival_station);
-            price=itemView.findViewById(R.id.price);
-            seat_type=itemView.findViewById(R.id.seat_type);
+            mTvDepartureTime=itemView.findViewById(R.id.tv_departure_time);
+            mTvDepartureStation=itemView.findViewById(R.id.tv_departure_station);
+            mTvCostTime=itemView.findViewById(R.id.tv_cost_time);
+            mTvTrainNo=itemView.findViewById(R.id.tv_train_no);
+            mTvArrivalTime=itemView.findViewById(R.id.tv_arrival_time);
+            mTvArrivalStation=itemView.findViewById(R.id.tv_arrival_station);
+            mTvPrice=itemView.findViewById(R.id.tv_price);
+            mTvSeatType=itemView.findViewById(R.id.tv_seat_type);
         }
 
         public void bindHolder(Station.ResultBean resultBean){
-            departure_time.setText(resultBean.getDeparturetime());
-            departure_station.setText(resultBean.getStation());
-            costTime.setText(resultBean.getCosttime());
-            trainNo.setText(resultBean.getTrainno());
-            arrival_time.setText(resultBean.getArrivaltime());
-            arrival_station.setText(resultBean.getEndstation());
-            price.setText(resultBean.getPriceed());
-            seat_type.setText(resultBean.getType());
+            mTvDepartureTime.setText(resultBean.getDeparturetime());
+            mTvDepartureStation.setText(resultBean.getStation());
+            mTvCostTime.setText(resultBean.getCosttime());
+            mTvTrainNo.setText(resultBean.getTrainno());
+            mTvArrivalTime.setText(resultBean.getArrivaltime());
+            mTvArrivalStation.setText(resultBean.getEndstation());
+            mTvPrice.setText(resultBean.getPriceed());
+            mTvSeatType.setText(resultBean.getType());
         }
     }
 }

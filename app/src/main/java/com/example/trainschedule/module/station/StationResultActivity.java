@@ -40,11 +40,12 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
     private static final String TAG = "StationResultActivity";
 
     @BindView(R.id.coordinator)
-    public CoordinatorLayout coordinator;
+    CoordinatorLayout coordinator;
     @BindView(R.id.toolbar)
-    public Toolbar toolbar;
-    @BindView(R.id.train_info)
-    public RecyclerView recyclerView;
+    Toolbar toolbar;
+    @BindView(R.id.rv_train_info)
+    RecyclerView mRvTrainInfo;
+
     private AlertDialog alertDialog;
 
     private List<Station.ResultBean> resultBeans=new ArrayList<>();
@@ -164,11 +165,11 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
 
 
         mTrainAdapter=new TrainAdapter(this,resultBeans);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRvTrainInfo.setLayoutManager(new LinearLayoutManager(this));
         //为RecyclerView添加分割线
-        recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        mRvTrainInfo.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         mTrainAdapter.setOnItemClickListener(this);
-        recyclerView.setAdapter(mTrainAdapter);
+        mRvTrainInfo.setAdapter(mTrainAdapter);
     }
 
     /**

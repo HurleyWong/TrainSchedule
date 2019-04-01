@@ -8,13 +8,9 @@
     android:fitsSystemWindows="true">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".module.train.TrainResultActivity">
+        android:orientation="vertical">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"
@@ -33,11 +29,11 @@
         <android.support.v7.widget.CardView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="@dimen/dp180"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/dp10"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
+            app:cardCornerRadius="@dimen/dp10"
+            app:cardElevation="@dimen/dp10">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -61,21 +57,21 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
                         <TextView
-                            android:id="@+id/start_station"
+                            android:id="@+id/tv_start_station"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="上海虹桥"
                             android:textColor="@color/black"
-                            android:textSize="18sp"/>
+                            android:textSize="@dimen/sp18"/>
                         <TextView
-                            android:id="@+id/start_time"
+                            android:id="@+id/tv_start_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="14:10"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="@dimen/sp16"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -84,26 +80,26 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
                         <TextView
-                            android:id="@+id/train_no"
+                            android:id="@+id/tv_train_no"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="G99"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="@dimen/sp16"/>
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="10dp"
                             android:layout_gravity="center_horizontal"
                             android:background="@mipmap/arrow"/>
                         <TextView
-                            android:id="@+id/train_type"
+                            android:id="@+id/tv_train_type"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="高铁"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="@dimen/sp16"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -112,23 +108,23 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
                         <TextView
-                            android:id="@+id/end_station"
+                            android:id="@+id/tv_end_station"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="广州南"
                             android:textColor="@color/black"
-                            android:textSize="18sp"/>
+                            android:textSize="@dimen/sp18"/>
                         <TextView
-                            android:id="@+id/end_time"
+                            android:id="@+id/tv_end_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="21:32"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="@dimen/sp16"/>
                         <ImageView
-                            android:id="@+id/QRCode"
+                            android:id="@+id/iv_QR_code"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"/>
@@ -138,7 +134,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/train_timeline"
+            android:id="@+id/rv_train_timeline"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"

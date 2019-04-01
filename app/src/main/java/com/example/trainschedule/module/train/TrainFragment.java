@@ -34,18 +34,18 @@ public class TrainFragment extends BaseFragment {
     /**
      * 搜索车次输入框
      */
-    @BindView(R.id.search_train_input)
-    EditText search_train_input;
+    @BindView(R.id.et_train_input)
+    EditText mEtTrainInput;
     /**
      * 删除搜索车次输入框输入的内容
      */
-    @BindView(R.id.search_train_clear)
-    ImageView search_train_clear;
+    @BindView(R.id.iv_train_clear)
+    ImageView mIvTrainClear;
     /**
      * 搜索车次按钮
      */
-    @BindView(R.id.search_train_button)
-    Button search_train_button;
+    @BindView(R.id.btn_train_search)
+    Button mBtnSearch;
 
     @Override
     public int getLayoutId() {
@@ -55,15 +55,15 @@ public class TrainFragment extends BaseFragment {
     @Override
     protected void initView(View view) {
         //监控EditText输入内容，点击clear图标删除输入内容
-        TextUtils.addClearListener(search_train_input,search_train_clear);
+        TextUtils.addClearListener(mEtTrainInput,mIvTrainClear);
 
         //输入法完成/回车
-        search_train_input.setOnKeyListener(new View.OnKeyListener(){
+        mEtTrainInput.setOnKeyListener(new View.OnKeyListener(){
             @Override
             public boolean onKey(View v,int keyCode,KeyEvent event){
                 if(keyCode==android.view.KeyEvent.KEYCODE_ENTER&&event.getAction()==android.view.KeyEvent.ACTION_DOWN){
                     //获取输入的内容
-                    String content=search_train_input.getText().toString();
+                    String content=mEtTrainInput.getText().toString();
                     //输出输入的内容
                     System.out.println("搜索内容："+content);
 
@@ -78,11 +78,11 @@ public class TrainFragment extends BaseFragment {
         });
 
         //点击搜索按钮
-        search_train_button.setOnClickListener(new View.OnClickListener(){
+        mBtnSearch.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 //获取输入的内容
-                String content=search_train_input.getText().toString();
+                String content=mEtTrainInput.getText().toString();
                 //输出输入的内容
                 System.out.println("搜索内容："+content);
 

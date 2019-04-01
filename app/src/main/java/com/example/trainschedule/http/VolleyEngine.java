@@ -6,7 +6,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.trainschedule.ApplicationContext;
+import com.example.trainschedule.app.App;
 
 import java.io.IOException;
 
@@ -29,7 +29,7 @@ public class VolleyEngine {
         return mInstance;
     }
 
-    private void getData(String url, ApplicationContext context, final ResultCallback callback) {
+    private void getData(String url, App context, final ResultCallback callback) {
         //创建请求对象
         //使用Volley框架
         StringRequest request = new StringRequest(url, new Response.Listener<String>() {

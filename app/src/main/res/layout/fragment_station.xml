@@ -11,7 +11,7 @@
         android:background="@drawable/a_shape_edittext">
 
         <TextView
-            android:id="@+id/start_station_text"
+            android:id="@+id/tv_start_station"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -28,11 +28,11 @@
             android:layout_height="@dimen/dp20"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dp10"
-            android:layout_toEndOf="@id/start_station_text"
+            android:layout_toEndOf="@id/tv_start_station"
             android:background="@color/colorCursor" />
 
         <AutoCompleteTextView
-            android:id="@+id/search_start_station_input"
+            android:id="@+id/tv_start_station_input"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp30"
             android:layout_centerVertical="true"
@@ -48,7 +48,7 @@
             android:completionThreshold="1"/>
 
         <ImageView
-            android:id="@+id/start_station_clear"
+            android:id="@+id/iv_start_station_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -67,7 +67,7 @@
         android:background="@drawable/a_shape_edittext">
 
         <TextView
-            android:id="@+id/end_station_text"
+            android:id="@+id/tv_end_station"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -84,11 +84,11 @@
             android:layout_height="@dimen/dp20"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dp10"
-            android:layout_toEndOf="@id/end_station_text"
+            android:layout_toEndOf="@id/tv_end_station"
             android:background="@color/colorCursor"/>
 
         <AutoCompleteTextView
-            android:id="@+id/search_end_station_input"
+            android:id="@+id/tv_end_station_input"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp30"
             android:layout_centerVertical="true"
@@ -105,7 +105,7 @@
             android:completionThreshold="1"/>
 
         <ImageView
-            android:id="@+id/end_station_clear"
+            android:id="@+id/iv_end_station_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -116,7 +116,7 @@
     </RelativeLayout>
 
     <CheckBox
-        android:id="@+id/isHigh"
+        android:id="@+id/cb_is_high"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/rl_end_station"
@@ -129,11 +129,11 @@
         android:textSize="@dimen/sp15"/>
 
     <Button
-        android:id="@+id/search_station_button"
+        android:id="@+id/btn_station_search"
         style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/isHigh"
+        android:layout_below="@id/cb_is_high"
         android:layout_marginTop="@dimen/dp20"
         android:layout_marginStart="@dimen/dp30"
         android:layout_marginEnd="@dimen/dp30"

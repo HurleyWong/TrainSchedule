@@ -41,33 +41,33 @@ public class StationFragment extends BaseFragment {
     /**
      * 搜索出发车站输入框
      */
-    @BindView(R.id.search_start_station_input)
-    AutoCompleteTextView start_train_input;
+    @BindView(R.id.tv_start_station_input)
+    AutoCompleteTextView mTvStartStation;
     /**
      * 删除出发车站输入框输入的内容
      */
-    @BindView(R.id.start_station_clear)
-    ImageView start_station_clear;
+    @BindView(R.id.iv_start_station_clear)
+    ImageView mIvStartStation;
     /**
      * 搜索到达车站输入框
      */
-    @BindView(R.id.search_end_station_input)
-    AutoCompleteTextView end_train_input;
+    @BindView(R.id.tv_end_station_input)
+    AutoCompleteTextView mTvEndStation;
     /**
      * 删除到达车站输入框输入的内容
      */
-    @BindView(R.id.end_station_clear)
-    ImageView end_station_clear;
+    @BindView(R.id.iv_end_station_clear)
+    ImageView mIvEndStation;
     /**
      * 选择是否只搜索高铁
      */
-    @BindView(R.id.isHigh)
-    CheckBox checkBox;
+    @BindView(R.id.cb_is_high)
+    CheckBox mCbIsHigh;
     /**
      * 搜索按钮
      */
-    @BindView(R.id.search_station_button)
-    Button search_station_button;
+    @BindView(R.id.btn_station_search)
+    Button mBtnSearch;
 
     //请求接口
     private String url;
@@ -90,24 +90,24 @@ public class StationFragment extends BaseFragment {
         //getData();
         dealData();
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(StationFragment.this.getActivity(),android.R.layout.simple_list_item_1,resultBeans);
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(StationFragment.this.getActivity(),android.R.layout.simple_list_item_1,resultBeans);
 
         //AutoCompleteTextView
-        start_train_input.setAdapter(adapter);
-        end_train_input.setAdapter(adapter);
+        mTvStartStation.setAdapter(adapter);
+        mTvEndStation.setAdapter(adapter);
 
         //监控EditText输入内容，点击clear图标删除输入内容
-        TextUtils.addClearListener(start_train_input,start_station_clear);
-        TextUtils.addClearListener(end_train_input,end_station_clear);
+        TextUtils.addClearListener(mTvStartStation,mIvStartStation);
+        TextUtils.addClearListener(mTvEndStation,mIvEndStation);
 
         //输入法完成/回车
-        end_train_input.setOnKeyListener(new View.OnKeyListener(){
+        mTvEndStation.setOnKeyListener(new View.OnKeyListener(){
             @Override
             public boolean onKey(View view,int i,KeyEvent keyEvent){
                 if(i==android.view.KeyEvent.KEYCODE_ENTER&&keyEvent.getAction()==android.view.KeyEvent.ACTION_DOWN){
                     //获取输入的内容
-                    String start_station=start_train_input.getText().toString();
-                    String end_station=end_train_input.getText().toString();
+                    String start_station=mTvStartStation.getText().toString();
+                    String end_station=mTvEndStation.getText().toString();
                     //输出输入的内容
                     System.out.println("出发车站："+start_station);
                     System.out.println("到达车站："+end_station);
@@ -124,18 +124,18 @@ public class StationFragment extends BaseFragment {
         });
 
         //点击搜索按钮
-        search_station_button.setOnClickListener(new View.OnClickListener(){
+        mBtnSearch.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 //获取输入的内容
-                String start_station=start_train_input.getText().toString();
-                String end_station=end_train_input.getText().toString();
+                String start_station=mTvStartStation.getText().toString();
+                String end_station=mTvEndStation.getText().toString();
                 //输出输入的内容
                 System.out.println("出发车站："+start_station);
                 System.out.println("到达车站："+end_station);
 
                 //设置CheckBox的监听事件，判断CheckBox是否被选中
-                checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+                mCbIsHigh.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView,boolean isChecked){
                         if(isChecked){

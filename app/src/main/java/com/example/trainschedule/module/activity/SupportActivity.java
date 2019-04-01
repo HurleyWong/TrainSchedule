@@ -1,19 +1,14 @@
 package com.example.trainschedule.module.activity;
 
-import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.example.trainschedule.R;
 import com.example.trainschedule.base.BaseActivity;
-import com.example.trainschedule.utils.ActionBarUtils;
 import com.example.trainschedule.utils.DialogUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * <pre>
@@ -30,7 +25,7 @@ public class SupportActivity extends BaseActivity {
     public DrawerLayout drawerLayout;
     @BindView(R.id.toolbar)
     public Toolbar toolbar;
-    @BindView(R.id.not_found_image)
+    @BindView(R.id.iv_not_found)
     public ImageView mIvNotFound;
 
     @Override

@@ -14,7 +14,7 @@
         android:background="@drawable/a_shape_edittext">
 
         <TextView
-            android:id="@+id/train_text"
+            android:id="@+id/tv_train"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -31,11 +31,11 @@
             android:layout_height="@dimen/dp20"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dp10"
-            android:layout_toEndOf="@id/train_text"
+            android:layout_toEndOf="@id/tv_train"
             android:background="@color/colorCursor"/>
 
         <EditText
-            android:id="@+id/search_train_input"
+            android:id="@+id/et_train_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -51,7 +51,7 @@
             android:textSize="@dimen/sp18"/>
 
         <ImageView
-            android:id="@+id/search_train_clear"
+            android:id="@+id/iv_train_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -62,7 +62,7 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/search_train_button"
+        android:id="@+id/btn_train_search"
         style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,10 +1,10 @@
-package com.example.trainschedule;
+package com.example.trainschedule.app;
 
 import android.app.Application;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 
-public class ApplicationContext extends Application{
+public class App extends Application{
 
     @Override
     public void onCreate() {

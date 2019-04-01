@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="60dp"
+              android:layout_height="@dimen/dp60"
               android:gravity="center"
               android:orientation="vertical">
     <LinearLayout
@@ -15,21 +15,21 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/departure_time"
+                android:id="@+id/tv_departure_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="06:43"
                 android:textColor="@color/blue_98"
-                android:textSize="18sp"/>
+                android:textSize="@dimen/sp18"/>
             <TextView
-                android:id="@+id/departure_station"
+                android:id="@+id/tv_departure_station"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="北京南"
                 android:textColor="@color/black"
-                android:textSize="14sp"/>
+                android:textSize="@dimen/sp14"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
@@ -37,22 +37,22 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/costTime"
+                android:id="@+id/tv_cost_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/dp5"
                 android:text="--5时57分-->"
                 android:textColor="@color/black"
-                android:textSize="14sp"/>
+                android:textSize="@dimen/sp14"/>
             <TextView
-                android:id="@+id/trainNo"
+                android:id="@+id/tv_train_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="G100"
                 android:textColor="@color/black"
-                android:textSize="14sp"/>
+                android:textSize="@dimen/sp14"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
@@ -60,21 +60,21 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/arrival_time"
+                android:id="@+id/tv_arrival_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="12:40"
                 android:textColor="@color/black"
-                android:textSize="18sp"/>
+                android:textSize="@dimen/sp18"/>
             <TextView
-                android:id="@+id/arrival_station"
+                android:id="@+id/tv_arrival_station"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="上海虹桥"
                 android:textColor="@color/black"
-                android:textSize="14sp"/>
+                android:textSize="@dimen/sp14"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
@@ -82,21 +82,21 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/price"
+                android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="553"
                 android:textColor="@color/black"
-                android:textSize="18sp"/>
+                android:textSize="@dimen/sp18"/>
             <TextView
-                android:id="@+id/seat_type"
+                android:id="@+id/tv_seat_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="二等座"
                 android:textColor="@color/black"
-                android:textSize="14sp"/>
+                android:textSize="@dimen/sp14"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
