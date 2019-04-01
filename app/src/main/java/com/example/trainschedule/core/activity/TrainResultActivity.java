@@ -1,4 +1,4 @@
-package com.example.trainschedule.module.train;
+package com.example.trainschedule.core.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,17 +18,21 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.trainschedule.base.BaseActivity;
-import com.example.trainschedule.module.train.adapter.TrainTimeAdapter;
+import com.example.trainschedule.core.adapter.TrainTimeAdapter;
 import com.example.trainschedule.bean.Train;
 import com.example.trainschedule.R;
+import com.example.trainschedule.http.OkHttpEngine;
+import com.example.trainschedule.http.ResultCallback;
 import com.google.gson.Gson;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitmapUtils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import okhttp3.Request;
 
 /**
  * <pre>
@@ -131,7 +135,7 @@ public class TrainResultActivity extends BaseActivity {
             mKeyEndTime=mKeyEndTime.replaceAll(""," ");
         }
 
-        url=R.string.jisu_url_train+"&trainno="+key;
+        url=getString(R.string.jisu_url_train)+"&trainno="+key;
 
         getData();
     }
@@ -140,22 +144,18 @@ public class TrainResultActivity extends BaseActivity {
      * 获取数据
      */
     private void getData(){
-        //创建请求对象
-        //使用Volley框架
-        StringRequest request=new StringRequest(url,new Response.Listener<String>(){
+        OkHttpEngine.getInstance().getAsynHttp(url, new ResultCallback() {
             @Override
-            public void onResponse(String response){
-                Log.e("接受的响应信息",response);
-                dealData(response);
+            public void onError(Request request, Exception e) {
+                Toast.makeText(TrainResultActivity.this, "网络请求错误", Toast.LENGTH_SHORT).show();
             }
-        },new Response.ErrorListener(){
+
             @Override
-            public void onErrorResponse(VolleyError error){
-                Toast.makeText(TrainResultActivity.this,"网络请求出错",Toast.LENGTH_SHORT).show();
+            public void onSuccess(String str) throws IOException {
+                Log.e("接受的响应信息", str);
+                dealData(str);
             }
         });
-        //把请求对象加入请求队列里面
-        Volley.newRequestQueue(getApplicationContext()).add(request);
     }
 
     /**

@@ -1,4 +1,4 @@
-package com.example.trainschedule.module.station;
+package com.example.trainschedule.core.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,16 +17,21 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.trainschedule.base.BaseActivity;
-import com.example.trainschedule.module.train.adapter.TrainAdapter;
+import com.example.trainschedule.core.adapter.TrainAdapter;
 import com.example.trainschedule.bean.Station;
 import com.example.trainschedule.R;
-import com.example.trainschedule.module.train.TrainResultActivity;
+import com.example.trainschedule.http.OkHttpEngine;
+import com.example.trainschedule.http.ResultCallback;
 import com.google.gson.Gson;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import okhttp3.Request;
 
 /**
  * <pre>
@@ -48,7 +53,7 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
 
     private AlertDialog alertDialog;
 
-    private List<Station.ResultBean> resultBeans=new ArrayList<>();
+    private List<Station.ResultBean.ListBean> listBeans = new ArrayList<>();
     private TrainAdapter mTrainAdapter;
 
     /**
@@ -67,6 +72,7 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
 
     @Override
     protected void initView() {
+
         //获得Intent传递过来的值，并且将其所包含的空格去掉
         Intent intent=getIntent();
         String key1=intent.getStringExtra("key1").replaceAll(" ","");
@@ -74,7 +80,7 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
         isHigh=intent.getIntExtra("bool",0);
 
         //极速数据api
-        url=R.string.jisu_url_station+"&start="+key1+"&end="+key2+"&ishigh="+isHigh;
+        url = getString(R.string.jisu_url_station) + "&start=" + key1 + "&end=" + key2 + "&ishigh=" + isHigh;
 
         getData();
     }
@@ -83,22 +89,19 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
      * 获取数据
      */
     private void getData(){
-        //创建请求对象
-        //使用Volley框架
-        StringRequest request=new StringRequest(url,new Response.Listener<String>(){
+        OkHttpEngine.getInstance().getAsynHttp(url, new ResultCallback() {
             @Override
-            public void onResponse(String response){
-                Log.e("接受的响应信息",response);
-                dealData(response);
+            public void onError(Request request, Exception e) {
+                Toast.makeText(StationResultActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
             }
-        },new Response.ErrorListener(){
+
             @Override
-            public void onErrorResponse(VolleyError error){
-                Toast.makeText(StationResultActivity.this,"网络请求出错",Toast.LENGTH_SHORT).show();
+            public void onSuccess(String str) throws IOException {
+                Log.e("接受的响应信息", str);
+                dealData(str);
+                mTrainAdapter.notifyDataSetChanged();
             }
         });
-        //把请求对象加入请求队列里面
-        Volley.newRequestQueue(getApplicationContext()).add(request);
     }
 
     /**
@@ -111,36 +114,34 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
 
         try{
             //把json字符转化为对象
-            final Station station=gson.fromJson(result,Station.class);
+            Station station = gson.fromJson(result, Station.class);
 
-            for(int i=0;i<station.getResult().size();i++){
-                if(station.getResult().get(i).getPriceyz()!=null){
-                    resultBeans.add(new Station.ResultBean(
-                            station.getResult().get(i).getTrainno(),
-                            station.getResult().get(i).getStation(),
-                            station.getResult().get(i).getEndstation(),
-                            station.getResult().get(i).getDeparturetime(),
-                            station.getResult().get(i).getArrivaltime(),
-                            station.getResult().get(i).getCosttime(),
-                            station.getResult().get(i).getPriceyz()+"元",
+            for (int i = 0; i < station.getResult().getList().size(); i ++) {
+                if (station.getResult().getList().get(i).getPriceyz() != null) {
+                    listBeans.add(new Station.ResultBean.ListBean(
+                            station.getResult().getList().get(i).getTrainno(),
+                            station.getResult().getList().get(i).getStation(),
+                            station.getResult().getList().get(i).getEndstation(),
+                            station.getResult().getList().get(i).getDeparturetime(),
+                            station.getResult().getList().get(i).getArrivaltime(),
+                            station.getResult().getList().get(i).getCosttime(),
+                            station.getResult().getList().get(i).getPriceyz() + "元",
                             "硬座"
-
                     ));
-                }
-                else{
-                    resultBeans.add(new Station.ResultBean(
-                            station.getResult().get(i).getTrainno(),
-                            station.getResult().get(i).getStation(),
-                            station.getResult().get(i).getEndstation(),
-                            station.getResult().get(i).getDeparturetime(),
-                            station.getResult().get(i).getArrivaltime(),
-                            station.getResult().get(i).getCosttime(),
-                            station.getResult().get(i).getPriceed()+"元",
+                } else {
+                    listBeans.add(new Station.ResultBean.ListBean(
+                            station.getResult().getList().get(i).getTrainno(),
+                            station.getResult().getList().get(i).getStation(),
+                            station.getResult().getList().get(i).getEndstation(),
+                            station.getResult().getList().get(i).getDeparturetime(),
+                            station.getResult().getList().get(i).getArrivaltime(),
+                            station.getResult().getList().get(i).getCosttime(),
+                            station.getResult().getList().get(i).getPriceed() + "元",
                             "二等座"
                     ));
                 }
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             //创建AlertDialog的构造器对象
             AlertDialog.Builder builder=new AlertDialog.Builder(StationResultActivity.this);
             //设置构造器标题
@@ -163,13 +164,13 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
             }
         }
 
-
-        mTrainAdapter=new TrainAdapter(this,resultBeans);
         mRvTrainInfo.setLayoutManager(new LinearLayoutManager(this));
         //为RecyclerView添加分割线
         mRvTrainInfo.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        mTrainAdapter=new TrainAdapter(this, listBeans);
         mTrainAdapter.setOnItemClickListener(this);
         mRvTrainInfo.setAdapter(mTrainAdapter);
+
     }
 
     /**
@@ -179,11 +180,11 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
      */
     @Override
     public void onItemClick(View view,int position){
-        String train_no=resultBeans.get(position).getTrainno();
-        String start_station=resultBeans.get(position).getStation();
-        String end_station=resultBeans.get(position).getEndstation();
-        String start_time=resultBeans.get(position).getDeparturetime();
-        String end_time=resultBeans.get(position).getArrivaltime();
+        String train_no=listBeans.get(position).getTrainno();
+        String start_station=listBeans.get(position).getStation();
+        String end_station=listBeans.get(position).getEndstation();
+        String start_time=listBeans.get(position).getDeparturetime();
+        String end_time=listBeans.get(position).getArrivaltime();
         Intent intent=new Intent();
         intent.setClass(this,TrainResultActivity.class);
         intent.putExtra("key",train_no);

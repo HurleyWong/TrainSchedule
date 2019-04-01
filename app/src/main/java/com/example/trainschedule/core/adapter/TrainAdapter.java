@@ -1,4 +1,4 @@
-package com.example.trainschedule.module.train.adapter;
+package com.example.trainschedule.core.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -23,16 +23,16 @@ import java.util.List;
 
 public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private LayoutInflater inflater;
-    private List<Station.ResultBean> resultBeans=new ArrayList<>();
+    private List<Station.ResultBean.ListBean> listBeans=new ArrayList<>();
 
     /**
      * 声明接口变量
      */
     private OnItemClickListener itemClickListener=null;
 
-    public TrainAdapter(Context context,List<Station.ResultBean> resultBeans){
+    public TrainAdapter(Context context,List<Station.ResultBean.ListBean> listBeans){
         inflater=LayoutInflater.from(context);
-        this.resultBeans=resultBeans;
+        this.listBeans=listBeans;
     }
 
     public int getLayoutId() {
@@ -52,7 +52,7 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder,final int position){
         TrainAdapter.ViewHolder itemHolder=(TrainAdapter.ViewHolder)holder;
-        itemHolder.bindHolder(resultBeans.get(position));
+        itemHolder.bindHolder(listBeans.get(position));
 
         //点击事件注册及分发
         if(null!=itemClickListener){
@@ -72,7 +72,7 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
      */
     @Override
     public int getItemCount(){
-        return resultBeans.size();
+        return listBeans.size();
     }
 
     /**
@@ -112,15 +112,15 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             mTvSeatType=itemView.findViewById(R.id.tv_seat_type);
         }
 
-        public void bindHolder(Station.ResultBean resultBean){
-            mTvDepartureTime.setText(resultBean.getDeparturetime());
-            mTvDepartureStation.setText(resultBean.getStation());
-            mTvCostTime.setText(resultBean.getCosttime());
-            mTvTrainNo.setText(resultBean.getTrainno());
-            mTvArrivalTime.setText(resultBean.getArrivaltime());
-            mTvArrivalStation.setText(resultBean.getEndstation());
-            mTvPrice.setText(resultBean.getPriceed());
-            mTvSeatType.setText(resultBean.getType());
+        public void bindHolder(Station.ResultBean.ListBean listBean){
+            mTvDepartureTime.setText(listBean.getDeparturetime());
+            mTvDepartureStation.setText(listBean.getStation());
+            mTvCostTime.setText(listBean.getCosttime());
+            mTvTrainNo.setText(listBean.getTrainno());
+            mTvArrivalTime.setText(listBean.getArrivaltime());
+            mTvArrivalStation.setText(listBean.getEndstation());
+            mTvPrice.setText(listBean.getPriceed());
+            mTvSeatType.setText(listBean.getType());
         }
     }
 }

@@ -1,13 +1,8 @@
-package com.example.trainschedule.module.station;
+package com.example.trainschedule.core.fragment;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -18,6 +13,7 @@ import android.widget.ImageView;
 import com.example.trainschedule.base.BaseFragment;
 import com.example.trainschedule.bean.StationTip;
 import com.example.trainschedule.R;
+import com.example.trainschedule.core.activity.StationResultActivity;
 import com.example.trainschedule.utils.TextUtils;
 import com.example.trainschedule.utils.FileUtils;
 import com.google.gson.Gson;
@@ -72,7 +68,7 @@ public class StationFragment extends BaseFragment {
     //请求接口
     private String url;
 
-    private List<String> resultBeans=new ArrayList<String>();
+    private List<String> resultBeans=new ArrayList<>();
 
     /**
      * 判断CheckBox是否被选中
@@ -86,7 +82,7 @@ public class StationFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        url=getString(R.string.afanda_url_station_tip) + getString(R.string.afanda_station_tip_key);
+        url=getString(R.string.jisu_url_station);
         //getData();
         dealData();
 
@@ -114,7 +110,7 @@ public class StationFragment extends BaseFragment {
 
                     //使用Intent进行传值页面跳转
                     Intent intent=new Intent();
-                    intent.setClass(StationFragment.this.getActivity(),StationResultActivity.class);
+                    intent.setClass(StationFragment.this.getActivity(), StationResultActivity.class);
                     intent.putExtra("key1",start_station);
                     intent.putExtra("key2",end_station);
                     StationFragment.this.getActivity().startActivity(intent);
@@ -130,9 +126,6 @@ public class StationFragment extends BaseFragment {
                 //获取输入的内容
                 String start_station=mTvStartStation.getText().toString();
                 String end_station=mTvEndStation.getText().toString();
-                //输出输入的内容
-                System.out.println("出发车站："+start_station);
-                System.out.println("到达车站："+end_station);
 
                 //设置CheckBox的监听事件，判断CheckBox是否被选中
                 mCbIsHigh.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){

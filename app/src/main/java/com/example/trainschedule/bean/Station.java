@@ -12,283 +12,362 @@ import java.util.List;
 
 public class Station{
 
+
     /**
      * status : 0
      * msg : ok
-     * result : [{"trainno":"G34","type":"高铁","station":"杭州东","endstation":"北京南","departuretime":"07:18","arrivaltime":"13:07","sequenceno":"1","costtime":"5时49分","distance":"1279","isend":"1","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0.0","pricerw2":"0.0","priceyw1":"0.0","priceyw2":"0.0","priceyw3":"0.0","priceyd":"907.0","priceed":"538.5"},{"trainno":"G32","type":"高铁","station":"杭州东","endstation":"北京南","departuretime":"08:30","arrivaltime":"13:28","sequenceno":"1","costtime":"4时58分","distance":"1279","isend":"1","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0.0","pricerw2":"0.0","priceyw1":"0.0","priceyw2":"0.0","priceyw3":"0.0","priceyd":"907.0","priceed":"538.5"}]
+     * result : {"start":"上饶","end":"南昌","ishigh":"0","date":"2019-04-01","list":[{"trainno":"G9860","type":"","station":"上饶","endstation":"南昌","departuretime":"","arrivaltime":"","sequenceno":"0","costtime":"0分","distance":"0","isend":"0","trainno12306":"57000G986000","typename":""},{"trainno":"G5004","type":"","station":"上饶","endstation":"南昌","departuretime":"","arrivaltime":"","sequenceno":"0","costtime":"0分","distance":"0","isend":"0","trainno12306":"57000G500402","typename":""},{"trainno":"K1256","type":"K","station":"上饶","endstation":"南昌","departuretime":"03:24","arrivaltime":"06:15","sequenceno":"10","costtime":"2时51分","distance":"0","isend":"0","trainno12306":"5a000K1256A0","typename":"快速"},{"trainno":"K1257","type":"K","station":"上饶","endstation":"南昌","departuretime":"03:24","arrivaltime":"06:15","sequenceno":"10","costtime":"2时51分","distance":"0","isend":"0","trainno12306":"5a000K1256A0","typename":"快速"},{"trainno":"K287","type":"K","station":"上饶","endstation":"南昌","departuretime":"03:32","arrivaltime":"06:24","sequenceno":"7","costtime":"2时52分","distance":"0","isend":"1","trainno12306":"550000K28710","typename":"快速"},{"trainno":"G5003","type":"G","station":"上饶","endstation":"南昌","departuretime":"08:20","arrivaltime":"09:51","sequenceno":"1","costtime":"1时31分","distance":"0","isend":"1","trainno12306":"57000G500307","pricesw":"337","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"179.5","priceed":"107.0"},{"trainno":"K8713","type":"K","station":"上饶","endstation":"南昌","departuretime":"08:44","arrivaltime":"12:05","sequenceno":"2","costtime":"0分","distance":"0","isend":"1","trainno12306":"57000K87130A","pricesw":"","pricetd":"","pricerz":"60.5","priceyz":"40.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"快速"},{"trainno":"G1756","type":"G","station":"上饶","endstation":"南昌西","departuretime":"08:54","arrivaltime":"10:01","sequenceno":"5","costtime":"1时7分","distance":"0","isend":"0","trainno12306":"58000G175603","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1757","type":"G","station":"上饶","endstation":"南昌西","departuretime":"08:54","arrivaltime":"10:01","sequenceno":"5","costtime":"1时7分","distance":"0","isend":"0","trainno12306":"58000G175603","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1321","type":"G","station":"上饶","endstation":"南昌西","departuretime":"09:08","arrivaltime":"10:11","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G132160","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1421","type":"G","station":"上饶","endstation":"南昌西","departuretime":"09:29","arrivaltime":"10:25","sequenceno":"6","costtime":"56分","distance":"0","isend":"0","trainno12306":"56000G142160","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1383","type":"G","station":"上饶","endstation":"南昌","departuretime":"09:35","arrivaltime":"10:53","sequenceno":"8","costtime":"1时18分","distance":"0","isend":"1","trainno12306":"5l000G138380","pricesw":"337","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"179.5","priceed":"107.0"},{"trainno":"G1403","type":"G","station":"上饶","endstation":"南昌西","departuretime":"09:45","arrivaltime":"10:55","sequenceno":"6","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"56000G140340","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2365","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:08","arrivaltime":"11:11","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G236550","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1371","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:15","arrivaltime":"11:18","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G137170","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1416","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:20","arrivaltime":"11:23","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5e000G141660","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1417","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:20","arrivaltime":"11:23","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5e000G141660","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1695","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:24","arrivaltime":"11:33","sequenceno":"5","costtime":"1时9分","distance":"0","isend":"0","trainno12306":"58000G169805","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1698","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:24","arrivaltime":"11:33","sequenceno":"5","costtime":"1时9分","distance":"0","isend":"0","trainno12306":"58000G169805","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1341","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:25","arrivaltime":"11:28","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G1341A0","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2369","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:30","arrivaltime":"11:38","sequenceno":"7","costtime":"1时8分","distance":"0","isend":"0","trainno12306":"5n000G237200","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2372","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:30","arrivaltime":"11:38","sequenceno":"7","costtime":"1时8分","distance":"0","isend":"0","trainno12306":"5n000G237200","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2046","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:37","arrivaltime":"11:54","sequenceno":"9","costtime":"1时17分","distance":"0","isend":"0","trainno12306":"5n000G204605","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2047","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:37","arrivaltime":"11:54","sequenceno":"9","costtime":"1时17分","distance":"0","isend":"0","trainno12306":"5n000G204605","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1405","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:01","arrivaltime":"12:46","sequenceno":"1","costtime":"1时45分","distance":"0","isend":"0","trainno12306":"57000G14050B","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1505","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:07","arrivaltime":"12:21","sequenceno":"12","costtime":"1时14分","distance":"0","isend":"0","trainno12306":"5l000G150511","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1337","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:24","arrivaltime":"12:27","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G133730","pricesw":"","pricetd":"210.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1340","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:24","arrivaltime":"12:27","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G133730","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1379","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:29","arrivaltime":"12:32","sequenceno":"12","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G137901","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1397","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:35","arrivaltime":"12:42","sequenceno":"9","costtime":"1时7分","distance":"0","isend":"0","trainno12306":"5i000G139720","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1503","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:51","arrivaltime":"13:04","sequenceno":"10","costtime":"1时13分","distance":"0","isend":"0","trainno12306":"5l000G150390","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2326","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:57","arrivaltime":"12:55","sequenceno":"11","costtime":"58分","distance":"0","isend":"1","trainno12306":"5j000G232630","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2327","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:57","arrivaltime":"12:55","sequenceno":"11","costtime":"58分","distance":"0","isend":"1","trainno12306":"5j000G232630","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1981","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:08","arrivaltime":"13:11","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5j000G198400","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1984","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:08","arrivaltime":"13:11","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5j000G198400","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1619","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:08","arrivaltime":"13:16","sequenceno":"9","costtime":"1时8分","distance":"0","isend":"1","trainno12306":"5i000G161930","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1377","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:17","arrivaltime":"13:21","sequenceno":"13","costtime":"1时4分","distance":"0","isend":"0","trainno12306":"5l000G137750","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2342","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:24","arrivaltime":"13:27","sequenceno":"14","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5e000G234300","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2343","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:24","arrivaltime":"13:27","sequenceno":"14","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5e000G234300","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1665","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:42","arrivaltime":"13:39","sequenceno":"14","costtime":"57分","distance":"0","isend":"1","trainno12306":"5l000G166520","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"K8721","type":"K","station":"上饶","endstation":"南昌","departuretime":"12:46","arrivaltime":"16:02","sequenceno":"2","costtime":"3时16分","distance":"0","isend":"1","trainno12306":"57000K87210H","pricesw":"","pricetd":"","pricerz":"","priceyz":"40.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"快速"},{"trainno":"G1501","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:47","arrivaltime":"13:44","sequenceno":"7","costtime":"57分","distance":"0","isend":"0","trainno12306":"5l000G150150","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G860","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:52","arrivaltime":"14:09","sequenceno":"4","costtime":"1时17分","distance":"0","isend":"0","trainno12306":"580000G86003","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G861","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:52","arrivaltime":"14:09","sequenceno":"4","costtime":"1时17分","distance":"0","isend":"0","trainno12306":"580000G86003","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2302","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:53","arrivaltime":"14:03","sequenceno":"8","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"5j000G230270","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2303","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:53","arrivaltime":"14:03","sequenceno":"8","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"5j000G230270","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G61","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:13","arrivaltime":"14:17","sequenceno":"13","costtime":"1时4分","distance":"0","isend":"1","trainno12306":"4p00000G610A","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1301","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:19","arrivaltime":"14:22","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G130160","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1685","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:29","arrivaltime":"14:51","sequenceno":"13","costtime":"1时22分","distance":"0","isend":"0","trainno12306":"5n000G16880B","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1688","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:29","arrivaltime":"14:51","sequenceno":"13","costtime":"1时22分","distance":"0","isend":"0","trainno12306":"5n000G16880B","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1391","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:43","arrivaltime":"15:01","sequenceno":"5","costtime":"1时18分","distance":"0","isend":"0","trainno12306":"56000G139100","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1462","type":"","station":"上饶","endstation":"南昌","departuretime":"13:44","arrivaltime":"","sequenceno":"0","costtime":"0分","distance":"0","isend":"0","trainno12306":"57000G146200","typename":""},{"trainno":"G2338","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:52","arrivaltime":"15:06","sequenceno":"6","costtime":"1时14分","distance":"0","isend":"0","trainno12306":"58000G233800","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2339","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:52","arrivaltime":"15:06","sequenceno":"6","costtime":"1时14分","distance":"0","isend":"0","trainno12306":"58000G233800","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2362","type":"G","station":"上饶","endstation":"南昌西","departuretime":"14:00","arrivaltime":"15:17","sequenceno":"11","costtime":"1时17分","distance":"0","isend":"0","trainno12306":"5e000G236300","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2363","type":"G","station":"上饶","endstation":"南昌西","departuretime":"14:00","arrivaltime":"15:17","sequenceno":"11","costtime":"1时17分","distance":"0","isend":"0","trainno12306":"5e000G236300","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1375","type":"G","station":"上饶","endstation":"南昌西","departuretime":"14:11","arrivaltime":"15:21","sequenceno":"9","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"5l000G137570","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1451","type":"G","station":"上饶","endstation":"南昌西","departuretime":"14:21","arrivaltime":"15:26","sequenceno":"5","costtime":"1时5分","distance":"0","isend":"1","trainno12306":"56000G145113","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1333","type":"G","station":"上饶","endstation":"南昌西","departuretime":"14:29","arrivaltime":"15:32","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G133301","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1336","type":"G","station":"上饶","endstation":"南昌西","departuretime":"14:29","arrivaltime":"15:32","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G133301","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1387","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:02","arrivaltime":"16:13","sequenceno":"7","costtime":"1时11分","distance":"0","isend":"1","trainno12306":"5l000G138740","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2335","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:14","arrivaltime":"16:18","sequenceno":"7","costtime":"1时4分","distance":"0","isend":"0","trainno12306":"5l000G233551","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1369","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:20","arrivaltime":"16:23","sequenceno":"7","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G136930","pricesw":"","pricetd":"210.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G4207","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:36","arrivaltime":"16:58","sequenceno":"15","costtime":"1时22分","distance":"0","isend":"0","trainno12306":"58000G420601","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G4206","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:36","arrivaltime":"16:58","sequenceno":"15","costtime":"1时22分","distance":"0","isend":"0","trainno12306":"58000G420601","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1389","type":"G","station":"上饶","endstation":"南昌","departuretime":"15:37","arrivaltime":"16:48","sequenceno":"5","costtime":"1时11分","distance":"0","isend":"1","trainno12306":"5l000G138940","pricesw":"337","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"179.5","priceed":"107.0"},{"trainno":"G2040","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:54","arrivaltime":"17:05","sequenceno":"9","costtime":"1时11分","distance":"0","isend":"0","trainno12306":"5j000G204010","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2041","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:54","arrivaltime":"17:05","sequenceno":"9","costtime":"1时11分","distance":"0","isend":"0","trainno12306":"5j000G204010","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"K1185","type":"K","station":"上饶","endstation":"南昌","departuretime":"16:01","arrivaltime":"19:55","sequenceno":"12","costtime":"3时54分","distance":"0","isend":"0","trainno12306":"55000K118580","typename":"快速"},{"trainno":"K1188","type":"K","station":"上饶","endstation":"南昌","departuretime":"16:01","arrivaltime":"19:55","sequenceno":"12","costtime":"3时54分","distance":"0","isend":"0","trainno12306":"55000K118580","typename":"快速"},{"trainno":"G1353","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:13","arrivaltime":"17:16","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G135304","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1493","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:18","arrivaltime":"17:21","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"1","trainno12306":"5l000G149350","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1329","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:23","arrivaltime":"17:26","sequenceno":"7","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G132904","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1355","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:29","arrivaltime":"17:35","sequenceno":"7","costtime":"1时6分","distance":"0","isend":"0","trainno12306":"5l000G135530","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G99","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:35","arrivaltime":"17:31","sequenceno":"4","costtime":"56分","distance":"0","isend":"0","trainno12306":"5l00000G9903","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2036","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:40","arrivaltime":"17:45","sequenceno":"9","costtime":"1时5分","distance":"0","isend":"0","trainno12306":"5j000G203612","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2037","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:40","arrivaltime":"17:45","sequenceno":"9","costtime":"1时5分","distance":"0","isend":"0","trainno12306":"5j000G203612","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2323","type":"G","station":"上饶","endstation":"南昌","departuretime":"16:55","arrivaltime":"18:06","sequenceno":"9","costtime":"1时11分","distance":"0","isend":"1","trainno12306":"5j000G232240","pricesw":"338","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"180.5","priceed":"107.5"},{"trainno":"G2322","type":"G","station":"上饶","endstation":"南昌","departuretime":"16:55","arrivaltime":"18:06","sequenceno":"9","costtime":"1时11分","distance":"0","isend":"1","trainno12306":"5j000G232240","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2316","type":"G","station":"上饶","endstation":"南昌西","departuretime":"17:05","arrivaltime":"18:08","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5j000G231622","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2317","type":"G","station":"上饶","endstation":"南昌西","departuretime":"17:05","arrivaltime":"18:08","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5j000G231622","pricesw":"","pricetd":"210.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G635","type":"G","station":"上饶","endstation":"南昌西","departuretime":"17:19","arrivaltime":"18:27","sequenceno":"11","costtime":"1时8分","distance":"0","isend":"0","trainno12306":"5i0000G63561","pricesw":"","pricetd":"210.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1495","type":"G","station":"上饶","endstation":"南昌","departuretime":"17:35","arrivaltime":"18:44","sequenceno":"11","costtime":"1时9分","distance":"0","isend":"1","trainno12306":"5l000G149520","pricesw":"338","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"180.5","priceed":"107.5"},{"trainno":"G33","type":"G","station":"上饶","endstation":"南昌西","departuretime":"17:43","arrivaltime":"18:47","sequenceno":"16","costtime":"1时4分","distance":"0","isend":"1","trainno12306":"2400000G3326","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1305","type":"G","station":"上饶","endstation":"南昌西","departuretime":"17:48","arrivaltime":"18:51","sequenceno":"4","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G130540","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1461","type":"G","station":"上饶","endstation":"南昌西","departuretime":"17:53","arrivaltime":"18:57","sequenceno":"5","costtime":"1时4分","distance":"0","isend":"1","trainno12306":"56000G146110","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G5306","type":"G","station":"上饶","endstation":"南昌西","departuretime":"18:03","arrivaltime":"19:18","sequenceno":"12","costtime":"1时15分","distance":"0","isend":"1","trainno12306":"5n000G530602","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G5307","type":"G","station":"上饶","endstation":"南昌西","departuretime":"18:03","arrivaltime":"19:18","sequenceno":"12","costtime":"1时15分","distance":"0","isend":"1","trainno12306":"5n000G530602","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1359","type":"G","station":"上饶","endstation":"南昌西","departuretime":"18:18","arrivaltime":"19:28","sequenceno":"7","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"5l000G135961","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1483","type":"G","station":"上饶","endstation":"南昌西","departuretime":"18:37","arrivaltime":"19:40","sequenceno":"11","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G148340","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1582","type":"G","station":"上饶","endstation":"南昌","departuretime":"19:20","arrivaltime":"20:30","sequenceno":"10","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"5l000G158320","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1583","type":"G","station":"上饶","endstation":"南昌","departuretime":"19:20","arrivaltime":"20:30","sequenceno":"10","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"5l000G158320","pricesw":"338","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"180.5","priceed":"107.5"},{"trainno":"G1361","type":"G","station":"上饶","endstation":"南昌西","departuretime":"19:30","arrivaltime":"20:33","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G136104","pricesw":"","pricetd":"210.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1691","type":"G","station":"上饶","endstation":"南昌西","departuretime":"19:31","arrivaltime":"20:45","sequenceno":"11","costtime":"1时14分","distance":"0","isend":"0","trainno12306":"5n000G169407","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1694","type":"G","station":"上饶","endstation":"南昌西","departuretime":"19:31","arrivaltime":"20:45","sequenceno":"11","costtime":"1时14分","distance":"0","isend":"0","trainno12306":"5n000G169407","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1363","type":"G","station":"上饶","endstation":"南昌西","departuretime":"19:59","arrivaltime":"21:02","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G136351","pricesw":"","pricetd":"210.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G5312","type":"G","station":"上饶","endstation":"南昌","departuretime":"20:08","arrivaltime":"21:25","sequenceno":"4","costtime":"1时17分","distance":"0","isend":"1","trainno12306":"58000G531200","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G5313","type":"G","station":"上饶","endstation":"南昌","departuretime":"20:08","arrivaltime":"21:25","sequenceno":"4","costtime":"1时17分","distance":"0","isend":"1","trainno12306":"58000G531200","pricesw":"337","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"179.5","priceed":"107.0"},{"trainno":"G1365","type":"G","station":"上饶","endstation":"南昌西","departuretime":"20:19","arrivaltime":"21:22","sequenceno":"7","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G136562","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1459","type":"G","station":"上饶","endstation":"南昌西","departuretime":"20:24","arrivaltime":"21:27","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5j000G145801","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1458","type":"G","station":"上饶","endstation":"南昌西","departuretime":"20:24","arrivaltime":"21:27","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5j000G145801","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2346","type":"G","station":"上饶","endstation":"南昌西","departuretime":"20:31","arrivaltime":"21:34","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5e000G234600","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2347","type":"G","station":"上饶","endstation":"南昌西","departuretime":"20:31","arrivaltime":"21:34","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5e000G234600","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"K122","type":"K","station":"上饶","endstation":"南昌","departuretime":"20:55","arrivaltime":"23:52","sequenceno":"9","costtime":"2时57分","distance":"0","isend":"0","trainno12306":"550000K123E0","typename":"快速"},{"trainno":"K123","type":"K","station":"上饶","endstation":"南昌","departuretime":"20:55","arrivaltime":"23:52","sequenceno":"9","costtime":"2时57分","distance":"0","isend":"0","trainno12306":"550000K123E0","typename":"快速"},{"trainno":"K1586","type":"K","station":"上饶","endstation":"南昌","departuretime":"21:08","arrivaltime":"00:07","sequenceno":"9","costtime":"2时59分","distance":"0","isend":"0","trainno12306":"5a000K158608","typename":"快速"},{"trainno":"K1587","type":"K","station":"上饶","endstation":"南昌","departuretime":"21:08","arrivaltime":"00:07","sequenceno":"9","costtime":"2时59分","distance":"0","isend":"0","trainno12306":"5a000K158608","typename":"快速"},{"trainno":"G2356","type":"G","station":"上饶","endstation":"南昌","departuretime":"21:08","arrivaltime":"22:19","sequenceno":"15","costtime":"1时11分","distance":"0","isend":"1","trainno12306":"5e000G235700","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2357","type":"G","station":"上饶","endstation":"南昌","departuretime":"21:08","arrivaltime":"22:19","sequenceno":"15","costtime":"1时11分","distance":"0","isend":"1","trainno12306":"5e000G235700","pricesw":"338","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"180.5","priceed":"107.5"},{"trainno":"G1395","type":"G","station":"上饶","endstation":"南昌西","departuretime":"21:22","arrivaltime":"22:26","sequenceno":"8","costtime":"1时4分","distance":"0","isend":"1","trainno12306":"5l000G139540","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"K253","type":"K","station":"上饶","endstation":"南昌","departuretime":"23:01","arrivaltime":"01:52","sequenceno":"9","costtime":"2时51分","distance":"0","isend":"0","trainno12306":"550000K253D0","typename":"快速"},{"trainno":"K252","type":"K","station":"上饶","endstation":"南昌","departuretime":"23:01","arrivaltime":"01:52","sequenceno":"9","costtime":"2时51分","distance":"0","isend":"0","trainno12306":"550000K253D0","typename":"快速"},{"trainno":"K351","type":"K","station":"上饶","endstation":"南昌","departuretime":"23:30","arrivaltime":"02:23","sequenceno":"10","costtime":"2时53分","distance":"0","isend":"0","trainno12306":"550000K351C0","typename":"快速"},{"trainno":"K354","type":"K","station":"上饶","endstation":"南昌","departuretime":"23:30","arrivaltime":"02:23","sequenceno":"10","costtime":"2时53分","distance":"0","isend":"0","trainno12306":"550000K351C0","typename":"快速"}]}
      */
 
     private String status;
     private String msg;
-    private List<ResultBean> result;
+    private ResultBean result;
 
-    public String getStatus(){
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status){
-        this.status=status;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public String getMsg(){
+    public String getMsg() {
         return msg;
     }
 
-    public void setMsg(String msg){
-        this.msg=msg;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
-    public List<ResultBean> getResult(){
+    public ResultBean getResult() {
         return result;
     }
 
-    public void setResult(List<ResultBean> result){
-        this.result=result;
+    public void setResult(ResultBean result) {
+        this.result = result;
     }
 
-    public static class ResultBean{
+    public static class ResultBean {
         /**
-         * trainno : G34
-         * type : 高铁
-         * station : 杭州东
-         * endstation : 北京南
-         * departuretime : 07:18
-         * arrivaltime : 13:07
-         * sequenceno : 1
-         * costtime : 5时49分
-         * distance : 1279
-         * isend : 1
-         * pricesw :
-         * pricetd :
-         * pricegr1 :
-         * pricegr2 :
-         * pricerw1 : 0.0
-         * pricerw2 : 0.0
-         * priceyw1 : 0.0
-         * priceyw2 : 0.0
-         * priceyw3 : 0.0
-         * priceyd : 907.0
-         * priceed : 538.5
+         * start : 上饶
+         * end : 南昌
+         * ishigh : 0
+         * date : 2019-04-01
+         * list : [{"trainno":"G9860","type":"","station":"上饶","endstation":"南昌","departuretime":"","arrivaltime":"","sequenceno":"0","costtime":"0分","distance":"0","isend":"0","trainno12306":"57000G986000","typename":""},{"trainno":"G5004","type":"","station":"上饶","endstation":"南昌","departuretime":"","arrivaltime":"","sequenceno":"0","costtime":"0分","distance":"0","isend":"0","trainno12306":"57000G500402","typename":""},{"trainno":"K1256","type":"K","station":"上饶","endstation":"南昌","departuretime":"03:24","arrivaltime":"06:15","sequenceno":"10","costtime":"2时51分","distance":"0","isend":"0","trainno12306":"5a000K1256A0","typename":"快速"},{"trainno":"K1257","type":"K","station":"上饶","endstation":"南昌","departuretime":"03:24","arrivaltime":"06:15","sequenceno":"10","costtime":"2时51分","distance":"0","isend":"0","trainno12306":"5a000K1256A0","typename":"快速"},{"trainno":"K287","type":"K","station":"上饶","endstation":"南昌","departuretime":"03:32","arrivaltime":"06:24","sequenceno":"7","costtime":"2时52分","distance":"0","isend":"1","trainno12306":"550000K28710","typename":"快速"},{"trainno":"G5003","type":"G","station":"上饶","endstation":"南昌","departuretime":"08:20","arrivaltime":"09:51","sequenceno":"1","costtime":"1时31分","distance":"0","isend":"1","trainno12306":"57000G500307","pricesw":"337","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"179.5","priceed":"107.0"},{"trainno":"K8713","type":"K","station":"上饶","endstation":"南昌","departuretime":"08:44","arrivaltime":"12:05","sequenceno":"2","costtime":"0分","distance":"0","isend":"1","trainno12306":"57000K87130A","pricesw":"","pricetd":"","pricerz":"60.5","priceyz":"40.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"快速"},{"trainno":"G1756","type":"G","station":"上饶","endstation":"南昌西","departuretime":"08:54","arrivaltime":"10:01","sequenceno":"5","costtime":"1时7分","distance":"0","isend":"0","trainno12306":"58000G175603","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1757","type":"G","station":"上饶","endstation":"南昌西","departuretime":"08:54","arrivaltime":"10:01","sequenceno":"5","costtime":"1时7分","distance":"0","isend":"0","trainno12306":"58000G175603","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1321","type":"G","station":"上饶","endstation":"南昌西","departuretime":"09:08","arrivaltime":"10:11","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G132160","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1421","type":"G","station":"上饶","endstation":"南昌西","departuretime":"09:29","arrivaltime":"10:25","sequenceno":"6","costtime":"56分","distance":"0","isend":"0","trainno12306":"56000G142160","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1383","type":"G","station":"上饶","endstation":"南昌","departuretime":"09:35","arrivaltime":"10:53","sequenceno":"8","costtime":"1时18分","distance":"0","isend":"1","trainno12306":"5l000G138380","pricesw":"337","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"179.5","priceed":"107.0"},{"trainno":"G1403","type":"G","station":"上饶","endstation":"南昌西","departuretime":"09:45","arrivaltime":"10:55","sequenceno":"6","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"56000G140340","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2365","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:08","arrivaltime":"11:11","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G236550","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1371","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:15","arrivaltime":"11:18","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G137170","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1416","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:20","arrivaltime":"11:23","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5e000G141660","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1417","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:20","arrivaltime":"11:23","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5e000G141660","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1695","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:24","arrivaltime":"11:33","sequenceno":"5","costtime":"1时9分","distance":"0","isend":"0","trainno12306":"58000G169805","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1698","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:24","arrivaltime":"11:33","sequenceno":"5","costtime":"1时9分","distance":"0","isend":"0","trainno12306":"58000G169805","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1341","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:25","arrivaltime":"11:28","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G1341A0","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2369","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:30","arrivaltime":"11:38","sequenceno":"7","costtime":"1时8分","distance":"0","isend":"0","trainno12306":"5n000G237200","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2372","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:30","arrivaltime":"11:38","sequenceno":"7","costtime":"1时8分","distance":"0","isend":"0","trainno12306":"5n000G237200","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2046","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:37","arrivaltime":"11:54","sequenceno":"9","costtime":"1时17分","distance":"0","isend":"0","trainno12306":"5n000G204605","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2047","type":"G","station":"上饶","endstation":"南昌西","departuretime":"10:37","arrivaltime":"11:54","sequenceno":"9","costtime":"1时17分","distance":"0","isend":"0","trainno12306":"5n000G204605","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1405","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:01","arrivaltime":"12:46","sequenceno":"1","costtime":"1时45分","distance":"0","isend":"0","trainno12306":"57000G14050B","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1505","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:07","arrivaltime":"12:21","sequenceno":"12","costtime":"1时14分","distance":"0","isend":"0","trainno12306":"5l000G150511","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1337","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:24","arrivaltime":"12:27","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G133730","pricesw":"","pricetd":"210.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1340","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:24","arrivaltime":"12:27","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G133730","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1379","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:29","arrivaltime":"12:32","sequenceno":"12","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G137901","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1397","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:35","arrivaltime":"12:42","sequenceno":"9","costtime":"1时7分","distance":"0","isend":"0","trainno12306":"5i000G139720","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1503","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:51","arrivaltime":"13:04","sequenceno":"10","costtime":"1时13分","distance":"0","isend":"0","trainno12306":"5l000G150390","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2326","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:57","arrivaltime":"12:55","sequenceno":"11","costtime":"58分","distance":"0","isend":"1","trainno12306":"5j000G232630","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2327","type":"G","station":"上饶","endstation":"南昌西","departuretime":"11:57","arrivaltime":"12:55","sequenceno":"11","costtime":"58分","distance":"0","isend":"1","trainno12306":"5j000G232630","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1981","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:08","arrivaltime":"13:11","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5j000G198400","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1984","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:08","arrivaltime":"13:11","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5j000G198400","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1619","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:08","arrivaltime":"13:16","sequenceno":"9","costtime":"1时8分","distance":"0","isend":"1","trainno12306":"5i000G161930","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1377","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:17","arrivaltime":"13:21","sequenceno":"13","costtime":"1时4分","distance":"0","isend":"0","trainno12306":"5l000G137750","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2342","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:24","arrivaltime":"13:27","sequenceno":"14","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5e000G234300","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2343","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:24","arrivaltime":"13:27","sequenceno":"14","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5e000G234300","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1665","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:42","arrivaltime":"13:39","sequenceno":"14","costtime":"57分","distance":"0","isend":"1","trainno12306":"5l000G166520","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"K8721","type":"K","station":"上饶","endstation":"南昌","departuretime":"12:46","arrivaltime":"16:02","sequenceno":"2","costtime":"3时16分","distance":"0","isend":"1","trainno12306":"57000K87210H","pricesw":"","pricetd":"","pricerz":"","priceyz":"40.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"快速"},{"trainno":"G1501","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:47","arrivaltime":"13:44","sequenceno":"7","costtime":"57分","distance":"0","isend":"0","trainno12306":"5l000G150150","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G860","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:52","arrivaltime":"14:09","sequenceno":"4","costtime":"1时17分","distance":"0","isend":"0","trainno12306":"580000G86003","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G861","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:52","arrivaltime":"14:09","sequenceno":"4","costtime":"1时17分","distance":"0","isend":"0","trainno12306":"580000G86003","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2302","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:53","arrivaltime":"14:03","sequenceno":"8","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"5j000G230270","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2303","type":"G","station":"上饶","endstation":"南昌西","departuretime":"12:53","arrivaltime":"14:03","sequenceno":"8","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"5j000G230270","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G61","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:13","arrivaltime":"14:17","sequenceno":"13","costtime":"1时4分","distance":"0","isend":"1","trainno12306":"4p00000G610A","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1301","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:19","arrivaltime":"14:22","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G130160","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1685","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:29","arrivaltime":"14:51","sequenceno":"13","costtime":"1时22分","distance":"0","isend":"0","trainno12306":"5n000G16880B","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1688","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:29","arrivaltime":"14:51","sequenceno":"13","costtime":"1时22分","distance":"0","isend":"0","trainno12306":"5n000G16880B","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1391","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:43","arrivaltime":"15:01","sequenceno":"5","costtime":"1时18分","distance":"0","isend":"0","trainno12306":"56000G139100","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1462","type":"","station":"上饶","endstation":"南昌","departuretime":"13:44","arrivaltime":"","sequenceno":"0","costtime":"0分","distance":"0","isend":"0","trainno12306":"57000G146200","typename":""},{"trainno":"G2338","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:52","arrivaltime":"15:06","sequenceno":"6","costtime":"1时14分","distance":"0","isend":"0","trainno12306":"58000G233800","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2339","type":"G","station":"上饶","endstation":"南昌西","departuretime":"13:52","arrivaltime":"15:06","sequenceno":"6","costtime":"1时14分","distance":"0","isend":"0","trainno12306":"58000G233800","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2362","type":"G","station":"上饶","endstation":"南昌西","departuretime":"14:00","arrivaltime":"15:17","sequenceno":"11","costtime":"1时17分","distance":"0","isend":"0","trainno12306":"5e000G236300","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2363","type":"G","station":"上饶","endstation":"南昌西","departuretime":"14:00","arrivaltime":"15:17","sequenceno":"11","costtime":"1时17分","distance":"0","isend":"0","trainno12306":"5e000G236300","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1375","type":"G","station":"上饶","endstation":"南昌西","departuretime":"14:11","arrivaltime":"15:21","sequenceno":"9","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"5l000G137570","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1451","type":"G","station":"上饶","endstation":"南昌西","departuretime":"14:21","arrivaltime":"15:26","sequenceno":"5","costtime":"1时5分","distance":"0","isend":"1","trainno12306":"56000G145113","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1333","type":"G","station":"上饶","endstation":"南昌西","departuretime":"14:29","arrivaltime":"15:32","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G133301","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1336","type":"G","station":"上饶","endstation":"南昌西","departuretime":"14:29","arrivaltime":"15:32","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G133301","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1387","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:02","arrivaltime":"16:13","sequenceno":"7","costtime":"1时11分","distance":"0","isend":"1","trainno12306":"5l000G138740","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2335","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:14","arrivaltime":"16:18","sequenceno":"7","costtime":"1时4分","distance":"0","isend":"0","trainno12306":"5l000G233551","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1369","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:20","arrivaltime":"16:23","sequenceno":"7","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G136930","pricesw":"","pricetd":"210.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G4207","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:36","arrivaltime":"16:58","sequenceno":"15","costtime":"1时22分","distance":"0","isend":"0","trainno12306":"58000G420601","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G4206","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:36","arrivaltime":"16:58","sequenceno":"15","costtime":"1时22分","distance":"0","isend":"0","trainno12306":"58000G420601","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1389","type":"G","station":"上饶","endstation":"南昌","departuretime":"15:37","arrivaltime":"16:48","sequenceno":"5","costtime":"1时11分","distance":"0","isend":"1","trainno12306":"5l000G138940","pricesw":"337","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"179.5","priceed":"107.0"},{"trainno":"G2040","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:54","arrivaltime":"17:05","sequenceno":"9","costtime":"1时11分","distance":"0","isend":"0","trainno12306":"5j000G204010","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2041","type":"G","station":"上饶","endstation":"南昌西","departuretime":"15:54","arrivaltime":"17:05","sequenceno":"9","costtime":"1时11分","distance":"0","isend":"0","trainno12306":"5j000G204010","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"K1185","type":"K","station":"上饶","endstation":"南昌","departuretime":"16:01","arrivaltime":"19:55","sequenceno":"12","costtime":"3时54分","distance":"0","isend":"0","trainno12306":"55000K118580","typename":"快速"},{"trainno":"K1188","type":"K","station":"上饶","endstation":"南昌","departuretime":"16:01","arrivaltime":"19:55","sequenceno":"12","costtime":"3时54分","distance":"0","isend":"0","trainno12306":"55000K118580","typename":"快速"},{"trainno":"G1353","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:13","arrivaltime":"17:16","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G135304","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1493","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:18","arrivaltime":"17:21","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"1","trainno12306":"5l000G149350","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1329","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:23","arrivaltime":"17:26","sequenceno":"7","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G132904","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1355","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:29","arrivaltime":"17:35","sequenceno":"7","costtime":"1时6分","distance":"0","isend":"0","trainno12306":"5l000G135530","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G99","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:35","arrivaltime":"17:31","sequenceno":"4","costtime":"56分","distance":"0","isend":"0","trainno12306":"5l00000G9903","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2036","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:40","arrivaltime":"17:45","sequenceno":"9","costtime":"1时5分","distance":"0","isend":"0","trainno12306":"5j000G203612","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2037","type":"G","station":"上饶","endstation":"南昌西","departuretime":"16:40","arrivaltime":"17:45","sequenceno":"9","costtime":"1时5分","distance":"0","isend":"0","trainno12306":"5j000G203612","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G2323","type":"G","station":"上饶","endstation":"南昌","departuretime":"16:55","arrivaltime":"18:06","sequenceno":"9","costtime":"1时11分","distance":"0","isend":"1","trainno12306":"5j000G232240","pricesw":"338","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"180.5","priceed":"107.5"},{"trainno":"G2322","type":"G","station":"上饶","endstation":"南昌","departuretime":"16:55","arrivaltime":"18:06","sequenceno":"9","costtime":"1时11分","distance":"0","isend":"1","trainno12306":"5j000G232240","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2316","type":"G","station":"上饶","endstation":"南昌西","departuretime":"17:05","arrivaltime":"18:08","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5j000G231622","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2317","type":"G","station":"上饶","endstation":"南昌西","departuretime":"17:05","arrivaltime":"18:08","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5j000G231622","pricesw":"","pricetd":"210.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G635","type":"G","station":"上饶","endstation":"南昌西","departuretime":"17:19","arrivaltime":"18:27","sequenceno":"11","costtime":"1时8分","distance":"0","isend":"0","trainno12306":"5i0000G63561","pricesw":"","pricetd":"210.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1495","type":"G","station":"上饶","endstation":"南昌","departuretime":"17:35","arrivaltime":"18:44","sequenceno":"11","costtime":"1时9分","distance":"0","isend":"1","trainno12306":"5l000G149520","pricesw":"338","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"180.5","priceed":"107.5"},{"trainno":"G33","type":"G","station":"上饶","endstation":"南昌西","departuretime":"17:43","arrivaltime":"18:47","sequenceno":"16","costtime":"1时4分","distance":"0","isend":"1","trainno12306":"2400000G3326","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1305","type":"G","station":"上饶","endstation":"南昌西","departuretime":"17:48","arrivaltime":"18:51","sequenceno":"4","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G130540","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1461","type":"G","station":"上饶","endstation":"南昌西","departuretime":"17:53","arrivaltime":"18:57","sequenceno":"5","costtime":"1时4分","distance":"0","isend":"1","trainno12306":"56000G146110","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G5306","type":"G","station":"上饶","endstation":"南昌西","departuretime":"18:03","arrivaltime":"19:18","sequenceno":"12","costtime":"1时15分","distance":"0","isend":"1","trainno12306":"5n000G530602","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G5307","type":"G","station":"上饶","endstation":"南昌西","departuretime":"18:03","arrivaltime":"19:18","sequenceno":"12","costtime":"1时15分","distance":"0","isend":"1","trainno12306":"5n000G530602","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1359","type":"G","station":"上饶","endstation":"南昌西","departuretime":"18:18","arrivaltime":"19:28","sequenceno":"7","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"5l000G135961","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1483","type":"G","station":"上饶","endstation":"南昌西","departuretime":"18:37","arrivaltime":"19:40","sequenceno":"11","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G148340","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1582","type":"G","station":"上饶","endstation":"南昌","departuretime":"19:20","arrivaltime":"20:30","sequenceno":"10","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"5l000G158320","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1583","type":"G","station":"上饶","endstation":"南昌","departuretime":"19:20","arrivaltime":"20:30","sequenceno":"10","costtime":"1时10分","distance":"0","isend":"0","trainno12306":"5l000G158320","pricesw":"338","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"180.5","priceed":"107.5"},{"trainno":"G1361","type":"G","station":"上饶","endstation":"南昌西","departuretime":"19:30","arrivaltime":"20:33","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G136104","pricesw":"","pricetd":"210.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1691","type":"G","station":"上饶","endstation":"南昌西","departuretime":"19:31","arrivaltime":"20:45","sequenceno":"11","costtime":"1时14分","distance":"0","isend":"0","trainno12306":"5n000G169407","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1694","type":"G","station":"上饶","endstation":"南昌西","departuretime":"19:31","arrivaltime":"20:45","sequenceno":"11","costtime":"1时14分","distance":"0","isend":"0","trainno12306":"5n000G169407","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G1363","type":"G","station":"上饶","endstation":"南昌西","departuretime":"19:59","arrivaltime":"21:02","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G136351","pricesw":"","pricetd":"210.5","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G5312","type":"G","station":"上饶","endstation":"南昌","departuretime":"20:08","arrivaltime":"21:25","sequenceno":"4","costtime":"1时17分","distance":"0","isend":"1","trainno12306":"58000G531200","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G5313","type":"G","station":"上饶","endstation":"南昌","departuretime":"20:08","arrivaltime":"21:25","sequenceno":"4","costtime":"1时17分","distance":"0","isend":"1","trainno12306":"58000G531200","pricesw":"337","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"179.5","priceed":"107.0"},{"trainno":"G1365","type":"G","station":"上饶","endstation":"南昌西","departuretime":"20:19","arrivaltime":"21:22","sequenceno":"7","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5l000G136562","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1459","type":"G","station":"上饶","endstation":"南昌西","departuretime":"20:24","arrivaltime":"21:27","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5j000G145801","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"G1458","type":"G","station":"上饶","endstation":"南昌西","departuretime":"20:24","arrivaltime":"21:27","sequenceno":"8","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5j000G145801","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2346","type":"G","station":"上饶","endstation":"南昌西","departuretime":"20:31","arrivaltime":"21:34","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5e000G234600","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2347","type":"G","station":"上饶","endstation":"南昌西","departuretime":"20:31","arrivaltime":"21:34","sequenceno":"9","costtime":"1时3分","distance":"0","isend":"0","trainno12306":"5e000G234600","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"K122","type":"K","station":"上饶","endstation":"南昌","departuretime":"20:55","arrivaltime":"23:52","sequenceno":"9","costtime":"2时57分","distance":"0","isend":"0","trainno12306":"550000K123E0","typename":"快速"},{"trainno":"K123","type":"K","station":"上饶","endstation":"南昌","departuretime":"20:55","arrivaltime":"23:52","sequenceno":"9","costtime":"2时57分","distance":"0","isend":"0","trainno12306":"550000K123E0","typename":"快速"},{"trainno":"K1586","type":"K","station":"上饶","endstation":"南昌","departuretime":"21:08","arrivaltime":"00:07","sequenceno":"9","costtime":"2时59分","distance":"0","isend":"0","trainno12306":"5a000K158608","typename":"快速"},{"trainno":"K1587","type":"K","station":"上饶","endstation":"南昌","departuretime":"21:08","arrivaltime":"00:07","sequenceno":"9","costtime":"2时59分","distance":"0","isend":"0","trainno12306":"5a000K158608","typename":"快速"},{"trainno":"G2356","type":"G","station":"上饶","endstation":"南昌","departuretime":"21:08","arrivaltime":"22:19","sequenceno":"15","costtime":"1时11分","distance":"0","isend":"1","trainno12306":"5e000G235700","typename":"高铁","priceyd":"","priceed":""},{"trainno":"G2357","type":"G","station":"上饶","endstation":"南昌","departuretime":"21:08","arrivaltime":"22:19","sequenceno":"15","costtime":"1时11分","distance":"0","isend":"1","trainno12306":"5e000G235700","pricesw":"338","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"180.5","priceed":"107.5"},{"trainno":"G1395","type":"G","station":"上饶","endstation":"南昌西","departuretime":"21:22","arrivaltime":"22:26","sequenceno":"8","costtime":"1时4分","distance":"0","isend":"1","trainno12306":"5l000G139540","pricesw":"349.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","typename":"高铁","priceyd":"186.5","priceed":"110.5"},{"trainno":"K253","type":"K","station":"上饶","endstation":"南昌","departuretime":"23:01","arrivaltime":"01:52","sequenceno":"9","costtime":"2时51分","distance":"0","isend":"0","trainno12306":"550000K253D0","typename":"快速"},{"trainno":"K252","type":"K","station":"上饶","endstation":"南昌","departuretime":"23:01","arrivaltime":"01:52","sequenceno":"9","costtime":"2时51分","distance":"0","isend":"0","trainno12306":"550000K253D0","typename":"快速"},{"trainno":"K351","type":"K","station":"上饶","endstation":"南昌","departuretime":"23:30","arrivaltime":"02:23","sequenceno":"10","costtime":"2时53分","distance":"0","isend":"0","trainno12306":"550000K351C0","typename":"快速"},{"trainno":"K354","type":"K","station":"上饶","endstation":"南昌","departuretime":"23:30","arrivaltime":"02:23","sequenceno":"10","costtime":"2时53分","distance":"0","isend":"0","trainno12306":"550000K351C0","typename":"快速"}]
          */
 
-        public ResultBean(String trainno,String station,String endstation,String departuretime,
-                          String arrivaltime,String costtime,String priceed,String type){
-            this.trainno=trainno;
-            this.station=station;
-            this.endstation=endstation;
-            this.departuretime=departuretime;
-            this.arrivaltime=arrivaltime;
-            this.costtime=costtime;
-            this.priceed=priceed;
-            this.type=type;
+        private String start;
+        private String end;
+        private String ishigh;
+        private String date;
+        private List<ListBean> list;
+
+        public String getStart() {
+            return start;
         }
 
-        private String trainno;
-        private String type;
-        private String station;
-        private String endstation;
-        private String departuretime;
-        private String arrivaltime;
-        private String sequenceno;
-        private String costtime;
-        private String distance;
-        private String isend;
-        private String pricesw;
-        private String pricetd;
-        private String pricegr1;
-        private String pricegr2;
-        private String pricerw1;
-        private String pricerw2;
-        private String priceyw1;
-        private String priceyw2;
-        private String priceyw3;
-        private String priceyd;
-        private String priceed;
-        private String pricerz;             //软座
-        private String priceyz;             //硬座
-
-        public String getTrainno(){
-            return trainno;
+        public void setStart(String start) {
+            this.start = start;
         }
 
-        public void setTrainno(String trainno){
-            this.trainno=trainno;
+        public String getEnd() {
+            return end;
         }
 
-        public String getType(){
-            return type;
+        public void setEnd(String end) {
+            this.end = end;
         }
 
-        public void setType(String type){
-            this.type=type;
+        public String getIshigh() {
+            return ishigh;
         }
 
-        public String getStation(){
-            return station;
+        public void setIshigh(String ishigh) {
+            this.ishigh = ishigh;
         }
 
-        public void setStation(String station){
-            this.station=station;
+        public String getDate() {
+            return date;
         }
 
-        public String getEndstation(){
-            return endstation;
+        public void setDate(String date) {
+            this.date = date;
         }
 
-        public void setEndstation(String endstation){
-            this.endstation=endstation;
+        public List<ListBean> getList() {
+            return list;
         }
 
-        public String getDeparturetime(){
-            return departuretime;
+        public void setList(List<ListBean> list) {
+            this.list = list;
         }
 
-        public void setDeparturetime(String departuretime){
-            this.departuretime=departuretime;
-        }
+        public static class ListBean {
+            /**
+             * trainno : G9860
+             * type :
+             * station : 上饶
+             * endstation : 南昌
+             * departuretime :
+             * arrivaltime :
+             * sequenceno : 0
+             * costtime : 0分
+             * distance : 0
+             * isend : 0
+             * trainno12306 : 57000G986000
+             * typename :
+             * pricesw : 337
+             * pricetd :
+             * pricegr1 :
+             * pricegr2 :
+             * pricerw1 :
+             * pricerw2 :
+             * priceyw1 :
+             * priceyw2 :
+             * priceyw3 :
+             * priceyd : 179.5
+             * priceed : 107.0
+             * pricerz : 60.5
+             * priceyz : 40.5
+             */
 
-        public String getArrivaltime(){
-            return arrivaltime;
-        }
+            private String trainno;
+            private String type;
+            private String station;
+            private String endstation;
+            private String departuretime;
+            private String arrivaltime;
+            private String sequenceno;
+            private String costtime;
+            private String distance;
+            private String isend;
+            private String trainno12306;
+            private String typename;
+            private String pricesw;
+            private String pricetd;
+            private String pricegr1;
+            private String pricegr2;
+            private String pricerw1;
+            private String pricerw2;
+            private String priceyw1;
+            private String priceyw2;
+            private String priceyw3;
+            private String priceyd;
+            private String priceed;
+            private String pricerz;
+            private String priceyz;
 
-        public void setArrivaltime(String arrivaltime){
-            this.arrivaltime=arrivaltime;
-        }
+            public ListBean(String trainno, String station, String endstation, String departuretime,
+                            String arrivaltime, String costtime, String priceed, String type) {
+                this.trainno = trainno;
+                this.station = station;
+                this.endstation = endstation;
+                this.departuretime = departuretime;
+                this.arrivaltime = arrivaltime;
+                this.costtime = costtime;
+                this.priceed = priceed;
+                this.type = type;
+            }
 
-        public String getSequenceno(){
-            return sequenceno;
-        }
+            public String getTrainno() {
+                return trainno;
+            }
 
-        public void setSequenceno(String sequenceno){
-            this.sequenceno=sequenceno;
-        }
+            public void setTrainno(String trainno) {
+                this.trainno = trainno;
+            }
 
-        public String getCosttime(){
-            return costtime;
-        }
+            public String getType() {
+                return type;
+            }
 
-        public void setCosttime(String costtime){
-            this.costtime=costtime;
-        }
+            public void setType(String type) {
+                this.type = type;
+            }
 
-        public String getDistance(){
-            return distance;
-        }
+            public String getStation() {
+                return station;
+            }
 
-        public void setDistance(String distance){
-            this.distance=distance;
-        }
+            public void setStation(String station) {
+                this.station = station;
+            }
 
-        public String getIsend(){
-            return isend;
-        }
+            public String getEndstation() {
+                return endstation;
+            }
 
-        public void setIsend(String isend){
-            this.isend=isend;
-        }
+            public void setEndstation(String endstation) {
+                this.endstation = endstation;
+            }
 
-        public String getPricesw(){
-            return pricesw;
-        }
+            public String getDeparturetime() {
+                return departuretime;
+            }
 
-        public void setPricesw(String pricesw){
-            this.pricesw=pricesw;
-        }
+            public void setDeparturetime(String departuretime) {
+                this.departuretime = departuretime;
+            }
 
-        public String getPricetd(){
-            return pricetd;
-        }
+            public String getArrivaltime() {
+                return arrivaltime;
+            }
 
-        public void setPricetd(String pricetd){
-            this.pricetd=pricetd;
-        }
+            public void setArrivaltime(String arrivaltime) {
+                this.arrivaltime = arrivaltime;
+            }
 
-        public String getPricegr1(){
-            return pricegr1;
-        }
+            public String getSequenceno() {
+                return sequenceno;
+            }
 
-        public void setPricegr1(String pricegr1){
-            this.pricegr1=pricegr1;
-        }
+            public void setSequenceno(String sequenceno) {
+                this.sequenceno = sequenceno;
+            }
 
-        public String getPricegr2(){
-            return pricegr2;
-        }
+            public String getCosttime() {
+                return costtime;
+            }
 
-        public void setPricegr2(String pricegr2){
-            this.pricegr2=pricegr2;
-        }
+            public void setCosttime(String costtime) {
+                this.costtime = costtime;
+            }
 
-        public String getPricerw1(){
-            return pricerw1;
-        }
+            public String getDistance() {
+                return distance;
+            }
 
-        public void setPricerw1(String pricerw1){
-            this.pricerw1=pricerw1;
-        }
+            public void setDistance(String distance) {
+                this.distance = distance;
+            }
 
-        public String getPricerw2(){
-            return pricerw2;
-        }
+            public String getIsend() {
+                return isend;
+            }
 
-        public void setPricerw2(String pricerw2){
-            this.pricerw2=pricerw2;
-        }
+            public void setIsend(String isend) {
+                this.isend = isend;
+            }
 
-        public String getPriceyw1(){
-            return priceyw1;
-        }
+            public String getTrainno12306() {
+                return trainno12306;
+            }
 
-        public void setPriceyw1(String priceyw1){
-            this.priceyw1=priceyw1;
-        }
+            public void setTrainno12306(String trainno12306) {
+                this.trainno12306 = trainno12306;
+            }
 
-        public String getPriceyw2(){
-            return priceyw2;
-        }
+            public String getTypename() {
+                return typename;
+            }
 
-        public void setPriceyw2(String priceyw2){
-            this.priceyw2=priceyw2;
-        }
+            public void setTypename(String typename) {
+                this.typename = typename;
+            }
 
-        public String getPriceyw3(){
-            return priceyw3;
-        }
+            public String getPricesw() {
+                return pricesw;
+            }
 
-        public void setPriceyw3(String priceyw3){
-            this.priceyw3=priceyw3;
-        }
+            public void setPricesw(String pricesw) {
+                this.pricesw = pricesw;
+            }
 
-        public String getPriceyd(){
-            return priceyd;
-        }
+            public String getPricetd() {
+                return pricetd;
+            }
 
-        public void setPriceyd(String priceyd){
-            this.priceyd=priceyd;
-        }
+            public void setPricetd(String pricetd) {
+                this.pricetd = pricetd;
+            }
 
-        public String getPriceed(){
-            return priceed;
-        }
+            public String getPricegr1() {
+                return pricegr1;
+            }
 
-        public void setPriceed(String priceed){
-            this.priceed=priceed;
-        }
+            public void setPricegr1(String pricegr1) {
+                this.pricegr1 = pricegr1;
+            }
 
-        public String getPricerz(){
-            return pricerz;
-        }
+            public String getPricegr2() {
+                return pricegr2;
+            }
 
-        public void setPricerz(String pricerz){
-            this.pricerz=pricerz;
-        }
+            public void setPricegr2(String pricegr2) {
+                this.pricegr2 = pricegr2;
+            }
 
-        public String getPriceyz(){
-            return priceyz;
-        }
+            public String getPricerw1() {
+                return pricerw1;
+            }
 
-        public void setPriceyz(String priceyz){
-            this.priceyz=priceyz;
+            public void setPricerw1(String pricerw1) {
+                this.pricerw1 = pricerw1;
+            }
+
+            public String getPricerw2() {
+                return pricerw2;
+            }
+
+            public void setPricerw2(String pricerw2) {
+                this.pricerw2 = pricerw2;
+            }
+
+            public String getPriceyw1() {
+                return priceyw1;
+            }
+
+            public void setPriceyw1(String priceyw1) {
+                this.priceyw1 = priceyw1;
+            }
+
+            public String getPriceyw2() {
+                return priceyw2;
+            }
+
+            public void setPriceyw2(String priceyw2) {
+                this.priceyw2 = priceyw2;
+            }
+
+            public String getPriceyw3() {
+                return priceyw3;
+            }
+
+            public void setPriceyw3(String priceyw3) {
+                this.priceyw3 = priceyw3;
+            }
+
+            public String getPriceyd() {
+                return priceyd;
+            }
+
+            public void setPriceyd(String priceyd) {
+                this.priceyd = priceyd;
+            }
+
+            public String getPriceed() {
+                return priceed;
+            }
+
+            public void setPriceed(String priceed) {
+                this.priceed = priceed;
+            }
+
+            public String getPricerz() {
+                return pricerz;
+            }
+
+            public void setPricerz(String pricerz) {
+                this.pricerz = pricerz;
+            }
+
+            public String getPriceyz() {
+                return priceyz;
+            }
+
+            public void setPriceyz(String priceyz) {
+                this.priceyz = priceyz;
+            }
         }
     }
 }

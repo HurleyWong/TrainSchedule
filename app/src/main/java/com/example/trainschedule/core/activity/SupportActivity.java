@@ -1,4 +1,4 @@
-package com.example.trainschedule.module.activity;
+package com.example.trainschedule.core.activity;
 
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;

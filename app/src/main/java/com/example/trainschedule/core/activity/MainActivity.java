@@ -1,4 +1,4 @@
-package com.example.trainschedule.module.activity;
+package com.example.trainschedule.core.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,9 +15,10 @@ import android.widget.Toast;
 
 import com.example.trainschedule.R;
 import com.example.trainschedule.base.BaseActivity;
+import com.example.trainschedule.core.fragment.DefaultFragment;
 import com.example.trainschedule.utils.ViewPagerUtils;
-import com.example.trainschedule.module.station.StationFragment;
-import com.example.trainschedule.module.train.TrainFragment;
+import com.example.trainschedule.core.fragment.StationFragment;
+import com.example.trainschedule.core.fragment.TrainFragment;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 

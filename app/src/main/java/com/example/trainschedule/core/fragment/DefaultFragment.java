@@ -1,18 +1,11 @@
-package com.example.trainschedule.module.activity;
+package com.example.trainschedule.core.fragment;
 
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.trainschedule.R;
 import com.example.trainschedule.base.BaseFragment;
-import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import butterknife.BindView;
