@@ -62,6 +62,6 @@ public class VolleyEngine {
             }
         });
         //把请求对象加入请求队列中
-        new Volley().newRequestQueue(context).add(request);
+        Volley.newRequestQueue(context).add(request);
     }
 }
