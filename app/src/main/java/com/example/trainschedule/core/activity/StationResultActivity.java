@@ -12,10 +12,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.trainschedule.base.BaseActivity;
 import com.example.trainschedule.core.adapter.TrainAdapter;
 import com.example.trainschedule.bean.Station;
@@ -25,8 +21,6 @@ import com.example.trainschedule.http.ResultCallback;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -117,6 +111,7 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
             Station station = gson.fromJson(result, Station.class);
 
             for (int i = 0; i < station.getResult().getList().size(); i ++) {
+                //如果价格不为0且时间不为0
                 if (station.getResult().getList().get(i).getPriceyz() != null) {
                     listBeans.add(new Station.ResultBean.ListBean(
                             station.getResult().getList().get(i).getTrainno(),
@@ -144,8 +139,6 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
         } catch (Exception e) {
             //创建AlertDialog的构造器对象
             AlertDialog.Builder builder=new AlertDialog.Builder(StationResultActivity.this);
-            //设置构造器标题
-            //builder.setTitle("错误");
             //构造器内容。为对话框设置文本项
             builder.setMessage(R.string.wrong_station);
             //为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
@@ -180,18 +173,18 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
      */
     @Override
     public void onItemClick(View view,int position){
-        String train_no=listBeans.get(position).getTrainno();
-        String start_station=listBeans.get(position).getStation();
-        String end_station=listBeans.get(position).getEndstation();
-        String start_time=listBeans.get(position).getDeparturetime();
-        String end_time=listBeans.get(position).getArrivaltime();
+        String trainNp=listBeans.get(position).getTrainno();
+        String startStation=listBeans.get(position).getStation();
+        String endStation=listBeans.get(position).getEndstation();
+        String startTime=listBeans.get(position).getDeparturetime();
+        String endTime=listBeans.get(position).getArrivaltime();
         Intent intent=new Intent();
         intent.setClass(this,TrainResultActivity.class);
-        intent.putExtra("key",train_no);
-        intent.putExtra("start_station",start_station);
-        intent.putExtra("end_station",end_station);
-        intent.putExtra("start_time",start_time);
-        intent.putExtra("end_time",end_time);
+        intent.putExtra("key",trainNp);
+        intent.putExtra("start_station",startStation);
+        intent.putExtra("end_station",endStation);
+        intent.putExtra("start_time",startTime);
+        intent.putExtra("end_time",endTime);
 
         StationResultActivity.this.startActivity(intent);
     }

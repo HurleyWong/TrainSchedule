@@ -47,8 +47,6 @@ dependencies {
 
     //Gson包
     implementation 'com.google.code.gson:gson:2.8.5'
-    //Volley包
-    implementation 'com.mcxiaoke.volley:library:1.0.19'
     //OkHttp包
     implementation 'com.squareup.okhttp3:okhttp:3.14.0'
 

@@ -13,10 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.trainschedule.base.BaseActivity;
 import com.example.trainschedule.core.adapter.TrainTimeAdapter;
 import com.example.trainschedule.bean.Train;
@@ -173,7 +169,7 @@ public class TrainResultActivity extends BaseActivity {
             //车次
             mTvTrainNo.setText(train.getResult().getTrainno());
             //类别
-            mTvTrainType.setText(train.getResult().getType());
+            mTvTrainType.setText(train.getResult().getTypename());
             //如果传过来的intent值不为空，则说明是从点击列车班次跳转过来的
             if(mKeyStartTime!=null&&mKeyEndTime!=null&&mKeyStartStation!=null&&mKeyEndStation!=null){
                 //出发车站
@@ -202,7 +198,6 @@ public class TrainResultActivity extends BaseActivity {
 
             for(int i=0;i<train.getResult().getList().size();i++){
                 if(train.getResult().getList().get(i).getArrivaltime().equals("----")){
-                    //Toast.makeText(TrainResultActivity.this,"测试1",Toast.LENGTH_SHORT).show();
                     listBeans.add(new Train.ResultBean.ListBean(
                             train.getResult().getList().get(i).getStation(),
                             train.getResult().getList().get(i).getDeparturetime(),
@@ -210,12 +205,11 @@ public class TrainResultActivity extends BaseActivity {
                             ""));
                 }
                 else{
-                    //Toast.makeText(TrainResultActivity.this,"测试2",Toast.LENGTH_SHORT).show();
                     listBeans.add(new Train.ResultBean.ListBean(
                             train.getResult().getList().get(i).getStation(),
-                            train.getResult().getList().get(i).getArrivaltime()+"-",
+                            train.getResult().getList().get(i).getArrivaltime(),
                             train.getResult().getList().get(i).getStoptime()+"'",
-                            "-"+train.getResult().getList().get(i).getDeparturetime()));
+                            train.getResult().getList().get(i).getDeparturetime()));
                 }
 
             }
@@ -232,8 +226,6 @@ public class TrainResultActivity extends BaseActivity {
         }catch(Exception e){
             //创建AlertDialog的构造器对象
             AlertDialog.Builder builder=new AlertDialog.Builder(TrainResultActivity.this);
-            //设置构造器标题
-            //builder.setTitle("错误");
             //构造器内容。为对话框设置文本项
             builder.setMessage(R.string.wrong_train);
             //为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件

@@ -1,98 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:gravity="center"
-              android:orientation="horizontal">
-    <RelativeLayout
-        android:id="@+id/rl_timeline"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/dp10">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/dp20">
 
-        <TextView
-            android:id="@+id/tv_top_line"
-            android:layout_width="0.5dp"
-            android:layout_height="12dp"
-            android:layout_centerHorizontal="true"
-            android:background="@color/blue_85"/>
+    <TextView
+        android:id="@+id/tv_station"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="南昌"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp16"/>
 
-        <TextView
-            android:id="@+id/tv_timeline_point"
-            android:layout_width="@dimen/dp10"
-            android:layout_height="@dimen/dp10"
-            android:layout_below="@id/tv_top_line"
-            android:layout_centerHorizontal="true"
-            android:background="@mipmap/point"/>
-
-        <TextView
-            android:layout_width="0.5dp"
-            android:layout_height="match_parent"
-            android:layout_below="@id/tv_timeline_point"
-            android:layout_centerHorizontal="true"
-            android:background="@color/blue_85" />
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_arrival_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="13:18"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp16"/>
 
     <RelativeLayout
-        android:id="@+id/rl_stations"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/dp6"
-        android:paddingRight="@dimen/dp10"
-        android:paddingLeft="@dimen/dp32"
-        android:paddingTop="@dimen/dp6">
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/tv_station"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="上海虹桥"
-            android:layout_marginTop="@dimen/dp3"
-            android:textColor="@color/black"
-            android:textSize="@dimen/sp14"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/tv_times"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/dp6"
-        android:paddingRight="@dimen/dp20"
-        android:paddingLeft="@dimen/dp18"
-        android:paddingTop="@dimen/dp6">
-
-        <TextView
-            android:id="@+id/tv_arrival_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp3"
-            android:text="14:10"
-            android:textColor="@color/black"
-            android:textSize="@dimen/sp14"/>
-        <ImageView
-            android:id="@+id/tv_clock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/clock"
-            android:layout_marginTop="@dimen/dp5"
-            android:paddingLeft="@dimen/dp40"/>
         <TextView
             android:id="@+id/tv_stop_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp3"
-            android:paddingLeft="@dimen/dp60"
             android:text="3'"
+            android:layout_centerInParent="true"
             android:textColor="@color/black"
-            android:textSize="@dimen/sp14"/>
-        <TextView
-            android:id="@+id/tv_departure_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp3"
-            android:paddingLeft="@dimen/dp80"
-            android:text="15:01"
-            android:textColor="@color/black"
-            android:textSize="@dimen/sp14"/>
+            android:textSize="@dimen/sp16"
+            android:drawableStart="@mipmap/clock"/>
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_departure_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="13:29"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp16"/>
 </LinearLayout>

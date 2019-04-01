@@ -12,135 +12,157 @@ import java.util.List;
 
 public class Train{
 
+
     /**
      * status : 0
      * msg : ok
-     * result : {"trainno":"G34","type":"高铁","list":[{"sequenceno":"1","station":"杭州东","day":"1","arrivaltime":"----","departuretime":"07:01","stoptime":"0","costtime":"0","distance":"0","isend":"0","pricesw":"0","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"0.0","priceed":"0.0"},{"sequenceno":"2","station":"湖州","day":"1","arrivaltime":"07:22","departuretime":"07:24","stoptime":"2","costtime":"21","distance":"71","isend":"0","pricesw":"103","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"55.0","priceed":"32.5"},{"sequenceno":"3","station":"宜兴","day":"1","arrivaltime":"07:42","departuretime":"07:44","stoptime":"2","costtime":"41","distance":"127","isend":"0","pricesw":"184","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"98.0","priceed":"58.5"},{"sequenceno":"4","station":"溧阳","day":"1","arrivaltime":"07:55","departuretime":"07:57","stoptime":"2","costtime":"54","distance":"158","isend":"0","pricesw":"229","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"122.0","priceed":"72.5"},{"sequenceno":"5","station":"溧水","day":"1","arrivaltime":"08:13","departuretime":"08:15","stoptime":"2","costtime":"72","distance":"0","isend":"0","pricesw":"304.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"162.5","priceed":"96.5"},{"sequenceno":"6","station":"南京南","day":"1","arrivaltime":"08:31","departuretime":"08:33","stoptime":"2","costtime":"90","distance":"256","isend":"0","pricesw":"371","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"198.0","priceed":"117.5"},{"sequenceno":"7","station":"宿州东","day":"1","arrivaltime":"09:33","departuretime":"09:35","stoptime":"2","costtime":"152","distance":"519","isend":"0","pricesw":"749.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"400.0","priceed":"237.5"},{"sequenceno":"8","station":"徐州东","day":"1","arrivaltime":"09:53","departuretime":"10:09","stoptime":"16","costtime":"172","distance":"587","isend":"0","pricesw":"838.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"447.0","priceed":"265.5"},{"sequenceno":"9","station":"泰安","day":"1","arrivaltime":"11:00","departuretime":"11:04","stoptime":"4","costtime":"239","distance":"0","isend":"0","pricesw":"1134.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"605.0","priceed":"359.5"},{"sequenceno":"10","station":"济南西","day":"1","arrivaltime":"11:21","departuretime":"11:24","stoptime":"3","costtime":"260","distance":"873","isend":"0","pricesw":"1211.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"646.0","priceed":"383.5"},{"sequenceno":"11","station":"沧州西","day":"1","arrivaltime":"12:10","departuretime":"12:12","stoptime":"2","costtime":"309","distance":"0","isend":"0","pricesw":"1457.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"777.5","priceed":"461.5"},{"sequenceno":"12","station":"北京南","day":"1","arrivaltime":"13:03","departuretime":"13:03","stoptime":"0","costtime":"362","distance":"1279","isend":"1","pricesw":"1701","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"907.0","priceed":"538.5","costtimetxt":"6时2分"}]}
+     * result : {"trainno":"G5305","startstation":"南昌西","endstation":"厦门北","type":"G","date":"2019-04-01","trainno12306":"","typename":"高铁","list":[{"sequenceno":"1","station":"南昌西","day":"1","arrivaltime":"----","departuretime":"07:52","stoptime":"0","costtime":"0","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"3","station":"鹰潭北","day":"1","arrivaltime":"08:26","departuretime":"08:28","stoptime":"2","costtime":"0","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"4","station":"上饶","day":"1","arrivaltime":"08:58","departuretime":"09:00","stoptime":"2","costtime":"32","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"5","station":"武夷山北","day":"1","arrivaltime":"09:23","departuretime":"09:25","stoptime":"2","costtime":"57","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"6","station":"武夷山东","day":"1","arrivaltime":"09:37","departuretime":"09:39","stoptime":"2","costtime":"71","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"7","station":"建瓯西","day":"1","arrivaltime":"09:55","departuretime":"09:57","stoptime":"2","costtime":"89","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"8","station":"南平北","day":"1","arrivaltime":"10:13","departuretime":"10:15","stoptime":"2","costtime":"107","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"9","station":"古田北","day":"1","arrivaltime":"10:29","departuretime":"10:31","stoptime":"2","costtime":"123","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"10","station":"闽清北","day":"1","arrivaltime":"10:42","departuretime":"10:44","stoptime":"2","costtime":"136","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"11","station":"福州","day":"1","arrivaltime":"11:04","departuretime":"11:07","stoptime":"3","costtime":"158","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"12","station":"福州南","day":"1","arrivaltime":"11:24","departuretime":"11:26","stoptime":"2","costtime":"178","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"13","station":"泉州","day":"1","arrivaltime":"12:17","departuretime":"12:19","stoptime":"2","costtime":"231","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"14","station":"厦门北","day":"1","arrivaltime":"12:44","departuretime":"12:44","stoptime":"0","costtime":"258","distance":"0","isend":"1","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":"","costtimetxt":"4时18分"}]}
      */
 
     private String status;
     private String msg;
     private ResultBean result;
 
-    public String getStatus(){
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status){
-        this.status=status;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public String getMsg(){
+    public String getMsg() {
         return msg;
     }
 
-    public void setMsg(String msg){
-        this.msg=msg;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
-    public ResultBean getResult(){
+    public ResultBean getResult() {
         return result;
     }
 
-    public void setResult(ResultBean result){
-        this.result=result;
+    public void setResult(ResultBean result) {
+        this.result = result;
     }
 
-    public static class ResultBean{
+    public static class ResultBean {
         /**
-         * trainno : G34
-         * type : 高铁
-         * list : [{"sequenceno":"1","station":"杭州东","day":"1","arrivaltime":"----","departuretime":"07:01","stoptime":"0","costtime":"0","distance":"0","isend":"0","pricesw":"0","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"0.0","priceed":"0.0"},{"sequenceno":"2","station":"湖州","day":"1","arrivaltime":"07:22","departuretime":"07:24","stoptime":"2","costtime":"21","distance":"71","isend":"0","pricesw":"103","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"55.0","priceed":"32.5"},{"sequenceno":"3","station":"宜兴","day":"1","arrivaltime":"07:42","departuretime":"07:44","stoptime":"2","costtime":"41","distance":"127","isend":"0","pricesw":"184","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"98.0","priceed":"58.5"},{"sequenceno":"4","station":"溧阳","day":"1","arrivaltime":"07:55","departuretime":"07:57","stoptime":"2","costtime":"54","distance":"158","isend":"0","pricesw":"229","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"122.0","priceed":"72.5"},{"sequenceno":"5","station":"溧水","day":"1","arrivaltime":"08:13","departuretime":"08:15","stoptime":"2","costtime":"72","distance":"0","isend":"0","pricesw":"304.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"162.5","priceed":"96.5"},{"sequenceno":"6","station":"南京南","day":"1","arrivaltime":"08:31","departuretime":"08:33","stoptime":"2","costtime":"90","distance":"256","isend":"0","pricesw":"371","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"198.0","priceed":"117.5"},{"sequenceno":"7","station":"宿州东","day":"1","arrivaltime":"09:33","departuretime":"09:35","stoptime":"2","costtime":"152","distance":"519","isend":"0","pricesw":"749.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"400.0","priceed":"237.5"},{"sequenceno":"8","station":"徐州东","day":"1","arrivaltime":"09:53","departuretime":"10:09","stoptime":"16","costtime":"172","distance":"587","isend":"0","pricesw":"838.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"447.0","priceed":"265.5"},{"sequenceno":"9","station":"泰安","day":"1","arrivaltime":"11:00","departuretime":"11:04","stoptime":"4","costtime":"239","distance":"0","isend":"0","pricesw":"1134.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"605.0","priceed":"359.5"},{"sequenceno":"10","station":"济南西","day":"1","arrivaltime":"11:21","departuretime":"11:24","stoptime":"3","costtime":"260","distance":"873","isend":"0","pricesw":"1211.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"646.0","priceed":"383.5"},{"sequenceno":"11","station":"沧州西","day":"1","arrivaltime":"12:10","departuretime":"12:12","stoptime":"2","costtime":"309","distance":"0","isend":"0","pricesw":"1457.5","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"777.5","priceed":"461.5"},{"sequenceno":"12","station":"北京南","day":"1","arrivaltime":"13:03","departuretime":"13:03","stoptime":"0","costtime":"362","distance":"1279","isend":"1","pricesw":"1701","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"0","pricerw2":"0","priceyw1":"0","priceyw2":"0","priceyw3":"0","priceyd":"907.0","priceed":"538.5","costtimetxt":"6时2分"}]
+         * trainno : G5305
+         * startstation : 南昌西
+         * endstation : 厦门北
+         * type : G
+         * date : 2019-04-01
+         * trainno12306 :
+         * typename : 高铁
+         * list : [{"sequenceno":"1","station":"南昌西","day":"1","arrivaltime":"----","departuretime":"07:52","stoptime":"0","costtime":"0","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"3","station":"鹰潭北","day":"1","arrivaltime":"08:26","departuretime":"08:28","stoptime":"2","costtime":"0","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"4","station":"上饶","day":"1","arrivaltime":"08:58","departuretime":"09:00","stoptime":"2","costtime":"32","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"5","station":"武夷山北","day":"1","arrivaltime":"09:23","departuretime":"09:25","stoptime":"2","costtime":"57","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"6","station":"武夷山东","day":"1","arrivaltime":"09:37","departuretime":"09:39","stoptime":"2","costtime":"71","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"7","station":"建瓯西","day":"1","arrivaltime":"09:55","departuretime":"09:57","stoptime":"2","costtime":"89","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"8","station":"南平北","day":"1","arrivaltime":"10:13","departuretime":"10:15","stoptime":"2","costtime":"107","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"9","station":"古田北","day":"1","arrivaltime":"10:29","departuretime":"10:31","stoptime":"2","costtime":"123","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"10","station":"闽清北","day":"1","arrivaltime":"10:42","departuretime":"10:44","stoptime":"2","costtime":"136","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"11","station":"福州","day":"1","arrivaltime":"11:04","departuretime":"11:07","stoptime":"3","costtime":"158","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"12","station":"福州南","day":"1","arrivaltime":"11:24","departuretime":"11:26","stoptime":"2","costtime":"178","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"13","station":"泉州","day":"1","arrivaltime":"12:17","departuretime":"12:19","stoptime":"2","costtime":"231","distance":"0","isend":"0","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":""},{"sequenceno":"14","station":"厦门北","day":"1","arrivaltime":"12:44","departuretime":"12:44","stoptime":"0","costtime":"258","distance":"0","isend":"1","pricesw":"","pricetd":"","pricegr1":"","pricegr2":"","pricerw1":"","pricerw2":"","priceyw1":"","priceyw2":"","priceyw3":"","priceyd":"","priceed":"","costtimetxt":"4时18分"}]
          */
 
-        //车次
         private String trainno;
-        //类型
+        private String startstation;
+        private String endstation;
         private String type;
+        private String date;
+        private String trainno12306;
+        private String typename;
         private List<ListBean> list;
 
-        public String getTrainno(){
+        public String getTrainno() {
             return trainno;
         }
 
-        public void setTrainno(String trainno){
-            this.trainno=trainno;
+        public void setTrainno(String trainno) {
+            this.trainno = trainno;
         }
 
-        public String getType(){
+        public String getStartstation() {
+            return startstation;
+        }
+
+        public void setStartstation(String startstation) {
+            this.startstation = startstation;
+        }
+
+        public String getEndstation() {
+            return endstation;
+        }
+
+        public void setEndstation(String endstation) {
+            this.endstation = endstation;
+        }
+
+        public String getType() {
             return type;
         }
 
-        public void setType(String type){
-            this.type=type;
+        public void setType(String type) {
+            this.type = type;
         }
 
-        public List<ListBean> getList(){
+        public String getDate() {
+            return date;
+        }
+
+        public void setDate(String date) {
+            this.date = date;
+        }
+
+        public String getTrainno12306() {
+            return trainno12306;
+        }
+
+        public void setTrainno12306(String trainno12306) {
+            this.trainno12306 = trainno12306;
+        }
+
+        public String getTypename() {
+            return typename;
+        }
+
+        public void setTypename(String typename) {
+            this.typename = typename;
+        }
+
+        public List<ListBean> getList() {
             return list;
         }
 
-        public void setList(List<ListBean> list){
-            this.list=list;
+        public void setList(List<ListBean> list) {
+            this.list = list;
         }
 
-        public static class ListBean{
+        public static class ListBean {
             /**
              * sequenceno : 1
-             * station : 杭州东
+             * station : 南昌西
              * day : 1
              * arrivaltime : ----
-             * departuretime : 07:01
+             * departuretime : 07:52
              * stoptime : 0
              * costtime : 0
              * distance : 0
              * isend : 0
-             * pricesw : 0
+             * pricesw :
              * pricetd :
              * pricegr1 :
              * pricegr2 :
-             * pricerw1 : 0
-             * pricerw2 : 0
-             * priceyw1 : 0
-             * priceyw2 : 0
-             * priceyw3 : 0
-             * priceyd : 0.0
-             * priceed : 0.0
-             * costtimetxt : 6时2分
+             * pricerw1 :
+             * pricerw2 :
+             * priceyw1 :
+             * priceyw2 :
+             * priceyw3 :
+             * priceyd :
+             * priceed :
+             * costtimetxt : 4时18分
              */
 
-            public ListBean(String station,String arrivaltime,String stoptime,String departuretime){
-                this.station=station;
-                this.arrivaltime=arrivaltime;
-                this.stoptime=stoptime;
-                this.departuretime=departuretime;
-            }
-
-            //序号
             private String sequenceno;
-            //车站
             private String station;
-            //天数
             private String day;
-            //到达时间
             private String arrivaltime;
-            //出发时间
             private String departuretime;
-            //停留时间
             private String stoptime;
-
-            //时间段
-            private String time=departuretime+"-"+arrivaltime;
-
-            public String getTime(){
-                return time;
-            }
-
-            public void setTime(String time){
-                this.time=time;
-            }
-
-
-            //用时
             private String costtime;
             private String distance;
             private String isend;
@@ -157,172 +179,180 @@ public class Train{
             private String priceed;
             private String costtimetxt;
 
-            public String getSequenceno(){
+            public ListBean(String station, String arrivaltime, String stoptime, String departuretime) {
+                this.station = station;
+                this.arrivaltime = arrivaltime;
+                this.stoptime = stoptime;
+                this.departuretime = departuretime;
+            }
+
+
+            public String getSequenceno() {
                 return sequenceno;
             }
 
-            public void setSequenceno(String sequenceno){
-                this.sequenceno=sequenceno;
+            public void setSequenceno(String sequenceno) {
+                this.sequenceno = sequenceno;
             }
 
-            public String getStation(){
+            public String getStation() {
                 return station;
             }
 
-            public void setStation(String station){
-                this.station=station;
+            public void setStation(String station) {
+                this.station = station;
             }
 
-            public String getDay(){
+            public String getDay() {
                 return day;
             }
 
-            public void setDay(String day){
-                this.day=day;
+            public void setDay(String day) {
+                this.day = day;
             }
 
-            public String getArrivaltime(){
+            public String getArrivaltime() {
                 return arrivaltime;
             }
 
-            public void setArrivaltime(String arrivaltime){
-                this.arrivaltime=arrivaltime;
+            public void setArrivaltime(String arrivaltime) {
+                this.arrivaltime = arrivaltime;
             }
 
-            public String getDeparturetime(){
+            public String getDeparturetime() {
                 return departuretime;
             }
 
-            public void setDeparturetime(String departuretime){
-                this.departuretime=departuretime;
+            public void setDeparturetime(String departuretime) {
+                this.departuretime = departuretime;
             }
 
-            public String getStoptime(){
+            public String getStoptime() {
                 return stoptime;
             }
 
-            public void setStoptime(String stoptime){
-                this.stoptime=stoptime;
+            public void setStoptime(String stoptime) {
+                this.stoptime = stoptime;
             }
 
-            public String getCosttime(){
+            public String getCosttime() {
                 return costtime;
             }
 
-            public void setCosttime(String costtime){
-                this.costtime=costtime;
+            public void setCosttime(String costtime) {
+                this.costtime = costtime;
             }
 
-            public String getDistance(){
+            public String getDistance() {
                 return distance;
             }
 
-            public void setDistance(String distance){
-                this.distance=distance;
+            public void setDistance(String distance) {
+                this.distance = distance;
             }
 
-            public String getIsend(){
+            public String getIsend() {
                 return isend;
             }
 
-            public void setIsend(String isend){
-                this.isend=isend;
+            public void setIsend(String isend) {
+                this.isend = isend;
             }
 
-            public String getPricesw(){
+            public String getPricesw() {
                 return pricesw;
             }
 
-            public void setPricesw(String pricesw){
-                this.pricesw=pricesw;
+            public void setPricesw(String pricesw) {
+                this.pricesw = pricesw;
             }
 
-            public String getPricetd(){
+            public String getPricetd() {
                 return pricetd;
             }
 
-            public void setPricetd(String pricetd){
-                this.pricetd=pricetd;
+            public void setPricetd(String pricetd) {
+                this.pricetd = pricetd;
             }
 
-            public String getPricegr1(){
+            public String getPricegr1() {
                 return pricegr1;
             }
 
-            public void setPricegr1(String pricegr1){
-                this.pricegr1=pricegr1;
+            public void setPricegr1(String pricegr1) {
+                this.pricegr1 = pricegr1;
             }
 
-            public String getPricegr2(){
+            public String getPricegr2() {
                 return pricegr2;
             }
 
-            public void setPricegr2(String pricegr2){
-                this.pricegr2=pricegr2;
+            public void setPricegr2(String pricegr2) {
+                this.pricegr2 = pricegr2;
             }
 
-            public String getPricerw1(){
+            public String getPricerw1() {
                 return pricerw1;
             }
 
-            public void setPricerw1(String pricerw1){
-                this.pricerw1=pricerw1;
+            public void setPricerw1(String pricerw1) {
+                this.pricerw1 = pricerw1;
             }
 
-            public String getPricerw2(){
+            public String getPricerw2() {
                 return pricerw2;
             }
 
-            public void setPricerw2(String pricerw2){
-                this.pricerw2=pricerw2;
+            public void setPricerw2(String pricerw2) {
+                this.pricerw2 = pricerw2;
             }
 
-            public String getPriceyw1(){
+            public String getPriceyw1() {
                 return priceyw1;
             }
 
-            public void setPriceyw1(String priceyw1){
-                this.priceyw1=priceyw1;
+            public void setPriceyw1(String priceyw1) {
+                this.priceyw1 = priceyw1;
             }
 
-            public String getPriceyw2(){
+            public String getPriceyw2() {
                 return priceyw2;
             }
 
-            public void setPriceyw2(String priceyw2){
-                this.priceyw2=priceyw2;
+            public void setPriceyw2(String priceyw2) {
+                this.priceyw2 = priceyw2;
             }
 
-            public String getPriceyw3(){
+            public String getPriceyw3() {
                 return priceyw3;
             }
 
-            public void setPriceyw3(String priceyw3){
-                this.priceyw3=priceyw3;
+            public void setPriceyw3(String priceyw3) {
+                this.priceyw3 = priceyw3;
             }
 
-            public String getPriceyd(){
+            public String getPriceyd() {
                 return priceyd;
             }
 
-            public void setPriceyd(String priceyd){
-                this.priceyd=priceyd;
+            public void setPriceyd(String priceyd) {
+                this.priceyd = priceyd;
             }
 
-            public String getPriceed(){
+            public String getPriceed() {
                 return priceed;
             }
 
-            public void setPriceed(String priceed){
-                this.priceed=priceed;
+            public void setPriceed(String priceed) {
+                this.priceed = priceed;
             }
 
-            public String getCosttimetxt(){
+            public String getCosttimetxt() {
                 return costtimetxt;
             }
 
-            public void setCosttimetxt(String costtimetxt){
-                this.costtimetxt=costtimetxt;
+            public void setCosttimetxt(String costtimetxt) {
+                this.costtimetxt = costtimetxt;
             }
         }
     }

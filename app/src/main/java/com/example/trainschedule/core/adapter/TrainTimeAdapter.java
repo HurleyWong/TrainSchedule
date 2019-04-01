@@ -31,11 +31,6 @@ public class TrainTimeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         this.listBeans=listBeans;
     }
 
-    /*public TrainTimeAdapter(Context context,List<Train> trainList){
-        inflater=LayoutInflater.from(context);
-        this.trainList=trainList;
-    }*/
-
     public int getLayoutId() {
         return R.layout.item_train_time;
     }
@@ -49,13 +44,11 @@ public class TrainTimeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public void onBindViewHolder(RecyclerView.ViewHolder holder,int position){
         ViewHolder itemHolder=(ViewHolder)holder;
         itemHolder.bindHolder(listBeans.get(position));
-        //itemHolder.bindHolder(trainList.get(position));
     }
 
     @Override
     public int getItemCount(){
         return listBeans.size();
-        //return trainList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -63,8 +56,6 @@ public class TrainTimeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         private TextView mTvStopTime;
         private TextView mTvArrivalTime;
         private TextView mTvStation;
-        private TextView mTvTopLine;
-        private TextView mTvTimelinePoint;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -72,8 +63,6 @@ public class TrainTimeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             mTvStopTime=itemView.findViewById(R.id.tv_stop_time);
             mTvDepartureTime=itemView.findViewById(R.id.tv_departure_time);
             mTvStation=itemView.findViewById(R.id.tv_station);
-            mTvTopLine=itemView.findViewById(R.id.tv_top_line);
-            mTvTimelinePoint=itemView.findViewById(R.id.tv_timeline_point);
         }
 
         public void bindHolder(Train.ResultBean.ListBean listBean){
