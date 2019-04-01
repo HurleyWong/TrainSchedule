@@ -20,5 +20,5 @@
     <!-- sp -->
     <dimen name="sp15">15sp</dimen>
     <dimen name="sp16">16sp</dimen>
-
+    <dimen name="sp18">18sp</dimen>
 </resources>

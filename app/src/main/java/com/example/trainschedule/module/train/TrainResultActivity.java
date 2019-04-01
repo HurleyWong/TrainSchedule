@@ -3,15 +3,12 @@ package com.example.trainschedule.module.train;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,7 +18,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.trainschedule.base.BaseActivity;
-import com.example.trainschedule.utils.ActionBarUtils;
 import com.example.trainschedule.module.train.adapter.TrainTimeAdapter;
 import com.example.trainschedule.bean.Train;
 import com.example.trainschedule.R;
@@ -33,7 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * <pre>
@@ -110,7 +105,7 @@ public class TrainResultActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.train_result;
+        return R.layout.activity_train_result;
     }
 
     @Override

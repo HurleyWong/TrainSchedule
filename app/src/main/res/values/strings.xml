@@ -11,6 +11,7 @@
     <string name="support">支持</string>
     <string name="setting">设置</string>
     <string name="positive">确定</string>
+    <string name="search">搜索</string>
     <string name="exit">再按一次返回键退出程序</string>
 
     <!-- 极速数据api -->
@@ -45,30 +46,6 @@
     <string name="app_csdn_addr">https://blog.csdn.net/qq_34262794</string>
     <string name="app_blog">个人博客：</string>
     <string name="app_blog_addr">https://pipipeng.me</string>
-
-    <!-- 框架名称 -->
-    <string name="open_source">开源协议</string>
-    <string name="thanks">感谢下列项目的付出</string>
-    <string name="Gson">Gson</string>
-    <string name="Volley">Volley</string>
-    <string name="Glide">Glide</string>
-    <string name="Fresco">Fresco</string>
-    <string name="BufferKnife">ButterKnife</string>
-    <string name="PinchImageView">PinchImageView</string>
-    <string name="FlyShapeImageView">FlyShapeImageView</string>
-    <string name="Y_DividerItemDecoration">Y_DividerItemDecoration</string>
-    <string name="Zxing">Zxing</string>
-
-    <!-- 框架地址 -->
-    <string name="gson_addr">https://github.com/google/gson</string>
-    <string name="volley_addr">https://github.com/google/volley</string>
-    <string name="glide_addr">https://github.com/bumptech/glide</string>
-    <string name="fresco_addr">https://www.fresco-cn.org/</string>
-    <string name="butterknife_addr">https://github.com/JakeWharton/butterknife</string>
-    <string name="pinchimageview_addr">https://github.com/boycy815/PinchImageView</string>
-    <string name="flyshapeimageview_addr">https://github.com/FlyRecker/FlyShapeImageView</string>
-    <string name="y_divideritemdecoration_addr">https://github.com/yanyusong/Y_DividerItemDecoration</string>
-    <string name="zxing_addr">https://github.com/open-android/Zxing</string>
 
     <!-- 出错 -->
     <string name="wrong_404">抱歉，开发者尚未开发此功能</string>

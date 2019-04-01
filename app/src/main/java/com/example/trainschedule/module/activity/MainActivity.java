@@ -143,7 +143,7 @@ public class MainActivity extends BaseActivity {
                                     viewPager.setCurrentItem(1);
                                     //禁止ViewPager左右滑动
                                     viewPager.setSlide(false);
-                                    //Toast.makeText(getApplicationContext(),item.getTitle().toString(),Toast.LENGTH_SHORT).show();
+                                    toolbar.setTitle(getString(R.string.station_query));
                                     //关闭导航栏菜单
                                     drawerLayout.closeDrawers();
                                     break;
@@ -155,7 +155,7 @@ public class MainActivity extends BaseActivity {
                                     viewPager.setCurrentItem(2);
                                     //禁止ViewPager左右滑动
                                     viewPager.setSlide(false);
-                                    //Toast.makeText(getApplicationContext(),item.getTitle().toString(),Toast.LENGTH_SHORT).show();
+                                    toolbar.setTitle(getString(R.string.train_query));
                                     //关闭导航栏菜单
                                     drawerLayout.closeDrawers();
                                     break;
