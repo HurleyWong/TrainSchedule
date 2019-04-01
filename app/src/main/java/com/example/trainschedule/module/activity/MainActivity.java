@@ -22,6 +22,8 @@ import com.example.trainschedule.utils.ActionBarUtils;
 import com.example.trainschedule.utils.ViewPagerUtils;
 import com.example.trainschedule.module.station.StationFragment;
 import com.example.trainschedule.module.train.TrainFragment;
+import com.mikepenz.aboutlibraries.Libs;
+import com.mikepenz.aboutlibraries.LibsBuilder;
 
 import java.util.ArrayList;
 
@@ -179,16 +181,14 @@ public class MainActivity extends BaseActivity {
                                 case R.id.about:
                                     //关闭导航栏菜单
                                     drawerLayout.closeDrawers();
-                                    Intent intent2 = new Intent();
-                                    intent2.setClass(MainActivity.this, AboutActivity.class);
-                                    MainActivity.this.startActivity(intent2);
-                                    break;
-                                case R.id.license:
-                                    //关闭导航栏菜单
-                                    drawerLayout.closeDrawers();
-                                    Intent intent3 = new Intent();
-                                    intent3.setClass(MainActivity.this, LicenseActivity.class);
-                                    MainActivity.this.startActivity(intent3);
+                                    new LibsBuilder()
+                                            .withActivityStyle(Libs.ActivityStyle.LIGHT_DARK_TOOLBAR)
+                                            .withActivityTitle(getString(R.string.about))
+                                            .withAboutAppName(getString(R.string.app_name))
+                                            .withAboutDescription(getString(R.string.app_func))
+                                            .withAboutIconShown(true)
+                                            .withAboutVersionShown(true)
+                                            .start(getApplicationContext());
                                     break;
                                 case R.id.support:
                                     //关闭导航栏菜单

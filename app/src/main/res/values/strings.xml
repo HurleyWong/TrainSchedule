@@ -33,7 +33,7 @@
 
 
     <!-- 应用功能介绍 -->
-    <string name="app_func">火车时刻表是一款可以根据车站和车次来查询火车运行时刻表的应用,主要功能如下：</string>
+    <string name="app_func">火车时刻表是一款可以根据车站和车次来查询火车运行时刻表的应用</string>
     <string name="func_paragraph">·  </string>
     <string name="app_func1">输入出发车站和到达车站，显示经过两个车站之间的所有车次</string>
     <string name="app_func2">输入准确的车次，显示该车次经过的所有车站和具体时刻表以及停留时间</string>

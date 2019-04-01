@@ -1,4 +1,5 @@
 <resources>
+    <!-- dp -->
     <dimen name="dp1">1dp</dimen>
     <dimen name="dp3">3dp</dimen>
     <dimen name="dp5">5dp</dimen>
@@ -14,4 +15,10 @@
     <dimen name="dp40">40dp</dimen>
     <dimen name="dp60">60dp</dimen>
     <dimen name="dp80">80dp</dimen>
+    <dimen name="dp200">200dp</dimen>
+
+    <!-- sp -->
+    <dimen name="sp15">15sp</dimen>
+    <dimen name="sp16">16sp</dimen>
+
 </resources>

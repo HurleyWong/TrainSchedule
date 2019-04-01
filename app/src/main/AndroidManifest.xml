@@ -5,9 +5,8 @@
     <application
         android:name=".ApplicationContext"
         android:allowBackup="true"
-        android:icon="@drawable/app_icon"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/AppTheme">
@@ -21,8 +20,6 @@
         </activity>
         <activity android:name=".module.train.TrainResultActivity"/>
         <activity android:name=".module.station.StationResultActivity"/>
-        <activity android:name=".module.activity.LicenseActivity"/>
-        <activity android:name=".module.activity.AboutActivity"/>
         <activity android:name=".module.activity.SupportActivity"/>
     </application>
 
