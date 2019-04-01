@@ -31,6 +31,7 @@
     <string name="input_train">请输入车次</string>
     <string name="only_high">只显示高铁</string>
     <string name="train_no">列车班次</string>
+    <string name="train_time">列车时刻</string>
 
 
     <!-- 应用功能介绍 -->

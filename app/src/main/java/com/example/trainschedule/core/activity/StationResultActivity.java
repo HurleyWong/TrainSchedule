@@ -38,8 +38,6 @@ import okhttp3.Request;
 public class StationResultActivity extends BaseActivity implements TrainAdapter.OnItemClickListener{
     private static final String TAG = "StationResultActivity";
 
-    @BindView(R.id.coordinator)
-    CoordinatorLayout coordinator;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.rv_train_info)
@@ -77,6 +75,16 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
         url = getString(R.string.jisu_url_station) + "&start=" + key1 + "&end=" + key2 + "&ishigh=" + isHigh;
 
         getData();
+    }
+
+    /**
+     * 显示返回键
+     *
+     * @return
+     */
+    @Override
+    protected boolean showHomeAsUp() {
+        return true;
     }
 
     /**

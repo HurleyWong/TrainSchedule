@@ -41,8 +41,6 @@ import okhttp3.Request;
 public class TrainResultActivity extends BaseActivity {
     private static final String TAG = "TrainResultActivity";
 
-    @BindView(R.id.drawerLayout)
-    DrawerLayout drawerLayout;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.rv_train_timeline)
@@ -134,6 +132,16 @@ public class TrainResultActivity extends BaseActivity {
         url=getString(R.string.jisu_url_train)+"&trainno="+key;
 
         getData();
+    }
+
+    /**
+     * 显示返回键
+     *
+     * @return
+     */
+    @Override
+    protected boolean showHomeAsUp() {
+        return true;
     }
 
     /**

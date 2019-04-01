@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:fab="http://schemas.android.com/tools"
     android:id="@+id/coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -42,4 +41,4 @@
         fab:fab_colorNormal="@color/primary"
         fab:fab_colorPressed="@color/primary_pressed"
         fab:fab_colorRipple="@color/ripple"/>-->
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>
