@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.trainschedule.R;
+import com.gyf.barlibrary.ImmersionBar;
 
 import java.util.Objects;
 
@@ -41,6 +42,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         unbinder = ButterKnife.bind(this);
         initToolbar();
         initView();
+        ImmersionBar.with(this)
+                //与导航栏同色
+                .statusBarColor(R.color.colorPrimary)
+                //解决状态栏和布局重叠问题
+                .fitsSystemWindows(true)
+                //初始化
+                .init();
     }
 
     @Override

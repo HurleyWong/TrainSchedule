@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.trainschedule">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.trainschedule">
 
     <application
         android:name=".app.App"
@@ -10,8 +11,11 @@
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/AppTheme"
-        android:networkSecurityConfig="@xml/network_security_config">
-        <activity android:name=".core.activity.MainActivity">
+        android:networkSecurityConfig="@xml/network_security_config"
+        tools:targetApi="n">
+        <activity
+            android:name=".core.activity.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
@@ -19,6 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".core.activity.MainActivity"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"/>
         <activity android:name=".core.activity.TrainResultActivity"/>
         <activity android:name=".core.activity.StationResultActivity"/>
         <activity android:name=".core.activity.SupportActivity"/>

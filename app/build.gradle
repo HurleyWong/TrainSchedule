@@ -59,8 +59,12 @@ dependencies {
     implementation 'com.recker.flyshapeimageview:flyshapeimageview:1.0'
     implementation 'com.yanyusong.y_divideritemdecoration:y_divideritemdecoration:2.0'
     implementation 'me.panpf:sketch:2.6.1'
+    //ImmersionBar包
+    implementation 'com.gyf.immersionbar:immersionbar:2.3.3'
     //AboutLibraries包
     implementation "com.mikepenz:aboutlibraries:6.1.1"
+    //FancyView包
+    implementation 'site.gemus:openingstartanimation:1.0.0'
 
 
 
