@@ -1,97 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_train"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/station_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/ll_train"
-        android:layout_centerHorizontal="true"
-        android:text="@string/train_query"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        android:typeface="monospace"/>
-
-    <LinearLayout
-        android:id="@+id/ll_train"
+    <RelativeLayout
+        android:id="@+id/rl_train"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="@dimen/dp20"
-        android:layout_marginRight="@dimen/dp20"
-        android:layout_gravity="center">
+        android:layout_marginTop="@dimen/dp200"
+        android:background="@drawable/a_shape_edittext">
 
-        <RelativeLayout
-            android:id="@+id/rl_train"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/train_text"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:layout_marginTop="@dimen/dp20"
-            android:background="@drawable/a_shape_edittext">
+            android:layout_centerVertical="true"
+            android:paddingBottom="@dimen/dp15"
+            android:paddingStart="@dimen/dp30"
+            android:paddingTop="@dimen/dp15"
+            android:text="@string/train_no"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp18"/>
 
-            <TextView
-                android:id="@+id/train_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:paddingBottom="@dimen/dp15"
-                android:paddingLeft="0dp"
-                android:paddingTop="@dimen/dp15"
-                android:text="到达车站"
-                android:textColor="@color/black"
-                android:textSize="18sp"/>
+        <View
+            android:id="@+id/view_train"
+            android:layout_width="1dip"
+            android:layout_height="@dimen/dp20"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_toEndOf="@id/train_text"
+            android:background="@color/colorCursor"/>
 
-            <View
-                android:id="@+id/view_train"
-                android:layout_width="1dip"
-                android:layout_height="@dimen/dp20"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/dp10"
-                android:layout_toRightOf="@id/train_text"
-                android:background="@color/colorCursor"/>
-
-            <EditText
-                android:id="@+id/search_train_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/dp10"
-                android:layout_toRightOf="@id/view_train"
-                android:background="@null"
-                android:drawablePadding="@dimen/dp5"
-                android:ems="19"
-                android:hint="@string/input_train"
-                android:inputType="text"
-                android:textColorHint="@color/colorCursor"
-                android:textCursorDrawable="@drawable/a_color_cursor"
-                android:textSize="18sp"/>
-
-            <ImageView
-                android:id="@+id/search_train_clear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/dp20"
-                android:src="@mipmap/ic_delete"
-                android:visibility="invisible"/>
-        </RelativeLayout>
-
-        <Button
-            android:id="@+id/search_train_button"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/search_train_input"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp10"
-            android:layout_marginTop="@dimen/dp25"
-            android:layout_weight="1"
-            android:background="@drawable/a_shape_search_button"
-            android:text="搜索"
-            android:textColor="@color/white"
-            android:textSize="18sp"/>
-    </LinearLayout>
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_toEndOf="@id/view_train"
+            android:background="@null"
+            android:drawablePadding="@dimen/dp5"
+            android:ems="19"
+            android:hint="@string/input_train"
+            android:inputType="text"
+            android:textColorHint="@color/colorCursor"
+            android:textCursorDrawable="@drawable/a_color_cursor"
+            android:textSize="@dimen/sp18"/>
+
+        <ImageView
+            android:id="@+id/search_train_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp20"
+            android:src="@mipmap/ic_delete"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/search_train_button"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_train"
+        android:layout_marginStart="@dimen/dp30"
+        android:layout_marginEnd="@dimen/dp30"
+        android:layout_marginTop="@dimen/dp20"
+        android:text="@string/search" />
 </RelativeLayout>
+

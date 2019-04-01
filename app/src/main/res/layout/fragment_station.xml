@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-    android:gravity="center">
-
-    <TextView
-        android:id="@+id/station_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/station_query"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        android:typeface="monospace"/>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:id="@+id/rl_start_station"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/station_title"
-        android:layout_marginTop="@dimen/dp40"
+        android:layout_marginTop="@dimen/dp200"
         android:background="@drawable/a_shape_edittext">
 
         <TextView
@@ -28,19 +16,19 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:paddingBottom="@dimen/dp15"
-            android:paddingLeft="@dimen/dp30"
+            android:paddingStart="@dimen/dp30"
             android:paddingTop="@dimen/dp15"
             android:text="@string/start_station"
             android:textColor="@color/black"
-            android:textSize="18sp"/>
+            android:textSize="@dimen/sp18"/>
 
         <View
             android:id="@+id/view_start_station"
             android:layout_width="1dip"
             android:layout_height="@dimen/dp20"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/dp10"
-            android:layout_toRightOf="@id/start_station_text"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_toEndOf="@id/start_station_text"
             android:background="@color/colorCursor" />
 
         <AutoCompleteTextView
@@ -48,24 +36,24 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp30"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/dp10"
-            android:layout_toRightOf="@id/view_start_station"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_toEndOf="@id/view_start_station"
             android:background="@null"
             android:ems="19"
             android:hint="@string/input_start_station"
             android:inputType="text"
             android:textColorHint="@color/colorCursor"
             android:textCursorDrawable="@drawable/a_color_cursor"
-            android:textSize="18sp"
+            android:textSize="@dimen/sp18"
             android:completionThreshold="1"/>
 
         <ImageView
             android:id="@+id/start_station_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/dp20"
+            android:layout_marginEnd="@dimen/dp20"
             android:src="@mipmap/ic_delete"
             android:visibility="invisible"/>
     </RelativeLayout>
@@ -84,19 +72,19 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:paddingBottom="@dimen/dp15"
-            android:paddingLeft="@dimen/dp30"
+            android:paddingStart="@dimen/dp30"
             android:paddingTop="@dimen/dp15"
             android:text="@string/end_station"
             android:textColor="@color/black"
-            android:textSize="18sp"/>
+            android:textSize="@dimen/sp18"/>
 
         <View
             android:id="@+id/view_end_station"
             android:layout_width="1dip"
             android:layout_height="@dimen/dp20"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/dp10"
-            android:layout_toRightOf="@id/end_station_text"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_toEndOf="@id/end_station_text"
             android:background="@color/colorCursor"/>
 
         <AutoCompleteTextView
@@ -104,8 +92,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp30"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/dp10"
-            android:layout_toRightOf="@id/view_end_station"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_toEndOf="@id/view_end_station"
             android:background="@null"
             android:drawablePadding="@dimen/dp5"
             android:ems="19"
@@ -113,16 +101,16 @@
             android:inputType="text"
             android:textColorHint="@color/colorCursor"
             android:textCursorDrawable="@drawable/a_color_cursor"
-            android:textSize="18sp"
+            android:textSize="@dimen/sp18"
             android:completionThreshold="1"/>
 
         <ImageView
             android:id="@+id/end_station_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/dp20"
+            android:layout_marginEnd="@dimen/dp20"
             android:src="@mipmap/ic_delete"
             android:visibility="invisible"/>
     </RelativeLayout>
