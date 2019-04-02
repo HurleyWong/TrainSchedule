@@ -66,7 +66,8 @@ dependencies {
     //FancyView包
     implementation 'site.gemus:openingstartanimation:1.0.0'
 
-
+    //AndroidUtilCode包
+    implementation 'com.blankj:utilcode:1.11.1'
 
 
 

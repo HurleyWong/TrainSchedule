@@ -11,6 +11,7 @@ import com.gyf.barlibrary.ImmersionBar;
 
 import site.gemus.openingstartanimation.NormalDrawStrategy;
 import site.gemus.openingstartanimation.OpeningStartAnimation;
+import site.gemus.openingstartanimation.RedYellowBlueDrawStrategy;
 
 /**
  * <pre>
@@ -34,7 +35,8 @@ public class SplashActivity extends AppCompatActivity {
                 .init();
 
         OpeningStartAnimation openingStartAnimation = new OpeningStartAnimation.Builder(this)
-                .setDrawStategy(new NormalDrawStrategy())
+                .setDrawStategy(new RedYellowBlueDrawStrategy())
+                .setAppStatement(getString(R.string.app_name))
                 .create();
         openingStartAnimation.show(this);
 
@@ -43,7 +45,7 @@ public class SplashActivity extends AppCompatActivity {
             intent.setClass(this, MainActivity.class);
             this.startActivity(intent);
             finish();
-        }, 1000);
+        }, 1500);
 
     }
 }
