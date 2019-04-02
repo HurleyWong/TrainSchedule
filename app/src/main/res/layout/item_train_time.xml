@@ -38,7 +38,7 @@
             android:layout_centerInParent="true"
             android:textColor="@color/black"
             android:textSize="@dimen/sp16"
-            android:drawableStart="@mipmap/clock"/>
+            android:drawableStart="@mipmap/ic_clock"/>
     </RelativeLayout>
 
     <TextView

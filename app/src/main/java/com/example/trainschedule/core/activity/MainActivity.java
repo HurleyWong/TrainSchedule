@@ -19,6 +19,7 @@ import com.blankj.utilcode.util.AppUtils;
 import com.example.trainschedule.R;
 import com.example.trainschedule.base.BaseActivity;
 import com.example.trainschedule.core.fragment.DefaultFragment;
+import com.example.trainschedule.core.fragment.TicketFragment;
 import com.example.trainschedule.utils.ViewPagerUtils;
 import com.example.trainschedule.core.fragment.StationFragment;
 import com.example.trainschedule.core.fragment.TrainFragment;
@@ -90,11 +91,13 @@ public class MainActivity extends BaseActivity {
         //添加Fragment
         final ArrayList<Fragment> fragments = new ArrayList<>();
         //添加默认Fragment
-        fragments.add(new DefaultFragment());
+        fragments.add(DefaultFragment.newInstance());
         //添加站站Fragment
-        fragments.add(new StationFragment());
+        fragments.add(StationFragment.newInstance());
         //添加车次Fragment
-        fragments.add(new TrainFragment());
+        fragments.add(TrainFragment.newInstance());
+        //添加车票Fragment
+        fragments.add(TicketFragment.newInstance());
 
         //设置适配器用于装载Fragment
         FragmentPagerAdapter pagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
@@ -172,7 +175,7 @@ public class MainActivity extends BaseActivity {
                                 //关闭导航栏菜单
                                 drawerLayout.closeDrawers();
                                 break;
-                            /*case R.id.ticket_manage:
+                            case R.id.ticket_manage:
                                 //改变item选中状态
                                 item.setChecked(true);
                                 //跳转到相应的ViewPager
@@ -180,17 +183,10 @@ public class MainActivity extends BaseActivity {
                                 viewPager.setCurrentItem(3);
                                 //禁止ViewPager左右滑动
                                 viewPager.setSlide(false);
+                                toolbar.setTitle(getString(R.string.ticket_manage));
                                 //关闭导航栏菜单
                                 drawerLayout.closeDrawers();
                                 break;
-
-                                //关闭导航栏菜单
-                                drawerLayout.closeDrawers();
-                                Intent intent1=new Intent();
-                                intent1.setClass(MainActivity.this,TicketActivity.class);
-                                MainActivity.this.startActivity(intent1);
-                                break;
-                            */
                             case R.id.about:
                                 //关闭导航栏菜单
                                 drawerLayout.closeDrawers();

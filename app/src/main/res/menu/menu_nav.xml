@@ -10,9 +10,9 @@
         <item
             android:id="@+id/train_query"
             android:title="@string/train_query"/>
-        <!--<item
+        <item
             android:id="@+id/ticket_manage"
-            android:title="@string/ticket_manage"/>-->
+            android:title="@string/ticket_manage"/>
 
         <item android:title="@string/others">
             <menu>

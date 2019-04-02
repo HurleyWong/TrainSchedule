@@ -1,6 +1,7 @@
 package com.example.trainschedule.core.fragment;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -74,6 +75,13 @@ public class StationFragment extends BaseFragment {
      * 判断CheckBox是否被选中
      */
     private int isHigh=0;
+
+    public static StationFragment newInstance() {
+        Bundle args = new Bundle();
+        StationFragment fragment = new StationFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public int getLayoutId() {

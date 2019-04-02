@@ -1,6 +1,7 @@
 package com.example.trainschedule.core.fragment;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +41,13 @@ public class TrainFragment extends BaseFragment {
      */
     @BindView(R.id.btn_train_search)
     Button mBtnSearch;
+
+    public static TrainFragment newInstance() {
+        Bundle args = new Bundle();
+        TrainFragment fragment = new TrainFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public int getLayoutId() {

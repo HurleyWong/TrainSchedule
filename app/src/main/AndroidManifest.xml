@@ -3,6 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.trainschedule">
 
+    <!-- 网络请求权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 数据写入权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 数据读取权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- 相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
         android:name=".app.App"
         android:allowBackup="true"
@@ -30,7 +39,15 @@
         <activity android:name=".core.activity.TrainResultActivity"/>
         <activity android:name=".core.activity.StationResultActivity"/>
         <activity android:name=".core.activity.SupportActivity"/>
-    </application>
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+        <provider
+            android:authorities="com.example.trainschedule.app.App"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+    </application>
 </manifest>

@@ -4,7 +4,7 @@
     <string name="app_version">V1.1</string>
     <string name="station_query">车站查询</string>
     <string name="train_query">车次查询</string>
-    <string name="ticket_manage">火车票管理</string>
+    <string name="ticket_manage">车票管理</string>
     <string name="others">其它</string>
     <string name="about">关于</string>
     <string name="license">开源协议</string>
@@ -20,7 +20,6 @@
     <!-- 阿凡达数据api -->
     <string name="afanda_url_station_tip">http://api.avatardata.cn/TrainTicket/Station?key=</string>
     <string name="afanda_station_tip_key">9de387f10f174850a6e9430ccfd1dc9a</string>
-
 
 
     <!-- 主要应用功能 -->
@@ -46,7 +45,7 @@
     <string name="app_csdn">CSDN：</string>
     <string name="app_csdn_addr">https://blog.csdn.net/qq_34262794</string>
     <string name="app_blog">个人博客：</string>
-    <string name="app_blog_addr">https://pipipeng.me</string>
+    <string name="app_blog_addr">https://hurley.fun</string>
 
     <!-- 出错 -->
     <string name="wrong_404">抱歉，开发者尚未开发此功能</string>

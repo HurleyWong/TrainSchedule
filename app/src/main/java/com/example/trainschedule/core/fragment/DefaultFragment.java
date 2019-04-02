@@ -1,5 +1,6 @@
 package com.example.trainschedule.core.fragment;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -31,6 +32,13 @@ public class DefaultFragment extends BaseFragment {
 
     String url1="http://s16.sinaimg.cn/orignal/001yUN6jzy7hgWgzoHt0f&690";
     String url2="http://photo.blog.sina.com.cn/showpic.html#blogid=14f7d01f50102y18q&url=http://album.sina.com.cn/pic/0068URxzzy7mV6yvoio7c";
+
+    public static DefaultFragment newInstance() {
+        Bundle args = new Bundle();
+        DefaultFragment fragment = new DefaultFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public int getLayoutId() {
