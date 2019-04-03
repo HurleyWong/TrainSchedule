@@ -11,7 +11,7 @@ package com.example.trainschedule.bean;
 public class Ticket {
 
     /**
-     * log_id : 8230646444219651330
+     * log_id : 574796674675110947
      * words_result_num : 8
      * words_result : {"name":"黄鹏远","destination_station":"南昌西站","seat_category":"二等座","ticket_rates":"￥83.0元","ticket_num":"G0Q4411","date":"2019年02月25日","train_num":"G4761","starting_station":"上饶站"}
      */
