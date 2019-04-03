@@ -17,11 +17,10 @@ import com.blankj.utilcode.util.ImageUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.example.trainschedule.R;
 import com.example.trainschedule.api.ApiService;
-import com.example.trainschedule.api.UrlContainer;
 import com.example.trainschedule.base.BaseFragment;
 import com.example.trainschedule.bean.Ticket;
-import com.example.trainschedule.bean.Token;
 import com.example.trainschedule.core.adapter.TicketAdapter;
+import com.example.trainschedule.http.RetrofitManager;
 import com.huantansheng.easyphotos.EasyPhotos;
 import com.huantansheng.easyphotos.models.album.entity.Photo;
 
@@ -35,9 +34,6 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -63,8 +59,6 @@ public class TicketFragment extends BaseFragment {
     Button mBtnPhoto;
     @BindView(R.id.rv_ticket)
     RecyclerView mRvTicket;
-
-    ApiService apiService;
 
     private TicketAdapter mAdapter;
 
@@ -105,13 +99,6 @@ public class TicketFragment extends BaseFragment {
         SnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(mRvTicket);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(UrlContainer.baseUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build();
-
-        apiService = retrofit.create(ApiService.class);
     }
 
     @OnClick(R.id.btn_photo)
@@ -138,7 +125,6 @@ public class TicketFragment extends BaseFragment {
                 ImageUtils.getBitmap(photos.get(0).path).compress(Bitmap.CompressFormat.JPEG, 40, outputStream);
                 byte[] bytes = outputStream.toByteArray();
                 image = EncodeUtils.base64Encode2String(bytes);
-                LogUtils.e(image);
                 getTicket(image);
             }
         }
@@ -146,37 +132,13 @@ public class TicketFragment extends BaseFragment {
     }
 
     private void getAccessToken() {
-        apiService.getAccessToken(CLIENT_CREDENTIALS, API_KEY, SECRET_KEY)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Token>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(Token token) {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-
 
     }
 
     @SuppressLint("CheckResult")
     private void getTicket(String image) {
-        apiService.getTicket(ACCESS_TOKEN, image)
+        RetrofitManager.create(ApiService.class)
+                .getTicket(ACCESS_TOKEN, image)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Ticket>() {
