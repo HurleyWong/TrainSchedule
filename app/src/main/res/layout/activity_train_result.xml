@@ -33,6 +33,8 @@
             android:layout_height="@dimen/dp200"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/dp10"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
             app:cardCornerRadius="@dimen/dp10"
             app:cardElevation="@dimen/dp10">
 

@@ -19,6 +19,7 @@ import com.example.trainschedule.R;
 import com.example.trainschedule.api.ApiService;
 import com.example.trainschedule.base.BaseFragment;
 import com.example.trainschedule.bean.Ticket;
+import com.example.trainschedule.bean.Token;
 import com.example.trainschedule.core.adapter.TicketAdapter;
 import com.example.trainschedule.http.RetrofitManager;
 import com.huantansheng.easyphotos.EasyPhotos;
@@ -53,8 +54,18 @@ public class TicketFragment extends BaseFragment {
     private static final String SECRET_KEY = "o16bD6cjKyIMFuCfw5WWSvZ3xffBGfV9";
     private static final String ACCESS_TOKEN = "24.3191cf02045daa9d80eb061ec15227c9.2592000.1556812741.282335-15913494";
 
-    @BindView(R.id.tv_test)
-    TextView mTvTest;
+    @BindView(R.id.tv_ticket_num)
+    TextView mTvTicketNum;
+    @BindView(R.id.tv_start_station)
+    TextView mTvStartStation;
+    @BindView(R.id.tv_ticket_date)
+    TextView mTvTicketDate;
+    @BindView(R.id.tv_ticket_price)
+    TextView mTvTicketPrice;
+    @BindView(R.id.tv_end_station)
+    TextView mTvEndStation;
+    @BindView(R.id.tv_seat_type)
+    TextView mTvSeatType;
     @BindView(R.id.btn_photo)
     Button mBtnPhoto;
     @BindView(R.id.rv_ticket)
@@ -98,7 +109,6 @@ public class TicketFragment extends BaseFragment {
         mRvTicket.setAdapter(mAdapter);
         SnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(mRvTicket);
-
     }
 
     @OnClick(R.id.btn_photo)
@@ -132,7 +142,31 @@ public class TicketFragment extends BaseFragment {
     }
 
     private void getAccessToken() {
+        RetrofitManager.create(ApiService.class)
+                .getAccessToken(CLIENT_CREDENTIALS, API_KEY, SECRET_KEY)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Token>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
+                    }
+
+                    @Override
+                    public void onNext(Token token) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
     }
 
     @SuppressLint("CheckResult")
@@ -149,7 +183,12 @@ public class TicketFragment extends BaseFragment {
 
                     @Override
                     public void onNext(Ticket ticket) {
-                        LogUtils.e(ticket.getWords_result().getStarting_station());
+                        mTvTicketNum.setText(ticket.getWords_result().getTicket_num());
+                        mTvStartStation.setText(ticket.getWords_result().getStarting_station());
+                        mTvTicketDate.setText(ticket.getWords_result().getDate());
+                        mTvTicketPrice.setText(ticket.getWords_result().getTicket_rates());
+                        mTvEndStation.setText(ticket.getWords_result().getDestination_station());
+                        mTvSeatType.setText(ticket.getWords_result().getSeat_category());
                     }
 
                     @Override
