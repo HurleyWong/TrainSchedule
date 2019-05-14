@@ -13,12 +13,24 @@ import android.support.v7.widget.RecyclerView;
  */
 public interface OnScrollingListener {
 
-    //列表滚动到最顶部
+    /**
+     * 列表滚动到最顶部
+     *
+     * @param recyclerView
+     */
     void onScrollTop(RecyclerView recyclerView);
 
-    //列表滚动到最底部
+    /**
+     * 列表滚动到最底部
+     *
+     * @param recyclerView
+     */
     void onScrollDown(RecyclerView recyclerView);
 
-    //列表滚动中
+    /**
+     * 列表滚动中
+     *
+     * @param recyclerView
+     */
     void onScrolling(RecyclerView recyclerView);
 }

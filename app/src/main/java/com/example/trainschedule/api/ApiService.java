@@ -2,6 +2,7 @@ package com.example.trainschedule.api;
 
 import com.example.trainschedule.bean.Ticket;
 import com.example.trainschedule.bean.Token;
+import com.example.trainschedule.bean.User;
 import com.example.trainschedule.bean.Word;
 
 import io.reactivex.Observable;
@@ -20,6 +21,11 @@ import retrofit2.http.Query;
  */
 public interface ApiService {
 
+    @POST(UrlContainer.LOGIN)
+    @FormUrlEncoded
+    Observable<User> login(@Field("username") String username,
+                           @Field("password") String password);
+
     @POST(UrlContainer.ACCESS_TOKEN)
     Observable<Token> getAccessToken(@Query("grant_type") String grantType,
                                      @Query("client_id") String clientId,
@@ -27,8 +33,9 @@ public interface ApiService {
 
     /**
      * 通过图片获取图片内文字信息
-     * @param token                 通过API Key和Secret Key获取的access_token
-     * @param image                 图像数据base64编码后进行urlencode后的String
+     *
+     * @param token 通过API Key和Secret Key获取的access_token
+     * @param image 图像数据base64编码后进行urlencode后的String
      * @return
      */
     @POST(UrlContainer.TRAIN_TICKET)

@@ -17,6 +17,9 @@
     <!-- 按钮禁用时的颜色 -->
     <color name="colorButtonDisable">#DDDDDD</color>
 
+    <!-- 分割线的颜色 -->
+    <color name="colorLine">#ECECEC</color>
+
     <!-- 透明度100% -->
     <color name="white5">#0cFFFFFF</color>
     <color name="white10">#22FFFFFF</color>

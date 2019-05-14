@@ -15,9 +15,10 @@ public interface OnItemLongClickListener {
 
     /**
      * 当RecyclerView某个条目被长按时回调
-     * @param itemView          被点击的item对象
-     * @param position          被点击的item位置
-     * @return                  是否拦截事件
+     *
+     * @param itemView 被点击的item对象
+     * @param position 被点击的item位置
+     * @return 是否拦截事件
      */
     boolean onItemLongClick(View itemView, int position);
 }

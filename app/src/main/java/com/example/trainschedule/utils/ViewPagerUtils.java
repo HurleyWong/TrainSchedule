@@ -13,29 +13,31 @@ import android.view.MotionEvent;
  * </pre>
  */
 
-public class ViewPagerUtils extends ViewPager{
-    //是否可以进行滑动
-    private boolean isSlide=false;
+public class ViewPagerUtils extends ViewPager {
+    /**
+     * 是否可以进行滑动
+     */
+    private boolean isSlide = false;
 
-    public void setSlide(boolean isSlide){
-        isSlide=isSlide;
+    public void setSlide(boolean isSlide) {
+        isSlide = isSlide;
     }
 
-    public ViewPagerUtils(Context context){
+    public ViewPagerUtils(Context context) {
         super(context);
     }
 
-    public ViewPagerUtils(Context context, AttributeSet attrs){
-        super(context,attrs);
+    public ViewPagerUtils(Context context, AttributeSet attrs) {
+        super(context, attrs);
     }
 
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent event){
+    public boolean onInterceptTouchEvent(MotionEvent event) {
         return isSlide;
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event){
+    public boolean onTouchEvent(MotionEvent event) {
         return isSlide;
     }
 

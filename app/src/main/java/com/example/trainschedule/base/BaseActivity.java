@@ -3,10 +3,12 @@ package com.example.trainschedule.base;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.trainschedule.R;
 import com.gyf.barlibrary.ImmersionBar;
 
@@ -55,6 +57,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         unbinder.unbind();
+        ImmersionBar.with(this).destroy();
     }
 
     @Override
@@ -100,5 +103,26 @@ public abstract class BaseActivity extends AppCompatActivity {
         return false;
     }
 
+    /**
+     * 显示Toast
+     *
+     * @param text
+     */
+    protected void toast(CharSequence text) {
+        //设置Toast背景颜色
+        ToastUtils.setBgColor(ContextCompat.getColor(this, R.color.gray));
+        ToastUtils.showShort(text);
+    }
+
+    /**
+     * 显示Toast
+     *
+     * @param id
+     */
+    protected void toast(int id) {
+        //设置Toast背景颜色
+        ToastUtils.setBgColor(ContextCompat.getColor(this, R.color.gray));
+        ToastUtils.showShort(id);
+    }
 
 }

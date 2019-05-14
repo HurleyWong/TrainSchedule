@@ -10,7 +10,7 @@ import java.util.List;
  * </pre>
  */
 
-public class Train{
+public class Train {
 
 
     /**

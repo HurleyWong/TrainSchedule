@@ -48,7 +48,7 @@ public class TrainResultActivity extends BaseActivity {
 
     private AlertDialog alertDialog;
 
-    private List<Train.ResultBean.ListBean> listBeans=new ArrayList<>();
+    private List<Train.ResultBean.ListBean> listBeans = new ArrayList<>();
     private TrainTimeAdapter mTrainTimeAdapter;
 
     /**
@@ -110,26 +110,26 @@ public class TrainResultActivity extends BaseActivity {
     @Override
     protected void initView() {
         //获得Intent传递过来的值，并且将其所包含的空格去掉
-        Intent intent=getIntent();
-        String key=intent.getStringExtra("key");
-        mKeyStartStation=intent.getStringExtra("start_station");
-        if(mKeyStartStation!=null){
-            mKeyStartStation=mKeyStartStation.replaceAll(""," ");
+        Intent intent = getIntent();
+        String key = intent.getStringExtra("key");
+        mKeyStartStation = intent.getStringExtra("start_station");
+        if (mKeyStartStation != null) {
+            mKeyStartStation = mKeyStartStation.replaceAll("", " ");
         }
-        mKeyEndStation=intent.getStringExtra("end_station");
-        if(mKeyEndStation!=null){
-            mKeyEndStation=mKeyEndStation.replaceAll(""," ");
+        mKeyEndStation = intent.getStringExtra("end_station");
+        if (mKeyEndStation != null) {
+            mKeyEndStation = mKeyEndStation.replaceAll("", " ");
         }
-        mKeyStartTime=intent.getStringExtra("start_time");
-        if(mKeyStartTime!=null){
-            mKeyStartTime=mKeyStartTime.replaceAll(""," ");
+        mKeyStartTime = intent.getStringExtra("start_time");
+        if (mKeyStartTime != null) {
+            mKeyStartTime = mKeyStartTime.replaceAll("", " ");
         }
-        mKeyEndTime=intent.getStringExtra("end_time");
-        if(mKeyEndTime!=null){
-            mKeyEndTime=mKeyEndTime.replaceAll(""," ");
+        mKeyEndTime = intent.getStringExtra("end_time");
+        if (mKeyEndTime != null) {
+            mKeyEndTime = mKeyEndTime.replaceAll("", " ");
         }
 
-        url=getString(R.string.jisu_url_train)+"&trainno="+key;
+        url = getString(R.string.jisu_url_train) + "&trainno=" + key;
 
         getData();
     }
@@ -147,7 +147,7 @@ public class TrainResultActivity extends BaseActivity {
     /**
      * 获取数据
      */
-    private void getData(){
+    private void getData() {
         OkHttpEngine.getInstance().getAsynHttp(url, new ResultCallback() {
             @Override
             public void onError(Request request, Exception e) {
@@ -164,22 +164,23 @@ public class TrainResultActivity extends BaseActivity {
 
     /**
      * 处理数据
+     *
      * @param result
      */
-    private void dealData(String result){
+    private void dealData(String result) {
         //实例化Gson对象
-        Gson gson=new Gson();
+        Gson gson = new Gson();
 
-        try{
+        try {
             //把json字符转化为对象
-            Train train=gson.fromJson(result,Train.class);
+            Train train = gson.fromJson(result, Train.class);
 
             //车次
             mTvTrainNo.setText(train.getResult().getTrainno());
             //类别
             mTvTrainType.setText(train.getResult().getTypename());
             //如果传过来的intent值不为空，则说明是从点击列车班次跳转过来的
-            if(mKeyStartTime!=null&&mKeyEndTime!=null&&mKeyStartStation!=null&&mKeyEndStation!=null){
+            if (mKeyStartTime != null && mKeyEndTime != null && mKeyStartStation != null && mKeyEndStation != null) {
                 //出发车站
                 mTvStartStation.setText(mKeyStartStation);
                 //出发时间
@@ -189,70 +190,68 @@ public class TrainResultActivity extends BaseActivity {
                 //到达时间
                 mTvEndTime.setText(mKeyEndTime);
                 //二维码文字
-                mQRCodeText=mKeyStartStation+"->"+mKeyEndStation;
-            }
-            else{
+                mQRCodeText = mKeyStartStation + "->" + mKeyEndStation;
+            } else {
                 //起点站
                 mTvStartStation.setText(train.getResult().getList().get(0).getStation());
                 //起点时间
                 mTvStartTime.setText(train.getResult().getList().get(0).getDeparturetime());
                 //终点站
-                mTvEndStation.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getStation());
+                mTvEndStation.setText(train.getResult().getList().get(train.getResult().getList().size() - 1).getStation());
                 //终点时间
-                mTvEndTime.setText(train.getResult().getList().get(train.getResult().getList().size()-1).getArrivaltime());
+                mTvEndTime.setText(train.getResult().getList().get(train.getResult().getList().size() - 1).getArrivaltime());
                 //二维码文字
-                mQRCodeText=train.getResult().getList().get(0).getStation()+"—>"+train.getResult().getList().get(train.getResult().getList().size()-1).getStation();
+                mQRCodeText = train.getResult().getList().get(0).getStation() + "—>" + train.getResult().getList().get(train.getResult().getList().size() - 1).getStation();
             }
 
-            for(int i=0;i<train.getResult().getList().size();i++){
-                if(train.getResult().getList().get(i).getArrivaltime().equals("----")){
+            for (int i = 0; i < train.getResult().getList().size(); i++) {
+                if (train.getResult().getList().get(i).getArrivaltime().equals("----")) {
                     listBeans.add(new Train.ResultBean.ListBean(
                             train.getResult().getList().get(i).getStation(),
                             train.getResult().getList().get(i).getDeparturetime(),
                             "",
                             ""));
-                }
-                else{
+                } else {
                     listBeans.add(new Train.ResultBean.ListBean(
                             train.getResult().getList().get(i).getStation(),
                             train.getResult().getList().get(i).getArrivaltime(),
-                            train.getResult().getList().get(i).getStoptime()+"'",
+                            train.getResult().getList().get(i).getStoptime() + "'",
                             train.getResult().getList().get(i).getDeparturetime()));
                 }
 
             }
 
             //生成二维码
-            Bitmap bitmap=null;
-            try{
+            Bitmap bitmap = null;
+            try {
                 //根据二维码文字生成二维码图片
-                bitmap=BitmapUtils.create2DCode(mQRCodeText);
+                bitmap = BitmapUtils.create2DCode(mQRCodeText);
                 mIvQRCode.setImageBitmap(bitmap);
-            }catch(WriterException e){
+            } catch (WriterException e) {
                 e.printStackTrace();
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             //创建AlertDialog的构造器对象
-            AlertDialog.Builder builder=new AlertDialog.Builder(TrainResultActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(TrainResultActivity.this);
             //构造器内容。为对话框设置文本项
             builder.setMessage(R.string.wrong_train);
             //为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
-            builder.setPositiveButton("确定",new DialogInterface.OnClickListener(){
+            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                 //第一个参数dialog是点击的确定按钮所属的dialog对象，第二个对象which是按钮的标示值
                 @Override
-                public void onClick(DialogInterface dialog,int which){
+                public void onClick(DialogInterface dialog, int which) {
                     onBackPressed();
                     //Toast.makeText(TrainResultActivity.this,"输入数据有误",Toast.LENGTH_SHORT).show();
                 }
             });
             //利用构造器创建AlertDialog对象，实现实例化
-            alertDialog=builder.create();
-            if(alertDialog!=null&&!alertDialog.isShowing()){
+            alertDialog = builder.create();
+            if (alertDialog != null && !alertDialog.isShowing()) {
                 alertDialog.show();
             }
         }
 
-        mTrainTimeAdapter=new TrainTimeAdapter(this,listBeans);
+        mTrainTimeAdapter = new TrainTimeAdapter(this, listBeans);
         mRvTrainTimeLine.setLayoutManager(new LinearLayoutManager(this));
         mRvTrainTimeLine.setAdapter(mTrainTimeAdapter);
     }

@@ -13,10 +13,11 @@ public class DialogUtils {
 
     /**
      * 警告Dialog
+     *
      * @param activity
-     * @param title             标题
-     * @param content           内容
-     * @param positiveBtn       确定按钮
+     * @param title       标题
+     * @param content     内容
+     * @param positiveBtn 确定按钮
      */
     public static void showAlertDialog(Activity activity,
                                        String title,

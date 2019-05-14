@@ -1,36 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/ll_login"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp200"
     android:background="?attr/colorPrimary"
     android:orientation="vertical">
     
-    <com.recker.flyshapeimageview.ShapeImageView
+    <ImageView
         android:id="@+id/iv_app_icon"
         android:layout_gravity="center_horizontal"
-        android:layout_width="@dimen/dp60"
-        android:layout_height="@dimen/dp60"
-        android:layout_marginTop="@dimen/dp80"
-        android:src="@mipmap/ic_launcher"
-        app:shape_mode="shape"
-        app:frame_width="@dimen/dp1"/>
+        android:layout_marginTop="@dimen/dp40"
+        android:layout_width="@dimen/dp80"
+        android:layout_height="@dimen/dp80"
+        android:src="@mipmap/ic_user_img" />
     <TextView
-        android:id="@+id/tv_app_name"
+        android:id="@+id/tv_login_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/dp10"
-        android:text="@string/app_name"
-        android:textSize="@dimen/sp16"/>
-    <TextView
-        android:id="@+id/tv_app_version"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/dp5"
-        android:text="@string/app_version"
-        android:textSize="@dimen/sp15"/>
+        android:padding="@dimen/dp10"
+        android:text="@string/click_login"
+        android:textSize="@dimen/sp20"
+        android:textColor="@color/white"/>
 </LinearLayout>
 

@@ -15,8 +15,9 @@ public interface OnItemClickListener {
 
     /**
      * 当RecyclerView某个item被点击时回调
-     * @param itemView      被点击的item对象
-     * @param position      被点击的item位置
+     *
+     * @param itemView 被点击的item对象
+     * @param position 被点击的item位置
      */
     void onItemClick(View itemView, int position);
 }

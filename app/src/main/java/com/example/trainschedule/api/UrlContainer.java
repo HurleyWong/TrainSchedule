@@ -12,7 +12,14 @@ public class UrlContainer {
 
     private static final String TAG = "UrlContainer";
 
+    public static final String MY_BASE_URL = "https://wherewego.top:8200/";
+
     public static final String baseUrl = "https://aip.baidubce.com/";
+
+    /**
+     * 登录
+     */
+    public static final String LOGIN = "login";
 
     /**
      * 百度api的Token

@@ -15,7 +15,6 @@ public class ActivityUtils {
     /**
      * The {@code fragment} is added to the container view with id {@code frameId}. The operation is
      * performed by the {@code fragmentManager}.
-     *
      */
     public static void addFragmentToActivity(@NonNull FragmentManager fragmentManager,
                                              @NonNull Fragment fragment, int frameId) {
@@ -26,13 +25,20 @@ public class ActivityUtils {
     }
 
     public static void replaceFragmentToActivity(@NonNull FragmentManager fragmentManager,
-                                                 @NonNull Fragment fragment, int frameId){
+                                                 @NonNull Fragment fragment, int frameId) {
         fragmentManager.beginTransaction()
                 .replace(frameId, fragment)
                 .commitAllowingStateLoss();
     }
 
-    //隐藏并添加Fragment
+    /**
+     * 隐藏并添加Fragment
+     *
+     * @param fragmentManager
+     * @param fromFragment
+     * @param toFragment
+     * @param frameId
+     */
     public static void hideAndAddFragmentToActivity(@NonNull FragmentManager fragmentManager,
                                                     @NonNull Fragment fromFragment,
                                                     @NonNull Fragment toFragment, int frameId) {
@@ -40,7 +46,13 @@ public class ActivityUtils {
         transaction.hide(fromFragment).add(frameId, toFragment).show(toFragment).commit();
     }
 
-    //隐藏并显示Fragment
+    /**
+     * 隐藏并显示Fragment
+     *
+     * @param fragmentManager
+     * @param fromFragment
+     * @param toFragment
+     */
     public static void hideAndShowFragmentToActivity(@NonNull FragmentManager fragmentManager,
                                                      @NonNull Fragment fromFragment,
                                                      @NonNull Fragment toFragment) {

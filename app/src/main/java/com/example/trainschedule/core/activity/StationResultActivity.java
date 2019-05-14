@@ -35,7 +35,7 @@ import okhttp3.Request;
  * </pre>
  */
 
-public class StationResultActivity extends BaseActivity implements TrainAdapter.OnItemClickListener{
+public class StationResultActivity extends BaseActivity implements TrainAdapter.OnItemClickListener {
     private static final String TAG = "StationResultActivity";
 
     @BindView(R.id.toolbar)
@@ -66,10 +66,10 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
     protected void initView() {
 
         //获得Intent传递过来的值，并且将其所包含的空格去掉
-        Intent intent=getIntent();
-        String key1=intent.getStringExtra("key1").replaceAll(" ","");
-        String key2=intent.getStringExtra("key2").replaceAll(" ","");
-        isHigh=intent.getIntExtra("bool",0);
+        Intent intent = getIntent();
+        String key1 = intent.getStringExtra("key1").replaceAll(" ", "");
+        String key2 = intent.getStringExtra("key2").replaceAll(" ", "");
+        isHigh = intent.getIntExtra("bool", 0);
 
         //极速数据api
         url = getString(R.string.jisu_url_station) + "&start=" + key1 + "&end=" + key2 + "&ishigh=" + isHigh;
@@ -90,7 +90,7 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
     /**
      * 获取数据
      */
-    private void getData(){
+    private void getData() {
         OkHttpEngine.getInstance().getAsynHttp(url, new ResultCallback() {
             @Override
             public void onError(Request request, Exception e) {
@@ -108,17 +108,18 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
 
     /**
      * 处理数据
+     *
      * @param result
      */
-    private void dealData(String result){
+    private void dealData(String result) {
         //实例化Gson对象
-        Gson gson=new Gson();
+        Gson gson = new Gson();
 
-        try{
+        try {
             //把json字符转化为对象
             Station station = gson.fromJson(result, Station.class);
 
-            for (int i = 0; i < station.getResult().getList().size(); i ++) {
+            for (int i = 0; i < station.getResult().getList().size(); i++) {
                 //如果价格不为0且时间不为0
                 if (station.getResult().getList().get(i).getPriceyz() != null) {
                     listBeans.add(new Station.ResultBean.ListBean(
@@ -146,29 +147,29 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
             }
         } catch (Exception e) {
             //创建AlertDialog的构造器对象
-            AlertDialog.Builder builder=new AlertDialog.Builder(StationResultActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(StationResultActivity.this);
             //构造器内容。为对话框设置文本项
             builder.setMessage(R.string.wrong_station);
             //为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
-            builder.setPositiveButton("确定",new DialogInterface.OnClickListener(){
+            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                 //第一个参数dialog是点击的确定按钮所属的dialog对象，第二个对象which是按钮的标示值
                 @Override
-                public void onClick(DialogInterface dialog,int which){
+                public void onClick(DialogInterface dialog, int which) {
                     onBackPressed();
                     //Toast.makeText(TrainResultActivity.this,"输入数据有误",Toast.LENGTH_SHORT).show();
                 }
             });
             //利用构造器创建AlertDialog对象，实现实例化
-            alertDialog=builder.create();
-            if(alertDialog!=null&&!alertDialog.isShowing()){
+            alertDialog = builder.create();
+            if (alertDialog != null && !alertDialog.isShowing()) {
                 alertDialog.show();
             }
         }
 
         mRvTrainInfo.setLayoutManager(new LinearLayoutManager(this));
         //为RecyclerView添加分割线
-        mRvTrainInfo.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-        mTrainAdapter=new TrainAdapter(this, listBeans);
+        mRvTrainInfo.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        mTrainAdapter = new TrainAdapter(this, listBeans);
         mTrainAdapter.setOnItemClickListener(this);
         mRvTrainInfo.setAdapter(mTrainAdapter);
 
@@ -176,23 +177,24 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
 
     /**
      * RecyclerView的item点击事件
+     *
      * @param view
      * @param position
      */
     @Override
-    public void onItemClick(View view,int position){
-        String trainNp=listBeans.get(position).getTrainno();
-        String startStation=listBeans.get(position).getStation();
-        String endStation=listBeans.get(position).getEndstation();
-        String startTime=listBeans.get(position).getDeparturetime();
-        String endTime=listBeans.get(position).getArrivaltime();
-        Intent intent=new Intent();
-        intent.setClass(this,TrainResultActivity.class);
-        intent.putExtra("key",trainNp);
-        intent.putExtra("start_station",startStation);
-        intent.putExtra("end_station",endStation);
-        intent.putExtra("start_time",startTime);
-        intent.putExtra("end_time",endTime);
+    public void onItemClick(View view, int position) {
+        String trainNp = listBeans.get(position).getTrainno();
+        String startStation = listBeans.get(position).getStation();
+        String endStation = listBeans.get(position).getEndstation();
+        String startTime = listBeans.get(position).getDeparturetime();
+        String endTime = listBeans.get(position).getArrivaltime();
+        Intent intent = new Intent();
+        intent.setClass(this, TrainResultActivity.class);
+        intent.putExtra("key", trainNp);
+        intent.putExtra("start_station", startStation);
+        intent.putExtra("end_station", endStation);
+        intent.putExtra("start_time", startTime);
+        intent.putExtra("end_time", endTime);
 
         StationResultActivity.this.startActivity(intent);
     }

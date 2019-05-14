@@ -17,22 +17,28 @@ import java.io.InputStreamReader;
 
 public class FileUtils {
 
-    //读取位于assets文件夹下的JSON文件
-    public static String getJSON(String fileName,Context context){
+    /**
+     * 读取位于assets文件夹下的JSON文件
+     *
+     * @param fileName
+     * @param context
+     * @return
+     */
+    public static String getJSON(String fileName, Context context) {
         //将JSON数据转变成字符串
-        StringBuilder stringBuilder=new StringBuilder();
-        try{
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
             //获取assets资源管理器
-            AssetManager assetManager=context.getAssets();
+            AssetManager assetManager = context.getAssets();
             //通过管理器打开文件并读取
-            BufferedReader reader=new BufferedReader(new InputStreamReader(
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
                     assetManager.open(fileName)
             ));
             String line;
-            while((line=reader.readLine())!=null){
+            while ((line = reader.readLine()) != null) {
                 stringBuilder.append(line);
             }
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return stringBuilder.toString();

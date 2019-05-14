@@ -52,7 +52,7 @@ public class TicketFragment extends BaseFragment {
     private static final String CLIENT_CREDENTIALS = "client_credentials";
     private static final String API_KEY = "9mCzvaOoj2UXZh7uOzAAXaoU";
     private static final String SECRET_KEY = "o16bD6cjKyIMFuCfw5WWSvZ3xffBGfV9";
-    private static final String ACCESS_TOKEN = "24.3191cf02045daa9d80eb061ec15227c9.2592000.1556812741.282335-15913494";
+    private static final String ACCESS_TOKEN = "24.d99aa7e58b61fd626b5293831b57a4ff.2592000.1560390146.282335-15913494";
 
     @BindView(R.id.tv_ticket_num)
     TextView mTvTicketNum;
@@ -107,8 +107,8 @@ public class TicketFragment extends BaseFragment {
         mAdapter = new TicketAdapter(getContext(), photos);
         mRvTicket.setLayoutManager(linearLayoutManager);
         mRvTicket.setAdapter(mAdapter);
-        SnapHelper snapHelper = new PagerSnapHelper();
-        snapHelper.attachToRecyclerView(mRvTicket);
+//        SnapHelper snapHelper = new PagerSnapHelper();
+//        snapHelper.attachToRecyclerView(mRvTicket);
     }
 
     @OnClick(R.id.btn_photo)

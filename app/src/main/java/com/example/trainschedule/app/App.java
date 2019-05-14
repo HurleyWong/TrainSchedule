@@ -6,7 +6,7 @@ import android.content.Context;
 import com.blankj.utilcode.util.Utils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
-public class App extends Application{
+public class App extends Application {
 
     private static App instance;
 

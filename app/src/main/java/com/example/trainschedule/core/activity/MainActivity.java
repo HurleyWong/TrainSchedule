@@ -12,9 +12,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.AppUtils;
 import com.example.trainschedule.R;
 import com.example.trainschedule.base.BaseActivity;
@@ -30,7 +32,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
 
     @BindView(R.id.drawerLayout)
@@ -45,8 +47,8 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.viewPager)
     ViewPagerUtils viewPager;
 
-    private TextView mTvAppName;
-    private TextView mTvAppVersion;
+    private LinearLayout mLlLogin;
+    private TextView mTvLoginStatus;
 
     private long exitTime = 0;
 
@@ -125,10 +127,20 @@ public class MainActivity extends BaseActivity {
      */
     private void initNavigationHeaderView() {
         View headerView = navigationView.getHeaderView(0);
-        mTvAppName = headerView.findViewById(R.id.tv_app_name);
-        mTvAppVersion = headerView.findViewById(R.id.tv_app_version);
-        mTvAppName.setText(AppUtils.getAppName());
-        mTvAppVersion.setText(AppUtils.getAppVersionName());
+        mLlLogin = headerView.findViewById(R.id.ll_login);
+        mTvLoginStatus = headerView.findViewById(R.id.tv_login_status);
+        mLlLogin.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.ll_login:
+                ActivityUtils.startActivity(LoginActivity.class);
+                break;
+            default:
+                break;
+        }
     }
 
     /**
@@ -233,6 +245,7 @@ public class MainActivity extends BaseActivity {
 
     /**
      * 按两次返回键退出程序
+     *
      * @param context
      */
     private void exit(Context context) {
@@ -244,6 +257,7 @@ public class MainActivity extends BaseActivity {
             System.exit(0);
         }
     }
+
 
 }
 

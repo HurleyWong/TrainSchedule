@@ -10,7 +10,7 @@ import java.util.List;
  * </pre>
  */
 
-public class Station{
+public class Station {
 
 
     /**

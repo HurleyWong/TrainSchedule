@@ -21,14 +21,14 @@ import java.util.List;
  * </pre>
  */
 
-public class TrainTimeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class TrainTimeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private LayoutInflater inflater;
-    private List<Train.ResultBean.ListBean> listBeans=new ArrayList<>();
-    private List<Train> trainList=new ArrayList<>();
+    private List<Train.ResultBean.ListBean> listBeans = new ArrayList<>();
+    private List<Train> trainList = new ArrayList<>();
 
-    public TrainTimeAdapter(Context context,List<Train.ResultBean.ListBean> listBeans){
-        inflater=LayoutInflater.from(context);
-        this.listBeans=listBeans;
+    public TrainTimeAdapter(Context context, List<Train.ResultBean.ListBean> listBeans) {
+        inflater = LayoutInflater.from(context);
+        this.listBeans = listBeans;
     }
 
     public int getLayoutId() {
@@ -36,36 +36,36 @@ public class TrainTimeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
-        return new ViewHolder(inflater.inflate(getLayoutId(),parent,false));
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new ViewHolder(inflater.inflate(getLayoutId(), parent, false));
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder,int position){
-        ViewHolder itemHolder=(ViewHolder)holder;
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        ViewHolder itemHolder = (ViewHolder) holder;
         itemHolder.bindHolder(listBeans.get(position));
     }
 
     @Override
-    public int getItemCount(){
+    public int getItemCount() {
         return listBeans.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mTvDepartureTime;
         private TextView mTvStopTime;
         private TextView mTvArrivalTime;
         private TextView mTvStation;
 
-        public ViewHolder(View itemView){
+        public ViewHolder(View itemView) {
             super(itemView);
-            mTvArrivalTime=itemView.findViewById(R.id.tv_arrival_time);
-            mTvStopTime=itemView.findViewById(R.id.tv_stop_time);
-            mTvDepartureTime=itemView.findViewById(R.id.tv_departure_time);
-            mTvStation=itemView.findViewById(R.id.tv_station);
+            mTvArrivalTime = itemView.findViewById(R.id.tv_arrival_time);
+            mTvStopTime = itemView.findViewById(R.id.tv_stop_time);
+            mTvDepartureTime = itemView.findViewById(R.id.tv_departure_time);
+            mTvStation = itemView.findViewById(R.id.tv_station);
         }
 
-        public void bindHolder(Train.ResultBean.ListBean listBean){
+        public void bindHolder(Train.ResultBean.ListBean listBean) {
             //time.setText(train.getResult().getList().get(0).getArrivaltime()+"-"+train.getResult().getList().get(0).getDeparturetime());
             //station.setText(train.getResult().getList().get(0).getStation());
             mTvArrivalTime.setText(listBean.getArrivaltime());

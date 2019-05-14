@@ -69,12 +69,12 @@ public class StationFragment extends BaseFragment {
     //请求接口
     private String url;
 
-    private List<String> resultBeans=new ArrayList<>();
+    private List<String> resultBeans = new ArrayList<>();
 
     /**
      * 判断CheckBox是否被选中
      */
-    private int isHigh=0;
+    private int isHigh = 0;
 
     public static StationFragment newInstance() {
         Bundle args = new Bundle();
@@ -90,37 +90,37 @@ public class StationFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        url=getString(R.string.jisu_url_station);
+        url = getString(R.string.jisu_url_station);
         //getData();
         dealData();
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<>(StationFragment.this.getActivity(),android.R.layout.simple_list_item_1,resultBeans);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(StationFragment.this.getActivity(), android.R.layout.simple_list_item_1, resultBeans);
 
         //AutoCompleteTextView
         mTvStartStation.setAdapter(adapter);
         mTvEndStation.setAdapter(adapter);
 
         //监控EditText输入内容，点击clear图标删除输入内容
-        TextUtils.addClearListener(mTvStartStation,mIvStartStation);
-        TextUtils.addClearListener(mTvEndStation,mIvEndStation);
+        TextUtils.addClearListener(mTvStartStation, mIvStartStation);
+        TextUtils.addClearListener(mTvEndStation, mIvEndStation);
 
         //输入法完成/回车
-        mTvEndStation.setOnKeyListener(new View.OnKeyListener(){
+        mTvEndStation.setOnKeyListener(new View.OnKeyListener() {
             @Override
-            public boolean onKey(View view,int i,KeyEvent keyEvent){
-                if(i==android.view.KeyEvent.KEYCODE_ENTER&&keyEvent.getAction()==android.view.KeyEvent.ACTION_DOWN){
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i == android.view.KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == android.view.KeyEvent.ACTION_DOWN) {
                     //获取输入的内容
-                    String start_station=mTvStartStation.getText().toString();
-                    String end_station=mTvEndStation.getText().toString();
+                    String start_station = mTvStartStation.getText().toString();
+                    String end_station = mTvEndStation.getText().toString();
                     //输出输入的内容
-                    System.out.println("出发车站："+start_station);
-                    System.out.println("到达车站："+end_station);
+                    System.out.println("出发车站：" + start_station);
+                    System.out.println("到达车站：" + end_station);
 
                     //使用Intent进行传值页面跳转
-                    Intent intent=new Intent();
+                    Intent intent = new Intent();
                     intent.setClass(StationFragment.this.getActivity(), StationResultActivity.class);
-                    intent.putExtra("key1",start_station);
-                    intent.putExtra("key2",end_station);
+                    intent.putExtra("key1", start_station);
+                    intent.putExtra("key2", end_station);
                     StationFragment.this.getActivity().startActivity(intent);
                 }
                 return false;
@@ -128,32 +128,31 @@ public class StationFragment extends BaseFragment {
         });
 
         //点击搜索按钮
-        mBtnSearch.setOnClickListener(new View.OnClickListener(){
+        mBtnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 //获取输入的内容
-                String start_station=mTvStartStation.getText().toString();
-                String end_station=mTvEndStation.getText().toString();
+                String start_station = mTvStartStation.getText().toString();
+                String end_station = mTvEndStation.getText().toString();
 
                 //设置CheckBox的监听事件，判断CheckBox是否被选中
-                mCbIsHigh.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+                mCbIsHigh.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
-                    public void onCheckedChanged(CompoundButton buttonView,boolean isChecked){
-                        if(isChecked){
-                            isHigh=1;
-                        }
-                        else{
-                            isHigh=0;
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        if (isChecked) {
+                            isHigh = 1;
+                        } else {
+                            isHigh = 0;
                         }
                     }
                 });
 
                 //使用Intent进行传值页面跳转
-                Intent intent=new Intent();
-                intent.setClass(StationFragment.this.getActivity(),StationResultActivity.class);
-                intent.putExtra("key1",start_station);
-                intent.putExtra("key2",end_station);
-                intent.putExtra("bool",isHigh);
+                Intent intent = new Intent();
+                intent.setClass(StationFragment.this.getActivity(), StationResultActivity.class);
+                intent.putExtra("key1", start_station);
+                intent.putExtra("key2", end_station);
+                intent.putExtra("bool", isHigh);
                 StationFragment.this.getActivity().startActivity(intent);
             }
         });
@@ -162,11 +161,11 @@ public class StationFragment extends BaseFragment {
     /**
      * 处理本地数据
      */
-    private void dealData(){
-        Gson gson=new Gson();
-        String JSONContext= FileUtils.getJSON("station.json",getContext());
-        final StationTip stationTip=gson.fromJson(JSONContext,StationTip.class);
-        for(int i=0;i<stationTip.getResult().size();i++){
+    private void dealData() {
+        Gson gson = new Gson();
+        String JSONContext = FileUtils.getJSON("station.json", getContext());
+        final StationTip stationTip = gson.fromJson(JSONContext, StationTip.class);
+        for (int i = 0; i < stationTip.getResult().size(); i++) {
             resultBeans.add(stationTip.getResult().get(i).getName());
         }
     }

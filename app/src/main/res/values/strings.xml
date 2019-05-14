@@ -32,6 +32,17 @@
     <string name="train_no">列车班次</string>
     <string name="train_time">列车时刻</string>
 
+    <!-- 登录模块 -->
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="click_login">点击登录</string>
+    <string name="login_username_input_hint">请输入用户名</string>
+    <string name="login_password_input_hint">请输入密码</string>
+    <string name="register_confirm_password_input_hint">请确认密码</string>
+    <string name="login_username_password_null">用户名或密码不能为空</string>
+    <string name="confirm_password_input_error">两次密码输入不一致，请重新输入</string>
+
 
     <!-- 应用功能介绍 -->
     <string name="app_func">火车时刻表是一款可以根据车站和车次来查询火车运行时刻表的应用</string>

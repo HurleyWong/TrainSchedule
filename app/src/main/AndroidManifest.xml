@@ -39,6 +39,8 @@
         <activity android:name=".core.activity.TrainResultActivity"/>
         <activity android:name=".core.activity.StationResultActivity"/>
         <activity android:name=".core.activity.SupportActivity"/>
+        <activity android:name=".core.activity.LoginActivity"/>
+        <activity android:name=".core.activity.RegisterActivity"/>
 
         <provider
             android:authorities="com.example.trainschedule.app.App"
