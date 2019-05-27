@@ -51,7 +51,7 @@ public class TrainFragment extends BaseFragment {
 
     @Override
     public int getLayoutId() {
-        return R.layout.fragment_train;
+        return R.layout.train_fragment;
     }
 
     @Override

@@ -32,7 +32,7 @@ public class TrainTimeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     public int getLayoutId() {
-        return R.layout.item_train_time;
+        return R.layout.train_time_recycle_item;
     }
 
     @Override

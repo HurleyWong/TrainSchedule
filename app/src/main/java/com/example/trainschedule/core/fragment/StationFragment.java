@@ -85,7 +85,7 @@ public class StationFragment extends BaseFragment {
 
     @Override
     public int getLayoutId() {
-        return R.layout.fragment_station;
+        return R.layout.station_fragment;
     }
 
     @Override

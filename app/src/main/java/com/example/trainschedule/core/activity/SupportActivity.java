@@ -30,7 +30,7 @@ public class SupportActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_support;
+        return R.layout.support_fragment;
     }
 
     @Override

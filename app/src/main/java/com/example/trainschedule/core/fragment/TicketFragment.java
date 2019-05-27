@@ -5,9 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SnapHelper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -44,7 +42,7 @@ import static android.app.Activity.RESULT_OK;
  *      @author hurley
  *      date    : 2019/4/2 3:07 PM
  *      github  : https://github.com/HurleyJames
- *      desc    :
+ *      desc    : 车票管理页面
  * </pre>
  */
 public class TicketFragment extends BaseFragment {
@@ -98,7 +96,7 @@ public class TicketFragment extends BaseFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_ticket;
+        return R.layout.ticket_fragment;
     }
 
     @Override

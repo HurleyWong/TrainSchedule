@@ -34,7 +34,7 @@ public class RegisterActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_register;
+        return R.layout.register_activity;
     }
 
     @Override

@@ -42,7 +42,7 @@ public class DefaultFragment extends BaseFragment {
 
     @Override
     public int getLayoutId() {
-        return R.layout.fragment_default;
+        return R.layout.default_fragment;
     }
 
     @Override

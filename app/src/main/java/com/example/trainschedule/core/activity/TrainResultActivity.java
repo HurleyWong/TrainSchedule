@@ -3,7 +3,6 @@ package com.example.trainschedule.core.activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -104,7 +103,7 @@ public class TrainResultActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_train_result;
+        return R.layout.train_result_activity;
     }
 
     @Override

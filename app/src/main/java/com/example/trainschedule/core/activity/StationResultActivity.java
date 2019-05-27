@@ -2,7 +2,6 @@ package com.example.trainschedule.core.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -59,7 +58,7 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_station_result;
+        return R.layout.station_result_activity;
     }
 
     @Override
