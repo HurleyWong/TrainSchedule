@@ -17,11 +17,10 @@ import android.widget.Toast;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.example.trainschedule.R;
 import com.example.trainschedule.base.BaseActivity;
-import com.example.trainschedule.core.fragment.DefaultFragment;
-import com.example.trainschedule.core.fragment.TicketFragment;
-import com.example.trainschedule.utils.ViewPagerUtils;
 import com.example.trainschedule.core.fragment.StationFragment;
+import com.example.trainschedule.core.fragment.TicketFragment;
 import com.example.trainschedule.core.fragment.TrainFragment;
+import com.example.trainschedule.utils.ViewPagerUtils;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 
@@ -45,11 +44,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     ViewPagerUtils viewPager;
 
     private LinearLayout mLlLogin;
+
     private TextView mTvLoginStatus;
 
     private long exitTime = 0;
-
-    private int option = -1;
 
     @Override
     protected int getLayoutId() {
@@ -90,7 +88,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         //添加Fragment
         final ArrayList<Fragment> fragments = new ArrayList<>();
         //添加默认Fragment
-        fragments.add(DefaultFragment.newInstance());
+        //fragments.add(DefaultFragment.newInstance());
         //添加站站Fragment
         fragments.add(StationFragment.newInstance());
         //添加车次Fragment
@@ -150,22 +148,22 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     item -> {
                         switch (item.getItemId()) {
                             //根据item进行选择
-                            case R.id.default_fragment:
-                                //改变item选中状态
-                                item.setChecked(true);
-                                //跳转到相应的ViewPager
-                                //首页默认对应0
-                                viewPager.setCurrentItem(0);
-                                viewPager.setSlide(false);
-                                //关闭导航栏菜单
-                                drawerLayout.closeDrawers();
-                                break;
+//                            case R.id.default_fragment:
+//                                //改变item选中状态
+//                                item.setChecked(true);
+//                                //跳转到相应的ViewPager
+//                                //首页默认对应0
+//                                viewPager.setCurrentItem(0);
+//                                viewPager.setSlide(false);
+//                                //关闭导航栏菜单
+//                                drawerLayout.closeDrawers();
+//                                break;
                             case R.id.station_query:
                                 //改变item选中状态
                                 item.setChecked(true);
                                 //跳转到相应的ViewPager
                                 //站站查询对应1
-                                viewPager.setCurrentItem(1);
+                                viewPager.setCurrentItem(0);
                                 //禁止ViewPager左右滑动
                                 viewPager.setSlide(false);
                                 toolbar.setTitle(getString(R.string.station_query));
@@ -177,7 +175,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                                 item.setChecked(true);
                                 //跳转到相应的ViewPager
                                 //车次查询对应2
-                                viewPager.setCurrentItem(2);
+                                viewPager.setCurrentItem(1);
                                 //禁止ViewPager左右滑动
                                 viewPager.setSlide(false);
                                 toolbar.setTitle(getString(R.string.train_query));
@@ -189,7 +187,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                                 item.setChecked(true);
                                 //跳转到相应的ViewPager
                                 //车票管理对应3
-                                viewPager.setCurrentItem(3);
+                                viewPager.setCurrentItem(2);
                                 //禁止ViewPager左右滑动
                                 viewPager.setSlide(false);
                                 toolbar.setTitle(getString(R.string.ticket_manage));

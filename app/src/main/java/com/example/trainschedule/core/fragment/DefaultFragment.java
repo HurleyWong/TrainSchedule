@@ -21,17 +21,11 @@ import butterknife.BindView;
  */
 
 public class DefaultFragment extends BaseFragment {
-    private static final String TAG = "DefaultFragment";
 
     @BindView(R.id.default_image)
     ImageView mIvDefault;
 
     private SimpleDraweeView draweeView;
-
-    int resourceId = R.mipmap.small_railline;
-
-    String url1 = "http://s16.sinaimg.cn/orignal/001yUN6jzy7hgWgzoHt0f&690";
-    String url2 = "http://photo.blog.sina.com.cn/showpic.html#blogid=14f7d01f50102y18q&url=http://album.sina.com.cn/pic/0068URxzzy7mV6yvoio7c";
 
     public static DefaultFragment newInstance() {
         Bundle args = new Bundle();
@@ -47,7 +41,9 @@ public class DefaultFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        Glide.with(this).load(resourceId).into(mIvDefault);
+        Glide.with(this).
+                load("https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/small_railline.JPG").
+                into(mIvDefault);
     }
 
 }
