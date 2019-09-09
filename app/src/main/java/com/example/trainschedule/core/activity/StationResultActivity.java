@@ -120,7 +120,9 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
 
             for (int i = 0; i < station.getResult().getList().size(); i++) {
                 //如果价格不为0且时间不为0
-                if (station.getResult().getList().get(i).getPriceyz() != null) {
+                // 如果硬座价格不为空，则为硬座
+                if (station.getResult().getList().get(i).getPriceyz() != null &&
+                    !station.getResult().getList().get(i).getCosttime().equals("0分")) {
                     listBeans.add(new Station.ResultBean.ListBean(
                             station.getResult().getList().get(i).getTrainno(),
                             station.getResult().getList().get(i).getStation(),
@@ -132,16 +134,19 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
                             "硬座"
                     ));
                 } else {
-                    listBeans.add(new Station.ResultBean.ListBean(
-                            station.getResult().getList().get(i).getTrainno(),
-                            station.getResult().getList().get(i).getStation(),
-                            station.getResult().getList().get(i).getEndstation(),
-                            station.getResult().getList().get(i).getDeparturetime(),
-                            station.getResult().getList().get(i).getArrivaltime(),
-                            station.getResult().getList().get(i).getCosttime(),
-                            station.getResult().getList().get(i).getPriceed() + "元",
-                            "二等座"
-                    ));
+                    // 如果硬座价格为空，则为高铁
+                    if (station.getResult().getList().get(i).getPriceed() != null) {
+                        listBeans.add(new Station.ResultBean.ListBean(
+                                station.getResult().getList().get(i).getTrainno(),
+                                station.getResult().getList().get(i).getStation(),
+                                station.getResult().getList().get(i).getEndstation(),
+                                station.getResult().getList().get(i).getDeparturetime(),
+                                station.getResult().getList().get(i).getArrivaltime(),
+                                station.getResult().getList().get(i).getCosttime(),
+                                station.getResult().getList().get(i).getPriceed() + "元",
+                                "二等座"
+                        ));
+                    }
                 }
             }
         } catch (Exception e) {

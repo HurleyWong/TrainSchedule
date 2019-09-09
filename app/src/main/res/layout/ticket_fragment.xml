@@ -142,10 +142,21 @@
         android:layout_marginStart="@dimen/dp10"
         android:layout_marginEnd="@dimen/dp10" />
 
-    <Button
-        android:id="@+id/btn_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="录入"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/a_shape_photo_button"
+            android:text="录入"/>
+    </RelativeLayout>
+
+
 </LinearLayout>
 
