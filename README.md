@@ -13,4 +13,4 @@
 * 使用 OkHttp + Gson + ButterKnife 等框架开发
 
 ## 截图
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/IMG_3560.JPG)
+![](https://i.loli.net/2021/02/21/KEYzNm1gR29ZAjn.jpg)
