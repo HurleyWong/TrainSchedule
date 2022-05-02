@@ -12,14 +12,14 @@ import java.util.List;
  * <pre>
  *      @author hurley
  *      date   : 2018/11/19 下午5:02
- *      github : https://github.com/HurleyJames
+ *      github : https://github.com/HurleyWong
  *      desc   : 文本输入辅助类，通过管理多个EditText输入是否为空来启用或者禁用按钮的点击事件
  * </pre>
  */
 public final class EditTextInputHelper implements TextWatcher {
 
     /**
-     * 操作按钮的View
+     * 操作按钮的 View
      */
     private View mView;
     /**
@@ -28,7 +28,7 @@ public final class EditTextInputHelper implements TextWatcher {
     private boolean isAlpha;
 
     /**
-     * EditText集合
+     * EditText 集合
      */
     private List<EditText> mViewSet;
 
@@ -51,9 +51,9 @@ public final class EditTextInputHelper implements TextWatcher {
     }
 
     /**
-     * 添加EditText
+     * 添加 EditText
      *
-     * @param views 传入单个或者多个EditText
+     * @param views 传入单个或者多个 EditText
      */
     public void addViews(EditText... views) {
         if (views == null) {
@@ -72,7 +72,7 @@ public final class EditTextInputHelper implements TextWatcher {
     }
 
     /**
-     * 移除EditText监听，避免内存泄露
+     * 移除 EditText 监听，避免内存泄露
      */
     public void removeViews() {
         if (mViewSet == null) {
@@ -115,9 +115,9 @@ public final class EditTextInputHelper implements TextWatcher {
     }
 
     /**
-     * 设置View的事件
+     * 设置 View 的事件
      *
-     * @param enabled 启用或者禁用View的事件
+     * @param enabled 启用或者禁用 View 的事件
      */
     public void setEnabled(boolean enabled) {
         if (enabled == mView.isEnabled()) {
@@ -125,17 +125,17 @@ public final class EditTextInputHelper implements TextWatcher {
         }
 
         if (enabled) {
-            //启用View的事件
+            // 启用 View 的事件
             mView.setEnabled(true);
             if (isAlpha) {
                 //设置不透明
                 mView.setAlpha(1f);
             }
         } else {
-            //禁用View的事件
+            // 禁用 View 的事件
             mView.setEnabled(false);
             if (isAlpha) {
-                //设置半透明
+                // 设置半透明
                 mView.setAlpha(0.5f);
             }
         }

@@ -18,8 +18,8 @@ import com.example.trainschedule.R;
  * <pre>
  *      @author hurley
  *      date    : 2019/4/9 1:21 PM
- *      github  : https://github.com/HurleyJames
- *      desc    : 带清除按钮的EditText
+ *      github  : https://github.com/HurleyWong
+ *      desc    : 带清除按钮的 EditText
  * </pre>
  */
 public class ClearEditText extends AppCompatEditText

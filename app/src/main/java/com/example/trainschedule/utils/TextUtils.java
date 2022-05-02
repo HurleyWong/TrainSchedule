@@ -23,7 +23,7 @@ public class TextUtils {
      * @param imageView
      */
     public static void addClearListener(final EditText editText, final ImageView imageView) {
-        //监听EditText的输入内容
+        // 监听 EditText 的输入内容
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -37,7 +37,7 @@ public class TextUtils {
 
             @Override
             public void afterTextChanged(Editable s) {
-                //如果输入后的输入内容长度大于0，则显示clear图标
+                // 如果输入后的输入内容长度大于 0，则显示 clear 图标
                 if (s.length() > 0) {
                     imageView.setVisibility(View.VISIBLE);
                 } else {
@@ -46,7 +46,7 @@ public class TextUtils {
             }
         });
 
-        //clear图标的点击事件
+        // clear 图标的点击事件
         imageView.setOnClickListener(v -> editText.setText(""));
     }
 }

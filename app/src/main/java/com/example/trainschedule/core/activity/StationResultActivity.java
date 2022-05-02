@@ -64,13 +64,13 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
     @Override
     protected void initView() {
 
-        //获得Intent传递过来的值，并且将其所包含的空格去掉
+        // 获得 Intent 传递过来的值，并且将其所包含的空格去掉
         Intent intent = getIntent();
         String key1 = intent.getStringExtra("key1").replaceAll(" ", "");
         String key2 = intent.getStringExtra("key2").replaceAll(" ", "");
         isHigh = intent.getIntExtra("bool", 0);
 
-        //极速数据api
+        // 极速数据 api
         url = getString(R.string.jisu_url_station) + "&start=" + key1 + "&end=" + key2 + "&ishigh=" + isHigh;
 
         getData();
@@ -111,18 +111,18 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
      * @param result
      */
     private void dealData(String result) {
-        //实例化Gson对象
+        // 实例化 Gson 对象
         Gson gson = new Gson();
 
         try {
-            //把json字符转化为对象
+            //把 json 字符转化为对象
             Station station = gson.fromJson(result, Station.class);
 
             for (int i = 0; i < station.getResult().getList().size(); i++) {
-                //如果价格不为0且时间不为0
+                // 如果价格不为 0 且时间不为 0
                 // 如果硬座价格不为空，则为硬座
                 if (station.getResult().getList().get(i).getPriceyz() != null &&
-                    !station.getResult().getList().get(i).getCosttime().equals("0分")) {
+                        !station.getResult().getList().get(i).getCosttime().equals("0分")) {
                     listBeans.add(new Station.ResultBean.ListBean(
                             station.getResult().getList().get(i).getTrainno(),
                             station.getResult().getList().get(i).getStation(),
@@ -150,20 +150,20 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
                 }
             }
         } catch (Exception e) {
-            //创建AlertDialog的构造器对象
+            // 创建 AlertDialog 的构造器对象
             AlertDialog.Builder builder = new AlertDialog.Builder(StationResultActivity.this);
-            //构造器内容。为对话框设置文本项
+            // 构造器内容。为对话框设置文本项
             builder.setMessage(R.string.wrong_station);
-            //为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
+            // 为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
             builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                //第一个参数dialog是点击的确定按钮所属的dialog对象，第二个对象which是按钮的标示值
+                // 第一个参数 dialog 是点击的确定按钮所属的dialog对象，第二个对象 which 是按钮的标示值
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     onBackPressed();
-                    //Toast.makeText(TrainResultActivity.this,"输入数据有误",Toast.LENGTH_SHORT).show();
+                    // Toast.makeText(TrainResultActivity.this,"输入数据有误",Toast.LENGTH_SHORT).show();
                 }
             });
-            //利用构造器创建AlertDialog对象，实现实例化
+            // 利用构造器创建 AlertDialog 对象，实现实例化
             alertDialog = builder.create();
             if (alertDialog != null && !alertDialog.isShowing()) {
                 alertDialog.show();
@@ -171,7 +171,7 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
         }
 
         mRvTrainInfo.setLayoutManager(new LinearLayoutManager(this));
-        //为RecyclerView添加分割线
+        // 为 RecyclerView 添加分割线
         mRvTrainInfo.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         mTrainAdapter = new TrainAdapter(this, listBeans);
         mTrainAdapter.setOnItemClickListener(this);
@@ -180,7 +180,7 @@ public class StationResultActivity extends BaseActivity implements TrainAdapter.
     }
 
     /**
-     * RecyclerView的item点击事件
+     * RecyclerView 的 item 点击事件
      *
      * @param view
      * @param position

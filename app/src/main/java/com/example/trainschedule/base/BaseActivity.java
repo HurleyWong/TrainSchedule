@@ -21,8 +21,8 @@ import butterknife.Unbinder;
  * <pre>
  *      @author hurley
  *      date    : 2019/3/31 9:02 PM
- *      github  : https://github.com/HurleyJames
- *      desc    :
+ *      github  : https://github.com/HurleyWong
+ *      desc    : Activity 基类
  * </pre>
  */
 public abstract class BaseActivity extends AppCompatActivity {
@@ -45,11 +45,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         initToolbar();
         initView();
         ImmersionBar.with(this)
-                //与导航栏同色
+                // 与导航栏同色
                 .statusBarColor(R.color.colorPrimary)
-                //解决状态栏和布局重叠问题
+                // 解决状态栏和布局重叠问题
                 .fitsSystemWindows(true)
-                //初始化
+                // 初始化
                 .init();
     }
 
@@ -63,22 +63,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch (id) {
-            case android.R.id.home:
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    finishAfterTransition();
-                } else {
-                    finish();
-                }
-                break;
-            default:
-                break;
+        if (id == android.R.id.home) {
+            finishAfterTransition();
         }
         return true;
     }
 
     /**
-     * 初始化toolbar
+     * 初始化 toolbar
      */
     private void initToolbar() {
         toolbar = findViewById(R.id.toolbar);
@@ -87,11 +79,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(showHomeAsUp());
-        //toolbar除掉阴影
+        // toolbar 除掉阴影
         getSupportActionBar().setElevation(0);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            toolbar.setElevation(0);
-        }
+        toolbar.setElevation(0);
     }
 
     /**
@@ -104,23 +94,23 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 显示Toast
+     * 显示 Toast
      *
      * @param text
      */
     protected void toast(CharSequence text) {
-        //设置Toast背景颜色
+        // 设置 Toast 背景颜色
         ToastUtils.setBgColor(ContextCompat.getColor(this, R.color.gray));
         ToastUtils.showShort(text);
     }
 
     /**
-     * 显示Toast
+     * 显示 Toast
      *
      * @param id
      */
     protected void toast(int id) {
-        //设置Toast背景颜色
+        //设置 Toast 背景颜色
         ToastUtils.setBgColor(ContextCompat.getColor(this, R.color.gray));
         ToastUtils.showShort(id);
     }

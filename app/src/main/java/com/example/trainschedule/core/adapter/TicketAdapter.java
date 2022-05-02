@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * <pre>
  *      @author hurley
  *      date    : 2019/4/2 5:00 PM
- *      github  : https://github.com/HurleyJames
+ *      github  : https://github.com/HurleyWong
  *      desc    : 车票适配器类
  * </pre>
  */

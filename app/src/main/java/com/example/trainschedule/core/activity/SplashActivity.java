@@ -16,8 +16,8 @@ import site.gemus.openingstartanimation.RedYellowBlueDrawStrategy;
  * <pre>
  *      @author hurley
  *      date    : 2019/4/1 9:23 PM
- *      github  : https://github.com/HurleyJames
- *      desc    :
+ *      github  : https://github.com/HurleyWong
+ *      desc    : 开屏界面
  * </pre>
  */
 public class SplashActivity extends AppCompatActivity {

@@ -15,8 +15,8 @@ import butterknife.OnClick;
  * <pre>
  *      @author hurley
  *      date    : 2019/4/9 1:42 PM
- *      github  : https://github.com/HurleyJames
- *      desc    :
+ *      github  : https://github.com/HurleyWong
+ *      desc    : 注册界面
  * </pre>
  */
 public class RegisterActivity extends BaseActivity {
@@ -55,15 +55,15 @@ public class RegisterActivity extends BaseActivity {
         String password = mEtPassword.getText().toString().trim();
         String repassword = mEtConfirmPassword.getText().toString().trim();
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password) || StringUtils.isEmpty(repassword)) {
-            //如果用户名或密码为空
+            // 如果用户名或密码为空
             toast(R.string.login_username_password_null);
             return;
         }
         if (!password.equals(repassword)) {
-            //如果密码与确认密码不一致
+            // 如果密码与确认密码不一致
             toast(R.string.confirm_password_input_error);
             return;
         }
-        //mPresenter.register(username, password, repassword);
+        // mPresenter.register(username, password, repassword);
     }
 }

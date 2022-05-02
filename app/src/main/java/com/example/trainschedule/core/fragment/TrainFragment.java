@@ -56,18 +56,18 @@ public class TrainFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        //监控EditText输入内容，点击clear图标删除输入内容
+        // 监控 EditText 输入内容，点击 clear 图标删除输入内容
         TextUtils.addClearListener(mEtTrainInput, mIvTrainClear);
 
-        //输入法完成/回车
+        // 输入法完成/回车
         mEtTrainInput.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == android.view.KeyEvent.KEYCODE_ENTER && event.getAction() == android.view.KeyEvent.ACTION_DOWN) {
-                    //获取输入的内容
+                    // 获取输入的内容
                     String content = mEtTrainInput.getText().toString();
 
-                    //使用Intent进行传值页面跳转
+                    // 使用 Intent 进行传值页面跳转
                     Intent intent = new Intent();
                     intent.setClass(TrainFragment.this.getActivity(), TrainResultActivity.class);
                     intent.putExtra("key", content);
@@ -77,14 +77,14 @@ public class TrainFragment extends BaseFragment {
             }
         });
 
-        //点击搜索按钮
+        // 点击搜索按钮
         mBtnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //获取输入的内容
+                // 获取输入的内容
                 String content = mEtTrainInput.getText().toString();
 
-                //使用Intent进行传值页面跳转
+                // 使用 Intent 进行传值页面跳转
                 Intent intent = new Intent();
                 intent.setClass(TrainFragment.this.getActivity(), TrainResultActivity.class);
                 intent.putExtra("key", content);

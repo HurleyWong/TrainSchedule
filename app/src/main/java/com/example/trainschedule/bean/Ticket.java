@@ -4,7 +4,7 @@ package com.example.trainschedule.bean;
  * <pre>
  *      @author hurley
  *      date    : 2019/4/2 10:47 AM
- *      github  : https://github.com/HurleyJames
+ *      github  : https://github.com/HurleyWong
  *      desc    :
  * </pre>
  */

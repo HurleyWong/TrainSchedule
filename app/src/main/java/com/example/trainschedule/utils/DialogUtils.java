@@ -12,7 +12,7 @@ public class DialogUtils {
 
 
     /**
-     * 警告Dialog
+     * 警告 Dialog
      *
      * @param activity
      * @param title       标题
@@ -24,27 +24,27 @@ public class DialogUtils {
                                        String content,
                                        String positiveBtn) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        //设置Dialog标题
+        // 设置 Dialog 标题
         builder.setTitle(title);
-        //设置Dialog内容
+        // 设置 Dialog 内容
         builder.setMessage(content);
-        //设置按钮
+        // 设置按钮
         builder.setPositiveButton(positiveBtn, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                //按钮点击事件
-                //onBackPressed();
+                // 按钮点击事件
+                // onBackPressed();
             }
         });
 
-        //创建Dialog对象，并实例化
+        // 创建 Dialog 对象，并实例化
         AlertDialog alertDialog = builder.create();
         if (alertDialog != null && !alertDialog.isShowing()) {
             alertDialog.show();
         }
     }
 
-    //隐藏Dialog
+    // 隐藏 Dialog
     public static void dismissDialog(Dialog dialog) {
         if (dialog != null && dialog.isShowing()) {
             Activity ownerActivity = dialog.getOwnerActivity();

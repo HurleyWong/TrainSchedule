@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
  *      e-mail : 1401682479@qq.com
  *      github : https://github.com/HurleyJames
  *      time   : 2018/11/18 下午2:39
- *      desc   : RecyclerView滚动监听类
+ *      desc   : RecyclerView 滚动监听类
  * </pre>
  */
 public interface OnScrollingListener {

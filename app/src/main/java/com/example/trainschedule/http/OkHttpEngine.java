@@ -17,7 +17,7 @@ import okhttp3.Response;
  *      author : Hurley
  *      e-mail : 1401682479@qq.com
  *      time   : 2018/10/30
- *      desc   : 对OkHttp进行封装
+ *      desc   : 对 OkHttp 进行封装
  * </pre>
  */
 
@@ -46,7 +46,7 @@ public class OkHttpEngine {
     }
 
     /**
-     * 异步GET请求
+     * 异步 GET 请求
      *
      * @param url
      * @param callback

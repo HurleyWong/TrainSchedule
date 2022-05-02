@@ -32,7 +32,7 @@ public class ActivityUtils {
     }
 
     /**
-     * 隐藏并添加Fragment
+     * 隐藏并添加 Fragment
      *
      * @param fragmentManager
      * @param fromFragment
@@ -47,7 +47,7 @@ public class ActivityUtils {
     }
 
     /**
-     * 隐藏并显示Fragment
+     * 隐藏并显示 Fragment
      *
      * @param fragmentManager
      * @param fromFragment

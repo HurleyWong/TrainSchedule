@@ -18,8 +18,8 @@ import butterknife.OnClick;
  * <pre>
  *      @author hurley
  *      date    : 2019/4/9 1:16 PM
- *      github  : https://github.com/HurleyJames
- *      desc    :
+ *      github  : https://github.com/HurleyWong
+ *      desc    : 登录界面
  * </pre>
  */
 public class LoginActivity extends BaseActivity {
@@ -61,14 +61,14 @@ public class LoginActivity extends BaseActivity {
                 String username = mEtUsername.getText().toString();
                 String password = mEtPassword.getText().toString();
                 if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
-                    //如果用户名或密码为空
+                    // 如果用户名或密码为空
                     toast(R.string.login_username_password_null);
                     return;
                 }
-                //mPresenter.login(username, password);
+                // mPresenter.login(username, password);
                 break;
             case R.id.tv_register:
-                //跳转至注册界面
+                // 跳转至注册界面
                 ActivityUtils.startActivity(RegisterActivity.class);
                 break;
             case R.id.tv_login_forget:

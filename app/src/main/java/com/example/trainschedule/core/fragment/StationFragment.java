@@ -21,6 +21,7 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 
@@ -66,13 +67,15 @@ public class StationFragment extends BaseFragment {
     @BindView(R.id.btn_station_search)
     Button mBtnSearch;
 
-    //请求接口
+    /**
+     * 请求接口
+     */
     private String url;
 
     private List<String> resultBeans = new ArrayList<>();
 
     /**
-     * 判断CheckBox是否被选中
+     * 判断 CheckBox 是否被选中
      */
     private int isHigh = 0;
 
@@ -91,32 +94,32 @@ public class StationFragment extends BaseFragment {
     @Override
     protected void initView(View view) {
         url = getString(R.string.jisu_url_station);
-        //getData();
+        // getData();
         dealData();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(StationFragment.this.getActivity(), android.R.layout.simple_list_item_1, resultBeans);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(Objects.requireNonNull(StationFragment.this.getActivity()), android.R.layout.simple_list_item_1, resultBeans);
 
-        //AutoCompleteTextView
+        // AutoCompleteTextView
         mTvStartStation.setAdapter(adapter);
         mTvEndStation.setAdapter(adapter);
 
-        //监控EditText输入内容，点击clear图标删除输入内容
+        // 监控 EditText 输入内容，点击 clear 图标删除输入内容
         TextUtils.addClearListener(mTvStartStation, mIvStartStation);
         TextUtils.addClearListener(mTvEndStation, mIvEndStation);
 
-        //输入法完成/回车
+        // 输入法完成/回车
         mTvEndStation.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if (i == android.view.KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == android.view.KeyEvent.ACTION_DOWN) {
-                    //获取输入的内容
+                    // 获取输入的内容
                     String start_station = mTvStartStation.getText().toString();
                     String end_station = mTvEndStation.getText().toString();
-                    //输出输入的内容
+                    // 输出输入的内容
                     System.out.println("出发车站：" + start_station);
                     System.out.println("到达车站：" + end_station);
 
-                    //使用Intent进行传值页面跳转
+                    // 使用 Intent 进行传值页面跳转
                     Intent intent = new Intent();
                     intent.setClass(StationFragment.this.getActivity(), StationResultActivity.class);
                     intent.putExtra("key1", start_station);
@@ -127,15 +130,15 @@ public class StationFragment extends BaseFragment {
             }
         });
 
-        //点击搜索按钮
+        // 点击搜索按钮
         mBtnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //获取输入的内容
+                // 获取输入的内容
                 String start_station = mTvStartStation.getText().toString();
                 String end_station = mTvEndStation.getText().toString();
 
-                //设置CheckBox的监听事件，判断CheckBox是否被选中
+                // 设置 CheckBox 的监听事件，判断 CheckBox 是否被选中
                 mCbIsHigh.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -147,7 +150,7 @@ public class StationFragment extends BaseFragment {
                     }
                 });
 
-                //使用Intent进行传值页面跳转
+                // 使用 Intent 进行传值页面跳转
                 Intent intent = new Intent();
                 intent.setClass(StationFragment.this.getActivity(), StationResultActivity.class);
                 intent.putExtra("key1", start_station);

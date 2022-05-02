@@ -108,7 +108,7 @@ public class TrainResultActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        //获得Intent传递过来的值，并且将其所包含的空格去掉
+        // 获得 Intent 传递过来的值，并且将其所包含的空格去掉
         Intent intent = getIntent();
         String key = intent.getStringExtra("key");
         mKeyStartStation = intent.getStringExtra("start_station");
@@ -167,39 +167,39 @@ public class TrainResultActivity extends BaseActivity {
      * @param result
      */
     private void dealData(String result) {
-        //实例化Gson对象
+        //实例化 Gson 对象
         Gson gson = new Gson();
 
         try {
-            //把json字符转化为对象
+            //把 json 字符转化为对象
             Train train = gson.fromJson(result, Train.class);
 
-            //车次
+            // 车次
             mTvTrainNo.setText(train.getResult().getTrainno());
-            //类别
+            // 类别
             mTvTrainType.setText(train.getResult().getTypename());
-            //如果传过来的intent值不为空，则说明是从点击列车班次跳转过来的
+            // 如果传过来的 intent 值不为空，则说明是从点击列车班次跳转过来的
             if (mKeyStartTime != null && mKeyEndTime != null && mKeyStartStation != null && mKeyEndStation != null) {
-                //出发车站
+                // 出发车站
                 mTvStartStation.setText(mKeyStartStation);
-                //出发时间
+                // 出发时间
                 mTvStartTime.setText(mKeyStartTime);
-                //到达车站
+                // 到达车站
                 mTvEndStation.setText(mKeyEndStation);
-                //到达时间
+                // 到达时间
                 mTvEndTime.setText(mKeyEndTime);
-                //二维码文字
+                // 二维码文字
                 mQRCodeText = mKeyStartStation + "->" + mKeyEndStation;
             } else {
-                //起点站
+                // 起点站
                 mTvStartStation.setText(train.getResult().getList().get(0).getStation());
-                //起点时间
+                // 起点时间
                 mTvStartTime.setText(train.getResult().getList().get(0).getDeparturetime());
-                //终点站
+                // 终点站
                 mTvEndStation.setText(train.getResult().getList().get(train.getResult().getList().size() - 1).getStation());
-                //终点时间
+                // 终点时间
                 mTvEndTime.setText(train.getResult().getList().get(train.getResult().getList().size() - 1).getArrivaltime());
-                //二维码文字
+                // 二维码文字
                 mQRCodeText = train.getResult().getList().get(0).getStation() + "—>" + train.getResult().getList().get(train.getResult().getList().size() - 1).getStation();
             }
 
@@ -220,30 +220,30 @@ public class TrainResultActivity extends BaseActivity {
 
             }
 
-            //生成二维码
+            // 生成二维码
             Bitmap bitmap = null;
             try {
-                //根据二维码文字生成二维码图片
+                // 根据二维码文字生成二维码图片
                 bitmap = BitmapUtils.create2DCode(mQRCodeText);
                 mIvQRCode.setImageBitmap(bitmap);
             } catch (WriterException e) {
                 e.printStackTrace();
             }
         } catch (Exception e) {
-            //创建AlertDialog的构造器对象
+            // 创建 AlertDialog 的构造器对象
             AlertDialog.Builder builder = new AlertDialog.Builder(TrainResultActivity.this);
-            //构造器内容。为对话框设置文本项
+            // 构造器内容。为对话框设置文本项
             builder.setMessage(R.string.wrong_train);
-            //为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
+            // 为构造器设置确定按钮，第一个参数为按钮显示的文本信息，第二个参数为点击后的监听事件
             builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                //第一个参数dialog是点击的确定按钮所属的dialog对象，第二个对象which是按钮的标示值
+                // 第一个参数 dialog 是点击的确定按钮所属的 dialog 对象，第二个对象 which 是按钮的标示值
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     onBackPressed();
-                    //Toast.makeText(TrainResultActivity.this,"输入数据有误",Toast.LENGTH_SHORT).show();
+                    // Toast.makeText(TrainResultActivity.this,"输入数据有误",Toast.LENGTH_SHORT).show();
                 }
             });
-            //利用构造器创建AlertDialog对象，实现实例化
+            // 利用构造器创建 AlertDialog 对象，实现实例化
             alertDialog = builder.create();
             if (alertDialog != null && !alertDialog.isShowing()) {
                 alertDialog.show();

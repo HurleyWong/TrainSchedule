@@ -6,6 +6,9 @@ import android.content.Context;
 import com.blankj.utilcode.util.Utils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
+/**
+ * 应用初始化类
+ */
 public class App extends Application {
 
     private static App instance;
@@ -16,10 +19,10 @@ public class App extends Application {
 
         instance = this;
 
-        //初始化Fresco框架
+        // 初始化 Fresco 框架
         Fresco.initialize(this);
 
-        //初始化工具类
+        // 初始化工具类
         Utils.init(this);
     }
 

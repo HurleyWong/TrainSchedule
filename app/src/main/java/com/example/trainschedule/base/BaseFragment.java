@@ -15,7 +15,7 @@ import butterknife.Unbinder;
  *      @author hurley
  *      date    : 2019/3/31 9:16 PM
  *      github  : https://github.com/HurleyJames
- *      desc    :
+ *      desc    : Fragment 基类
  * </pre>
  */
 public abstract class BaseFragment extends Fragment {
@@ -66,7 +66,7 @@ public abstract class BaseFragment extends Fragment {
     }
 
     /**
-     * 设置View
+     * 设置 View
      *
      * @param inflater
      * @param container

@@ -55,9 +55,9 @@ public class TrainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         TrainAdapter.ViewHolder itemHolder = (TrainAdapter.ViewHolder) holder;
         itemHolder.bindHolder(listBeans.get(position));
 
-        //点击事件注册及分发
+        // 点击事件注册及分发
         if (null != itemClickListener) {
-            //监听整个item
+            // 监听整个 item
             ((ViewHolder) holder).itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

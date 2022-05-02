@@ -4,8 +4,8 @@ package com.example.trainschedule.api;
  * <pre>
  *      @author hurley
  *      date    : 2019/4/2 10:40 AM
- *      github  : https://github.com/HurleyJames
- *      desc    :
+ *      github  : https://github.com/HurleyWong
+ *      desc    : Url 集合类
  * </pre>
  */
 public class UrlContainer {

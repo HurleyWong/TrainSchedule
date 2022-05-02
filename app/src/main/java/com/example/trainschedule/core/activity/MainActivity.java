@@ -56,11 +56,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void initView() {
-        //监听ViewPager
+        // 监听 ViewPager
         viewPagerListener();
-        //初始化NavigationView
+        // 初始化 NavigationView
         initNavigationHeaderView();
-        //监听NavigationView
+        // 监听 NavigationView
         navigationViewListener();
     }
 
@@ -76,7 +76,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
             @Override
             public void onPageSelected(int position) {
-                //滑动页面后的操作
+                // 滑动页面后的操作
             }
 
             @Override
@@ -85,40 +85,40 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             }
         });
 
-        //添加Fragment
+        // 添加Fragment
         final ArrayList<Fragment> fragments = new ArrayList<>();
-        //添加默认Fragment
-        //fragments.add(DefaultFragment.newInstance());
-        //添加站站Fragment
+        // 添加默认 Fragment
+        // fragments.add(DefaultFragment.newInstance());
+        // 添加站站 Fragment
         fragments.add(StationFragment.newInstance());
-        //添加车次Fragment
+        // 添加车次 Fragment
         fragments.add(TrainFragment.newInstance());
-        //添加车票Fragment
+        // 添加车票 Fragment
         fragments.add(TicketFragment.newInstance());
 
-        //设置适配器用于装载Fragment
+        // 设置适配器用于装载 Fragment
         FragmentPagerAdapter pagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                //得到Fragment
+                // 得到 Fragment
                 return fragments.get(position);
             }
 
             @Override
             public int getCount() {
-                //得到数量
+                // 得到数量
                 return fragments.size();
             }
         };
 
-        //设置装配器
+        // 设置装配器
         viewPager.setAdapter(pagerAdapter);
-        //预加载剩下两页
+        // 预加载剩下两页
         viewPager.setOffscreenPageLimit(2);
     }
 
     /**
-     * 初始化NavigationView
+     * 初始化 NavigationView
      */
     private void initNavigationHeaderView() {
         View headerView = navigationView.getHeaderView(0);
@@ -129,73 +129,69 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ll_login:
-                ActivityUtils.startActivity(LoginActivity.class);
-                break;
-            default:
-                break;
+        if (v.getId() == R.id.ll_login) {
+            ActivityUtils.startActivity(LoginActivity.class);
         }
     }
 
     /**
-     * 监听NavigationView
+     * 监听 NavigationView
      */
     private void navigationViewListener() {
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(
-                    //设置当导航栏被点击时的回调
+                    // 设置当导航栏被点击时的回调
                     item -> {
                         switch (item.getItemId()) {
-                            //根据item进行选择
+                            // 根据 item 进行选择
 //                            case R.id.default_fragment:
-//                                //改变item选中状态
+//                                // 改变 item 选中状态
 //                                item.setChecked(true);
-//                                //跳转到相应的ViewPager
-//                                //首页默认对应0
+//                                // 跳转到相应的 ViewPager
+//                                // 首页默认对应 0
 //                                viewPager.setCurrentItem(0);
 //                                viewPager.setSlide(false);
-//                                //关闭导航栏菜单
+//                                // 关闭导航栏菜单
 //                                drawerLayout.closeDrawers();
 //                                break;
                             case R.id.station_query:
-                                //改变item选中状态
+                                // 改变 item 选中状态
                                 item.setChecked(true);
-                                //跳转到相应的ViewPager
-                                //站站查询对应1
+                                // 跳转到相应的 ViewPager
+                                // 站站查询对应 1
                                 viewPager.setCurrentItem(0);
-                                //禁止ViewPager左右滑动
+                                // 禁止 ViewPager 左右滑动
                                 viewPager.setSlide(false);
                                 toolbar.setTitle(getString(R.string.station_query));
-                                //关闭导航栏菜单
+                                // 关闭导航栏菜单
                                 drawerLayout.closeDrawers();
                                 break;
                             case R.id.train_query:
-                                //改变item选中状态
+                                // 改变 item 选中状态
                                 item.setChecked(true);
-                                //跳转到相应的ViewPager
-                                //车次查询对应2
+                                // 跳转到相应的 ViewPager
+                                // 车次查询对应 2
                                 viewPager.setCurrentItem(1);
-                                //禁止ViewPager左右滑动
+                                // 禁止 ViewPager 左右滑动
                                 viewPager.setSlide(false);
                                 toolbar.setTitle(getString(R.string.train_query));
-                                //关闭导航栏菜单
+                                // 关闭导航栏菜单
                                 drawerLayout.closeDrawers();
                                 break;
                             case R.id.ticket_manage:
-                                //改变item选中状态
+                                // 改变 item 选中状态
                                 item.setChecked(true);
-                                //跳转到相应的ViewPager
-                                //车票管理对应3
+                                // 跳转到相应的 ViewPager
+                                // 车票管理对应 3
                                 viewPager.setCurrentItem(2);
-                                //禁止ViewPager左右滑动
+                                // 禁止 ViewPager 左右滑动
                                 viewPager.setSlide(false);
                                 toolbar.setTitle(getString(R.string.ticket_manage));
-                                //关闭导航栏菜单
+                                // 关闭导航栏菜单
                                 drawerLayout.closeDrawers();
                                 break;
                             case R.id.about:
-                                //关闭导航栏菜单
+                                // 关闭导航栏菜单
                                 drawerLayout.closeDrawers();
                                 new LibsBuilder()
                                         .withActivityStyle(Libs.ActivityStyle.LIGHT_DARK_TOOLBAR)
@@ -207,7 +203,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                                         .start(getApplicationContext());
                                 break;
                             case R.id.support:
-                                //关闭导航栏菜单
+                                // 关闭导航栏菜单
                                 drawerLayout.closeDrawers();
                                 Intent intent4 = new Intent();
                                 intent4.setClass(MainActivity.this, SupportActivity.class);
@@ -223,7 +219,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     /**
-     * 监听NavigationView
+     * 监听 NavigationView
      *
      * @param keyCode
      * @param event

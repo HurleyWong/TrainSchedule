@@ -8,14 +8,14 @@ import android.view.inputmethod.InputMethodManager;
  * <pre>
  *      author : Hurley
  *      e-mail : 1401682479@qq.com
- *      github : https://github.com/HurleyJames
+ *      github : https://github.com/HurleyWong
  *      time   : 2018/11/16 下午3:22
  *      desc   : 软键盘工具类
  * </pre>
  */
 public class KeyboardUtils {
 
-    //显示软键盘
+    // 显示软键盘
     public static void showKeyboard(View view) {
         if (view == null) {
             return;
@@ -27,7 +27,7 @@ public class KeyboardUtils {
         }
     }
 
-    //隐藏软键盘
+    // 隐藏软键盘
     public static void hideKeyboard(View view) {
         if (view == null) {
             return;
@@ -39,7 +39,7 @@ public class KeyboardUtils {
         }
     }
 
-    //切换软键盘
+    // 切换软键盘
     public static void toggleSoftInput(View view) {
         if (view == null) {
             return;

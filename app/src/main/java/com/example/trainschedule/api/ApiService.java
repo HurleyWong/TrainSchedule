@@ -15,12 +15,19 @@ import retrofit2.http.Query;
  * <pre>
  *      @author hurley
  *      date    : 2019/4/2 10:39 AM
- *      github  : https://github.com/HurleyJames
- *      desc    :
+ *      github  : https://github.com/HurleyWong
+ *      desc    : Api 服务类
  * </pre>
  */
 public interface ApiService {
 
+    /**
+     * 登录
+     *
+     * @param username
+     * @param password
+     * @return
+     */
     @POST(UrlContainer.LOGIN)
     @FormUrlEncoded
     Observable<User> login(@Field("username") String username,
@@ -43,6 +50,13 @@ public interface ApiService {
     Observable<Ticket> getTicket(@Field("access_token") String token,
                                  @Field("image") String image);
 
+    /**
+     * 通过图片获取关键词
+     *
+     * @param token
+     * @param image
+     * @return
+     */
     @POST(UrlContainer.GENERAL_BASIC)
     @FormUrlEncoded
     Observable<Word> getWord(@Field("access_token") String token,

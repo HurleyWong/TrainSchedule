@@ -10,8 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * <pre>
  *      @author hurley
  *      date    : 2019/4/3 1:04 PM
- *      github  : https://github.com/HurleyJames
- *      desc    :
+ *      github  : https://github.com/HurleyWong
+ *      desc    : Retrofit 管理类
  * </pre>
  */
 public class RetrofitManager {

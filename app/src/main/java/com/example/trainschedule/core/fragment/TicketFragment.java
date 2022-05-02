@@ -41,7 +41,7 @@ import static android.app.Activity.RESULT_OK;
  * <pre>
  *      @author hurley
  *      date    : 2019/4/2 3:07 PM
- *      github  : https://github.com/HurleyJames
+ *      github  : https://github.com/HurleyWong
  *      desc    : 车票管理页面
  * </pre>
  */

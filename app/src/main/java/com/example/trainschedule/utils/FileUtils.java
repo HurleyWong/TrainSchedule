@@ -18,19 +18,19 @@ import java.io.InputStreamReader;
 public class FileUtils {
 
     /**
-     * 读取位于assets文件夹下的JSON文件
+     * 读取位于 assets 文件夹下的 JSON 文件
      *
      * @param fileName
      * @param context
      * @return
      */
     public static String getJSON(String fileName, Context context) {
-        //将JSON数据转变成字符串
+        // 将 JSON 数据转变成字符串
         StringBuilder stringBuilder = new StringBuilder();
         try {
-            //获取assets资源管理器
+            // 获取 assets 资源管理器
             AssetManager assetManager = context.getAssets();
-            //通过管理器打开文件并读取
+            // 通过管理器打开文件并读取
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     assetManager.open(fileName)
             ));

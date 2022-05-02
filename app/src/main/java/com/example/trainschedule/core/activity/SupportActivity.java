@@ -35,7 +35,7 @@ public class SupportActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        //警告Dialog
+        // 警告 Dialog
         DialogUtils.showAlertDialog(this, null, getString(R.string.wrong_404), getString(R.string.positive));
     }
 

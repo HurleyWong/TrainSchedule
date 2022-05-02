@@ -66,14 +66,14 @@ public class TrainTimeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }
 
         public void bindHolder(Train.ResultBean.ListBean listBean) {
-            //time.setText(train.getResult().getList().get(0).getArrivaltime()+"-"+train.getResult().getList().get(0).getDeparturetime());
-            //station.setText(train.getResult().getList().get(0).getStation());
+            // time.setText(train.getResult().getList().get(0).getArrivaltime()+"-"+train.getResult().getList().get(0).getDeparturetime());
+            // station.setText(train.getResult().getList().get(0).getStation());
             mTvArrivalTime.setText(listBean.getArrivaltime());
             mTvStopTime.setText(listBean.getStoptime());
             mTvDepartureTime.setText(listBean.getDeparturetime());
             mTvStation.setText(listBean.getStation());
-            //time.setText(listBean.getDeparturetime()+""+listBean.getArrivaltime());
-            //station.setText(listBean.getStation());
+            // time.setText(listBean.getDeparturetime()+""+listBean.getArrivaltime());
+            // station.setText(listBean.getStation());
         }
     }
 }
