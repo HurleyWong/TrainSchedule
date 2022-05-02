@@ -52,11 +52,11 @@
     <string name="app_author">作者：</string>
     <string name="app_author_name">Hurley</string>
     <string name="app_github">Github：</string>
-    <string name="app_github_addr">https://github.com/HurleyJames</string>
+    <string name="app_github_addr">https://github.com/HurleyWong</string>
     <string name="app_csdn">CSDN：</string>
     <string name="app_csdn_addr">https://blog.csdn.net/qq_34262794</string>
     <string name="app_blog">个人博客：</string>
-    <string name="app_blog_addr">https://hurley.fun</string>
+    <string name="app_blog_addr">https://hurleywong.com</string>
 
     <!-- 出错 -->
     <string name="wrong_404">抱歉，开发者尚未开发此功能</string>
